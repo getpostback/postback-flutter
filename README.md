@@ -4,10 +4,10 @@ Mobile attribution and event tracking for Flutter apps, backed by the native iOS
 
 ## Requirements
 
-- Flutter 3.0 or later
-- Dart 3.0 or later
+- Flutter 3.22 or later
+- Dart 3.3 or later
 - iOS 14.0 or later
-- Android 5.0 (API 21) or later
+- Android 7.0 (API 24) or later
 
 ## Install
 
@@ -15,7 +15,7 @@ Add the package to `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  appsprint_flutter: ^1.0.0
+  appsprint_flutter: ^1.0.1
 ```
 
 Fetch dependencies:

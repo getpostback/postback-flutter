@@ -51,9 +51,13 @@ class AppSprintNative {
 
   static Future<Map<String, String>> getAttributionParams() async {
     final result = await _channel.invokeMethod<Map<dynamic, dynamic>>('getAttributionParams');
-    return (result ?? const <dynamic, dynamic>{}).map(
-      (key, value) => MapEntry(key.toString(), value.toString()),
-    );
+    final params = <String, String>{};
+    (result ?? const <dynamic, dynamic>{}).forEach((key, value) {
+      if (key != null && value != null) {
+        params[key.toString()] = value.toString();
+      }
+    });
+    return params;
   }
 
   static Future<bool> isInitialized() async {
