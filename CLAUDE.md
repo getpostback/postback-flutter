@@ -84,14 +84,14 @@ The SDK doesn't talk to the API directly — it delegates to the native plugins 
 ## CI/CD
 
 - `ci.yml` — Analyze + test + dry-run publish on push to main and PRs
-- `release.yml` — Analyze, test, publish to pub.dev on `v*` tags (manual — no OIDC support)
+- `release.yml` — Analyze and test on `v*` tags; publish to pub.dev after CI passes
 
 ### pub.dev Publishing
 
 - **Package:** `appsprint_flutter` on pub.dev
 - **Publisher:** `appsprint.app` (verified domain)
-- **Auth:** Manual `flutter pub publish` — pub.dev does not support OIDC yet
-- **CI:** `release.yml` runs analysis + tests but publish step requires manual auth
+- **Auth:** Manual `flutter pub publish` today; pub.dev automated publishing can be enabled separately
+- **CI:** `release.yml` runs analysis + tests before publish
 - Consumers install via: `appsprint_flutter: ^x.y.z` in `pubspec.yaml`
 
 ---
