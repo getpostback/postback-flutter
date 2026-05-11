@@ -44,6 +44,28 @@ const Map<AppSprintEventType, String> appSprintEventTypeValues = {
   AppSprintEventType.custom: 'custom',
 };
 
+enum GoogleAdsConsentStatus {
+  granted,
+  denied,
+  unspecified,
+}
+
+const Map<GoogleAdsConsentStatus, String> googleAdsConsentStatusValues = {
+  GoogleAdsConsentStatus.granted: 'GRANTED',
+  GoogleAdsConsentStatus.denied: 'DENIED',
+  GoogleAdsConsentStatus.unspecified: 'UNSPECIFIED',
+};
+
+class GoogleAdsConsent {
+  const GoogleAdsConsent({required this.adUserData});
+
+  final GoogleAdsConsentStatus adUserData;
+
+  Map<String, Object?> toJson() => {
+        'adUserData': googleAdsConsentStatusValues[adUserData],
+      };
+}
+
 class AppSprintConfig {
   const AppSprintConfig({
     required this.apiKey,
@@ -54,8 +76,10 @@ class AppSprintConfig {
     this.customerUserId,
     this.autoTrackSessions = true,
     this.autoRefreshAttribution = true,
+    this.googleAdsConsent,
   })  : logLevel = logLevel ?? (isDebug ? 0 : 2),
-        assert(logLevel == null || (logLevel >= 0 && logLevel <= 3), 'logLevel must be between 0 and 3.');
+        assert(logLevel == null || (logLevel >= 0 && logLevel <= 3),
+            'logLevel must be between 0 and 3.');
 
   final String apiKey;
   final String apiUrl;
@@ -65,6 +89,7 @@ class AppSprintConfig {
   final String? customerUserId;
   final bool autoTrackSessions;
   final bool autoRefreshAttribution;
+  final GoogleAdsConsent? googleAdsConsent;
 }
 
 class AttributionResult {
@@ -84,7 +109,8 @@ class AttributionResult {
   });
 
   factory AttributionResult.fromJson(Map<dynamic, dynamic> json) {
-    final isAttributed = json['isAttributed'] as bool? ?? json['source'] != 'organic';
+    final isAttributed =
+        json['isAttributed'] as bool? ?? json['source'] != 'organic';
     return AttributionResult(
       isAttributed: isAttributed,
       source: json['source'] as String? ?? (isAttributed ? null : 'organic'),

@@ -44,7 +44,12 @@ void main() {
 
   test('configure delegates to native channel', () async {
     final configured = await AppSprint.instance.configure(
-      const AppSprintConfig(apiKey: 'test-key', isDebug: true),
+      const AppSprintConfig(
+        apiKey: 'test-key',
+        isDebug: true,
+        googleAdsConsent:
+            GoogleAdsConsent(adUserData: GoogleAdsConsentStatus.granted),
+      ),
     );
 
     expect(configured, true);
@@ -58,6 +63,7 @@ void main() {
       'customerUserId': null,
       'autoTrackSessions': true,
       'autoRefreshAttribution': true,
+      'googleAdsConsent': {'adUserData': 'GRANTED'},
     });
   });
 
@@ -134,10 +140,36 @@ void main() {
     });
   });
 
+  test('sendEvent hoists Google Ads consent', () async {
+    final sent = await AppSprint.instance.sendEvent(
+      AppSprintEventType.purchase,
+      name: 'checkout',
+      params: {
+        'googleAdsConsent':
+            const GoogleAdsConsent(adUserData: GoogleAdsConsentStatus.denied),
+        'sku': 'pro',
+      },
+    );
+
+    expect(sent, true);
+    expect(calls.single.method, 'sendEvent');
+    expect(calls.single.arguments, {
+      'eventType': 'purchase',
+      'name': 'checkout',
+      'revenue': null,
+      'currency': null,
+      'googleAdsConsent': {'adUserData': 'DENIED'},
+      'parameters': {'sku': 'pro'},
+    });
+  });
+
   test('event vocabulary includes Appstack parity events', () {
-    expect(appSprintEventTypeValues[AppSprintEventType.sessionStart], 'session_start');
-    expect(appSprintEventTypeValues[AppSprintEventType.addPaymentInfo], 'add_payment_info');
-    expect(appSprintEventTypeValues[AppSprintEventType.achieveLevel], 'achieve_level');
+    expect(appSprintEventTypeValues[AppSprintEventType.sessionStart],
+        'session_start');
+    expect(appSprintEventTypeValues[AppSprintEventType.addPaymentInfo],
+        'add_payment_info');
+    expect(appSprintEventTypeValues[AppSprintEventType.achieveLevel],
+        'achieve_level');
   });
 
   test('sendEvent preserves zero revenue and strips hoisted fields', () async {
@@ -201,19 +233,22 @@ void main() {
     expect(attribution?.appleAds?['campaignId'], '123');
   });
 
-  test('native utility API surface matches documented wrapper methods', () async {
+  test('native utility API surface matches documented wrapper methods',
+      () async {
     await AppSprintNative.getAdServicesToken();
     await AppSprintNative.requestTrackingAuthorization();
     await AppSprint.instance.refreshAttribution();
     await AppSprint.instance.enableAppleAdsAttribution();
     await AppSprint.instance.destroy();
 
-    expect(calls.map((call) => call.method), containsAll(<String>[
-      'getAdServicesToken',
-      'requestTrackingAuthorization',
-      'refreshAttribution',
-      'enableAppleAdsAttribution',
-      'destroy',
-    ]));
+    expect(
+        calls.map((call) => call.method),
+        containsAll(<String>[
+          'getAdServicesToken',
+          'requestTrackingAuthorization',
+          'refreshAttribution',
+          'enableAppleAdsAttribution',
+          'destroy',
+        ]));
   });
 }

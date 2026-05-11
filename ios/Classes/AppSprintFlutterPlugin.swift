@@ -28,6 +28,7 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
         let customerUserId = args["customerUserId"] as? String
         let autoTrackSessions = args["autoTrackSessions"] as? Bool ?? true
         let autoRefreshAttribution = args["autoRefreshAttribution"] as? Bool ?? true
+        let googleAdsConsent = Self.googleAdsConsent(from: args["googleAdsConsent"])
 
         let logLevel: AppSprintLogLevel
         if let raw = logLevelRaw, let level = AppSprintLogLevel(rawValue: raw) {
@@ -43,7 +44,8 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
           logLevel: logLevel,
           customerUserId: customerUserId,
           autoTrackSessions: autoTrackSessions,
-          autoRefreshAttribution: autoRefreshAttribution
+          autoRefreshAttribution: autoRefreshAttribution,
+          googleAdsConsent: googleAdsConsent
         )
 
         let apiUrl = (args["apiUrl"] as? String) ?? (args["endpointBaseUrl"] as? String)
@@ -56,7 +58,8 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
             logLevel: logLevel,
             customerUserId: customerUserId,
             autoTrackSessions: autoTrackSessions,
-            autoRefreshAttribution: autoRefreshAttribution
+            autoRefreshAttribution: autoRefreshAttribution,
+            googleAdsConsent: googleAdsConsent
           )
         }
 
@@ -82,6 +85,10 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
         if let cur = args["currency"] as? String {
           if params == nil { params = [:] }
           params?["currency"] = cur
+        }
+        if let googleAdsConsent = args["googleAdsConsent"] as? [String: Any] {
+          if params == nil { params = [:] }
+          params?["googleAdsConsent"] = googleAdsConsent
         }
 
         await AppSprint.shared.sendEvent(type, name: name, params: params)
@@ -178,9 +185,11 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
         if let l = info.locale { dict["locale"] = l }
         if let t = info.timezone { dict["timezone"] = t }
         if let o = info.osVersion { dict["osVersion"] = o }
+        if let appVersion = info.appVersion { dict["appVersion"] = appVersion }
         if let v = info.idfv { dict["idfv"] = v }
         if let a = info.idfa { dict["idfa"] = a }
         if let tk = info.adServicesToken { dict["adServicesToken"] = tk }
+        if let attStatus = info.attStatus { dict["attStatus"] = attStatus.rawValue }
         result(dict)
       }
 
@@ -216,6 +225,21 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
     }
   }
 
+  private static func googleAdsConsent(from value: Any?) -> GoogleAdsConsent? {
+    guard let dict = value as? [String: Any],
+          let status = googleAdsConsentStatus(from: dict["adUserData"]) else {
+      return nil
+    }
+    return GoogleAdsConsent(adUserData: status)
+  }
+
+  private static func googleAdsConsentStatus(from value: Any?) -> GoogleAdsConsentStatus? {
+    guard let raw = value as? String else {
+      return nil
+    }
+    return GoogleAdsConsentStatus(rawValue: raw.trimmingCharacters(in: .whitespacesAndNewlines).uppercased())
+  }
+
   private static func attributionToDictionary(_ attr: AttributionResult) -> [String: Any] {
     var dict: [String: Any] = [
       "isAttributed": attr.isAttributed,
@@ -229,10 +253,16 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
     }
     if let appleAds = attr.appleAds {
       var apple: [String: Any] = ["campaignId": appleAds.campaignId]
+      if let orgId = appleAds.orgId { apple["orgId"] = orgId }
       if let adGroupId = appleAds.adGroupId { apple["adGroupId"] = adGroupId }
       if let keywordId = appleAds.keywordId { apple["keywordId"] = keywordId }
+      if let adId = appleAds.adId { apple["adId"] = adId }
       if let country = appleAds.countryOrRegion { apple["countryOrRegion"] = country }
+      if let claimType = appleAds.claimType { apple["claimType"] = claimType }
+      if let clickDate = appleAds.clickDate { apple["clickDate"] = clickDate }
+      if let impressionDate = appleAds.impressionDate { apple["impressionDate"] = impressionDate }
       if let conversion = appleAds.conversionType { apple["conversionType"] = conversion }
+      if let supplyPlacement = appleAds.supplyPlacement { apple["supplyPlacement"] = supplyPlacement }
       dict["appleAds"] = apple
     }
     if let utmSource = attr.utmSource { dict["utmSource"] = utmSource }

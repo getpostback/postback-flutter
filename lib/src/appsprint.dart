@@ -16,6 +16,7 @@ class AppSprint {
     String? customerUserId,
     bool autoTrackSessions = true,
     bool autoRefreshAttribution = true,
+    GoogleAdsConsent? googleAdsConsent,
   }) {
     final AppSprintConfig normalizedConfig;
     if (config is AppSprintConfig) {
@@ -30,6 +31,7 @@ class AppSprint {
         customerUserId: customerUserId,
         autoTrackSessions: autoTrackSessions,
         autoRefreshAttribution: autoRefreshAttribution,
+        googleAdsConsent: googleAdsConsent,
       );
     } else {
       throw ArgumentError.value(
@@ -56,26 +58,73 @@ class AppSprint {
       'customerUserId': normalizedConfig.customerUserId,
       'autoTrackSessions': normalizedConfig.autoTrackSessions,
       'autoRefreshAttribution': normalizedConfig.autoRefreshAttribution,
+      if (normalizedConfig.googleAdsConsent != null)
+        'googleAdsConsent': normalizedConfig.googleAdsConsent!.toJson(),
     });
   }
 
-  Future<bool> sendEvent(AppSprintEventType eventType, {String? name, Map<String, Object?>? params}) {
+  Future<bool> sendEvent(AppSprintEventType eventType,
+      {String? name, Map<String, Object?>? params}) {
+    final googleAdsConsent = _googleAdsConsentValue(params);
     return AppSprintNative.sendEvent({
       'eventType': appSprintEventTypeValues[eventType],
       'name': name,
       'revenue': params?['revenue'] ?? params?['price'],
       'currency': params?['currency'],
+      if (googleAdsConsent != null)
+        'googleAdsConsent': googleAdsConsent.toJson(),
       'parameters': _eventParametersWithoutHoistedFields(params),
     });
   }
 
-  static Map<String, Object?>? _eventParametersWithoutHoistedFields(Map<String, Object?>? params) {
+  static Map<String, Object?>? _eventParametersWithoutHoistedFields(
+      Map<String, Object?>? params) {
     if (params == null) return null;
     final parameters = Map<String, Object?>.of(params)
       ..remove('revenue')
       ..remove('price')
-      ..remove('currency');
+      ..remove('currency')
+      ..remove('googleAdsConsent')
+      ..remove('googleAdsAdUserDataConsent');
     return parameters.isEmpty ? null : parameters;
+  }
+
+  static GoogleAdsConsent? _googleAdsConsentValue(
+      Map<String, Object?>? params) {
+    final raw = params?['googleAdsConsent'];
+    if (raw is GoogleAdsConsent) {
+      return raw;
+    }
+    if (raw is Map) {
+      final status = _googleAdsConsentStatus(raw['adUserData']);
+      if (status != null) {
+        return GoogleAdsConsent(adUserData: status);
+      }
+    }
+    final aliasStatus =
+        _googleAdsConsentStatus(params?['googleAdsAdUserDataConsent']);
+    return aliasStatus == null
+        ? null
+        : GoogleAdsConsent(adUserData: aliasStatus);
+  }
+
+  static GoogleAdsConsentStatus? _googleAdsConsentStatus(Object? value) {
+    if (value is GoogleAdsConsentStatus) {
+      return value;
+    }
+    if (value is! String) {
+      return null;
+    }
+    switch (value.trim().toUpperCase()) {
+      case 'GRANTED':
+        return GoogleAdsConsentStatus.granted;
+      case 'DENIED':
+        return GoogleAdsConsentStatus.denied;
+      case 'UNSPECIFIED':
+        return GoogleAdsConsentStatus.unspecified;
+      default:
+        return null;
+    }
   }
 
   Future<TestEventResult> sendTestEvent() async {
@@ -90,7 +139,8 @@ class AppSprint {
 
   Future<void> clearData() => AppSprintNative.clearData();
 
-  Future<void> setCustomerUserId(String userId) => AppSprintNative.setCustomerUserId(userId);
+  Future<void> setCustomerUserId(String userId) =>
+      AppSprintNative.setCustomerUserId(userId);
 
   Future<AttributionResult?> refreshAttribution() async {
     final raw = await AppSprintNative.refreshAttribution();
@@ -98,7 +148,8 @@ class AppSprint {
     return AttributionResult.fromJson(raw);
   }
 
-  Future<bool> enableAppleAdsAttribution() => AppSprintNative.enableAppleAdsAttribution();
+  Future<bool> enableAppleAdsAttribution() =>
+      AppSprintNative.enableAppleAdsAttribution();
 
   Future<String?> getAppSprintId() => AppSprintNative.getAppSprintId();
 
@@ -108,7 +159,8 @@ class AppSprint {
     return AttributionResult.fromJson(raw);
   }
 
-  Future<Map<String, String>> getAttributionParams() => AppSprintNative.getAttributionParams();
+  Future<Map<String, String>> getAttributionParams() =>
+      AppSprintNative.getAttributionParams();
 
   Future<bool> isInitialized() => AppSprintNative.isInitialized();
 
