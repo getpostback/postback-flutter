@@ -8399,63 +8399,70 @@
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2206,
+      "offset": 1935,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2313,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2521,
+      "offset": 2628,
       "length": 6,
       "value": "95000"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2573,
+      "offset": 2680,
       "length": 6,
       "value": "90000"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2635,
+      "offset": 2742,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2640,
+      "offset": 2747,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2645,
+      "offset": 2752,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2725,
+      "offset": 2832,
       "length": 2,
       "value": "75"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2730,
+      "offset": 2837,
       "length": 13,
       "value": "1000000000"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 13628,
+      "offset": 13774,
       "length": 2,
       "value": "13"
     },

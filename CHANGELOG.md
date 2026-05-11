@@ -3,10 +3,12 @@
 ## 1.0.1
 
 - Added Google Ads consent configuration and event payload parity.
-- Updated vendored native binaries with Android v1.0.1 and rebuilt iOS XCFramework.
+- Updated vendored native binaries with iOS v1.0.1 and Android v1.0.2.
+- Picked up iOS customer-user-id retry/backoff parity.
 - Completed `getDeviceInfo()` parity for app version, GAID, IDFV/IDFA, AdServices token, and ATT status where platform-available.
 - Exposed full Apple Ads attribution fields returned by the backend.
 - Fixed attribution-param null stringification and corrected release metadata/docs.
+- Excluded internal agent notes from the pub.dev package.
 
 ## 1.0.0
 
