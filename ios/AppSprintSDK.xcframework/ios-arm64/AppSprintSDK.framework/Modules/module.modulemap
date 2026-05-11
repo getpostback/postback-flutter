@@ -1,0 +1,4 @@
+framework module AppSprintSDK {
+  header "AppSprintSDK-Swift.h"
+  requires objc
+}

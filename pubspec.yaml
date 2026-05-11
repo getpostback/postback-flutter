@@ -1,0 +1,29 @@
+name: appsprint_flutter
+description: Flutter AppSprint attribution SDK.
+version: 1.0.0
+homepage: https://appsprint.app
+repository: https://github.com/appsprint/appsprint-flutter
+issue_tracker: https://github.com/appsprint/appsprint-flutter/issues
+documentation: https://pub.dev/packages/appsprint_flutter
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.appsprint.flutter
+        pluginClass: AppSprintFlutterPlugin
+      ios:
+        pluginClass: AppSprintFlutterPlugin

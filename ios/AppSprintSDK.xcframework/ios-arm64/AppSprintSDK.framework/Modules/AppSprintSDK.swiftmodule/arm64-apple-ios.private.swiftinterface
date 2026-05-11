@@ -1,0 +1,239 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.4 effective-5.10 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name AppSprintSDK -package-name appsprint_ios
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
+import AdServices
+import AdSupport
+import AppTrackingTransparency
+import CryptoKit
+import Foundation
+import Foundation/*.Bundle*/
+import Foundation/*.ProcessInfo*/
+import Foundation/*.URL*/
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class AppSprint {
+  @_Concurrency.MainActor public static let shared: AppSprintSDK.AppSprint
+  @_Concurrency.MainActor final public var isInitialized: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor public init()
+  @_Concurrency.MainActor final public func configure(_ config: AppSprintSDK.AppSprintConfig) async
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func sendEvent(_ eventType: AppSprintSDK.AppSprintEventType, name: Swift.String? = nil, params: [Swift.String : Any]? = nil) async
+  #endif
+  @_Concurrency.MainActor final public func flush() async
+  @_Concurrency.MainActor final public func clearData()
+  @_Concurrency.MainActor final public func isSdkDisabled() -> Swift.Bool
+  @_Concurrency.MainActor final public func setCustomerUserId(_ userId: Swift.String) async
+  @_Concurrency.MainActor final public func sendTestEvent() async -> AppSprintSDK.TestEventResult
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func getAppSprintId() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func getAttribution() -> AppSprintSDK.AttributionResult?
+  #endif
+  @_Concurrency.MainActor final public func getAttributionParams() -> [Swift.String : Swift.String]
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  @_Concurrency.MainActor final public func refreshAttribution() async -> AppSprintSDK.AttributionResult?
+  #endif
+  @discardableResult
+  @_Concurrency.MainActor final public func enableAppleAdsAttribution() -> Swift.Bool
+  @_Concurrency.MainActor final public func destroy()
+  @objc deinit
+}
+public struct AppSprintConfig : Swift.Sendable {
+  public static let defaultAPIURL: Foundation.URL
+  public var apiKey: Swift.String
+  public var apiURL: Foundation.URL
+  public var enableAppleAdsAttribution: Swift.Bool
+  public var isDebug: Swift.Bool
+  public var logLevel: AppSprintSDK.AppSprintLogLevel
+  public var customerUserId: Swift.String?
+  public var autoTrackSessions: Swift.Bool
+  public var autoRefreshAttribution: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(apiKey: Swift.String, apiURL: Foundation.URL = AppSprintConfig.defaultAPIURL, enableAppleAdsAttribution: Swift.Bool = true, isDebug: Swift.Bool = false, logLevel: AppSprintSDK.AppSprintLogLevel = .warn, customerUserId: Swift.String? = nil, autoTrackSessions: Swift.Bool = true, autoRefreshAttribution: Swift.Bool = true)
+  #endif
+}
+public enum AppSprintNative {
+  @_Concurrency.MainActor public static func getDeviceInfo() -> AppSprintSDK.DeviceInfo
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func getAdServicesToken() -> Swift.String?
+  #endif
+  @_Concurrency.MainActor public static func requestTrackingAuthorization() async -> Swift.Bool
+  public static func storageSet(_ key: Swift.String, value: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func storageGet(_ key: Swift.String) -> Swift.String?
+  #endif
+  public static func storageRemove(_ key: Swift.String)
+}
+public enum AppSprintLogLevel : Swift.Int, Swift.Codable, Swift.Sendable {
+  case debug
+  case info
+  case warn
+  case error
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum AppSprintEventType : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+  case sessionStart
+  case login
+  case signUp
+  case register
+  case purchase
+  case subscribe
+  case startTrial
+  case addPaymentInfo
+  case addToCart
+  case addToWishlist
+  case initiateCheckout
+  case viewContent
+  case viewItem
+  case search
+  case share
+  case tutorialComplete
+  case achieveLevel
+  case levelStart
+  case levelComplete
+  case custom
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias AllCases = [AppSprintSDK.AppSprintEventType]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [AppSprintSDK.AppSprintEventType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum AppSprintAttStatus : Swift.String, Swift.Codable, Swift.Sendable {
+  case notDetermined
+  case restricted
+  case denied
+  case authorized
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct AttributionLink : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let id: Swift.String
+  public let name: Swift.String
+  public static func == (a: AppSprintSDK.AttributionLink, b: AppSprintSDK.AttributionLink) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AppleAdsAttribution : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let campaignId: Swift.String
+  public let adGroupId: Swift.String?
+  public let keywordId: Swift.String?
+  public let countryOrRegion: Swift.String?
+  public let conversionType: Swift.String?
+  public static func == (a: AppSprintSDK.AppleAdsAttribution, b: AppSprintSDK.AppleAdsAttribution) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AttributionResult : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let isAttributed: Swift.Bool
+  public let matchType: Swift.String?
+  public let link: AppSprintSDK.AttributionLink?
+  public let appleAds: AppSprintSDK.AppleAdsAttribution?
+  public let utmSource: Swift.String?
+  public let utmMedium: Swift.String?
+  public let utmCampaign: Swift.String?
+  public let utmContent: Swift.String?
+  public let utmTerm: Swift.String?
+  public var source: Swift.String {
+    get
+  }
+  public var confidence: Swift.Double {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var campaignName: Swift.String? {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(source: Swift.String, confidence: Swift.Double, campaignName: Swift.String? = nil, utmSource: Swift.String? = nil, utmMedium: Swift.String? = nil, utmCampaign: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(isAttributed: Swift.Bool, source: Swift.String? = nil, matchType: Swift.String? = nil, link: AppSprintSDK.AttributionLink? = nil, appleAds: AppSprintSDK.AppleAdsAttribution? = nil, utmSource: Swift.String? = nil, utmMedium: Swift.String? = nil, utmCampaign: Swift.String? = nil, utmContent: Swift.String? = nil, utmTerm: Swift.String? = nil)
+  #endif
+  public static func == (a: AppSprintSDK.AttributionResult, b: AppSprintSDK.AttributionResult) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct InstallResponse : Swift.Codable, Swift.Sendable {
+  public let appsprintId: Swift.String
+  public let installId: Swift.String?
+  public let attribution: AppSprintSDK.AttributionResult
+  public let attributionParams: [Swift.String : Swift.String]?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(appsprintId: Swift.String, installId: Swift.String? = nil, attribution: AppSprintSDK.AttributionResult, attributionParams: [Swift.String : Swift.String]? = nil)
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TestEventResult : Swift.Equatable, Swift.Sendable {
+  public let success: Swift.Bool
+  public let message: Swift.String
+  public init(success: Swift.Bool, message: Swift.String)
+  public static func == (a: AppSprintSDK.TestEventResult, b: AppSprintSDK.TestEventResult) -> Swift.Bool
+}
+public struct DeviceInfo : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let deviceModel: Swift.String?
+  public let screenWidth: Swift.Int?
+  public let screenHeight: Swift.Int?
+  public let locale: Swift.String?
+  public let timezone: Swift.String?
+  public let osVersion: Swift.String?
+  public let appVersion: Swift.String?
+  public let idfv: Swift.String?
+  public let idfa: Swift.String?
+  public let adServicesToken: Swift.String?
+  public let attStatus: AppSprintSDK.AppSprintAttStatus?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(deviceModel: Swift.String? = nil, screenWidth: Swift.Int? = nil, screenHeight: Swift.Int? = nil, locale: Swift.String? = nil, timezone: Swift.String? = nil, osVersion: Swift.String? = nil, appVersion: Swift.String? = nil, idfv: Swift.String? = nil, idfa: Swift.String? = nil, adServicesToken: Swift.String? = nil, attStatus: AppSprintSDK.AppSprintAttStatus? = nil)
+  #endif
+  public static func == (a: AppSprintSDK.DeviceInfo, b: AppSprintSDK.DeviceInfo) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AnyCodable : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let value: AppSprintSDK.AnySendable
+  public init(_ value: some Sendable)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: AppSprintSDK.AnyCodable, b: AppSprintSDK.AnyCodable) -> Swift.Bool
+}
+public struct AnySendable : @unchecked Swift.Sendable, Swift.Equatable {
+  public init(_ base: Any)
+  public static func == (lhs: AppSprintSDK.AnySendable, rhs: AppSprintSDK.AnySendable) -> Swift.Bool
+}
+extension AppSprintSDK.AppSprint : Swift.Sendable {}
+extension AppSprintSDK.AppSprintAttStatus : Swift.Equatable {}
+extension AppSprintSDK.AppSprintAttStatus : Swift.Hashable {}
+extension AppSprintSDK.AppSprintAttStatus : Swift.RawRepresentable {}
+extension AppSprintSDK.AppSprintLogLevel : Swift.Equatable {}
+extension AppSprintSDK.AppSprintLogLevel : Swift.Hashable {}
+extension AppSprintSDK.AppSprintLogLevel : Swift.RawRepresentable {}
+extension AppSprintSDK.AppSprintEventType : Swift.Equatable {}
+extension AppSprintSDK.AppSprintEventType : Swift.Hashable {}
+extension AppSprintSDK.AppSprintEventType : Swift.RawRepresentable {}
