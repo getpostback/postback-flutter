@@ -182,6 +182,32 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
         if let m = info.deviceModel { dict["deviceModel"] = m }
         if let w = info.screenWidth { dict["screenWidth"] = w }
         if let h = info.screenHeight { dict["screenHeight"] = h }
+        if let w = info.nativeScreenWidth { dict["nativeScreenWidth"] = w }
+        if let h = info.nativeScreenHeight { dict["nativeScreenHeight"] = h }
+        if let scale = info.screenScale { dict["screenScale"] = scale }
+        if let concurrency = info.hardwareConcurrency { dict["hardwareConcurrency"] = concurrency }
+        if let count = info.processorCount { dict["processorCount"] = count }
+        if let touch = info.maxTouchPoints { dict["maxTouchPoints"] = touch }
+        if let memory = info.memoryGb { dict["memoryGb"] = memory }
+        if let lowPower = info.lowPowerMode { dict["lowPowerMode"] = lowPower }
+        if let state = info.batteryState { dict["batteryState"] = state }
+        if let bucket = info.batteryLevelBucket { dict["batteryLevelBucket"] = bucket }
+        if let languages = info.preferredLanguages { dict["preferredLanguages"] = languages }
+        if let offset = info.timezoneOffsetMinutes { dict["timezoneOffsetMinutes"] = offset }
+        if let value = info.deviceManufacturer { dict["deviceManufacturer"] = value }
+        if let value = info.deviceBrand { dict["deviceBrand"] = value }
+        if let value = info.deviceProduct { dict["deviceProduct"] = value }
+        if let value = info.deviceHardware { dict["deviceHardware"] = value }
+        if let value = info.gpuVendor { dict["gpuVendor"] = value }
+        if let value = info.gpuRenderer { dict["gpuRenderer"] = value }
+        if let value = info.connectionType { dict["connectionType"] = value }
+        if let value = info.networkType { dict["networkType"] = value }
+        if let value = info.carrierName { dict["carrierName"] = value }
+        if let value = info.carrierCountryCode { dict["carrierCountryCode"] = value }
+        if let value = info.mobileCountryCode { dict["mobileCountryCode"] = value }
+        if let value = info.mobileNetworkCode { dict["mobileNetworkCode"] = value }
+        if let value = info.sdkPlatform { dict["sdkPlatform"] = value }
+        if let value = info.sdkVersion { dict["sdkVersion"] = value }
         if let l = info.locale { dict["locale"] = l }
         if let t = info.timezone { dict["timezone"] = t }
         if let o = info.osVersion { dict["osVersion"] = o }

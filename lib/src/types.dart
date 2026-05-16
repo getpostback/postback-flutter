@@ -146,6 +146,32 @@ class DeviceInfo {
     this.deviceModel,
     this.screenWidth,
     this.screenHeight,
+    this.nativeScreenWidth,
+    this.nativeScreenHeight,
+    this.screenScale,
+    this.hardwareConcurrency,
+    this.processorCount,
+    this.maxTouchPoints,
+    this.memoryGb,
+    this.lowPowerMode,
+    this.batteryState,
+    this.batteryLevelBucket,
+    this.preferredLanguages,
+    this.timezoneOffsetMinutes,
+    this.deviceManufacturer,
+    this.deviceBrand,
+    this.deviceProduct,
+    this.deviceHardware,
+    this.gpuVendor,
+    this.gpuRenderer,
+    this.connectionType,
+    this.networkType,
+    this.carrierName,
+    this.carrierCountryCode,
+    this.mobileCountryCode,
+    this.mobileNetworkCode,
+    this.sdkPlatform,
+    this.sdkVersion,
     this.locale,
     this.timezone,
     this.osVersion,
@@ -161,6 +187,34 @@ class DeviceInfo {
       deviceModel: json['deviceModel'] as String?,
       screenWidth: (json['screenWidth'] as num?)?.toInt(),
       screenHeight: (json['screenHeight'] as num?)?.toInt(),
+      nativeScreenWidth: (json['nativeScreenWidth'] as num?)?.toInt(),
+      nativeScreenHeight: (json['nativeScreenHeight'] as num?)?.toInt(),
+      screenScale: (json['screenScale'] as num?)?.toDouble(),
+      hardwareConcurrency: (json['hardwareConcurrency'] as num?)?.toInt(),
+      processorCount: (json['processorCount'] as num?)?.toInt(),
+      maxTouchPoints: (json['maxTouchPoints'] as num?)?.toInt(),
+      memoryGb: (json['memoryGb'] as num?)?.toInt(),
+      lowPowerMode: json['lowPowerMode'] as bool?,
+      batteryState: json['batteryState'] as String?,
+      batteryLevelBucket: json['batteryLevelBucket'] as String?,
+      preferredLanguages: (json['preferredLanguages'] as List<dynamic>?)
+          ?.whereType<String>()
+          .toList(),
+      timezoneOffsetMinutes: (json['timezoneOffsetMinutes'] as num?)?.toInt(),
+      deviceManufacturer: json['deviceManufacturer'] as String?,
+      deviceBrand: json['deviceBrand'] as String?,
+      deviceProduct: json['deviceProduct'] as String?,
+      deviceHardware: json['deviceHardware'] as String?,
+      gpuVendor: json['gpuVendor'] as String?,
+      gpuRenderer: json['gpuRenderer'] as String?,
+      connectionType: json['connectionType'] as String?,
+      networkType: json['networkType'] as String?,
+      carrierName: json['carrierName'] as String?,
+      carrierCountryCode: json['carrierCountryCode'] as String?,
+      mobileCountryCode: json['mobileCountryCode'] as String?,
+      mobileNetworkCode: json['mobileNetworkCode'] as String?,
+      sdkPlatform: json['sdkPlatform'] as String?,
+      sdkVersion: json['sdkVersion'] as String?,
       locale: json['locale'] as String?,
       timezone: json['timezone'] as String?,
       osVersion: json['osVersion'] as String?,
@@ -175,6 +229,32 @@ class DeviceInfo {
   final String? deviceModel;
   final int? screenWidth;
   final int? screenHeight;
+  final int? nativeScreenWidth;
+  final int? nativeScreenHeight;
+  final double? screenScale;
+  final int? hardwareConcurrency;
+  final int? processorCount;
+  final int? maxTouchPoints;
+  final int? memoryGb;
+  final bool? lowPowerMode;
+  final String? batteryState;
+  final String? batteryLevelBucket;
+  final List<String>? preferredLanguages;
+  final int? timezoneOffsetMinutes;
+  final String? deviceManufacturer;
+  final String? deviceBrand;
+  final String? deviceProduct;
+  final String? deviceHardware;
+  final String? gpuVendor;
+  final String? gpuRenderer;
+  final String? connectionType;
+  final String? networkType;
+  final String? carrierName;
+  final String? carrierCountryCode;
+  final String? mobileCountryCode;
+  final String? mobileNetworkCode;
+  final String? sdkPlatform;
+  final String? sdkVersion;
   final String? locale;
   final String? timezone;
   final String? osVersion;

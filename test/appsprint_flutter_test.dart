@@ -25,6 +25,11 @@ void main() {
         },
         'getDeviceInfo': {
           'deviceModel': 'iPhone15,2',
+          'screenScale': 3,
+          'hardwareConcurrency': 6,
+          'preferredLanguages': ['en-US', 'fr-FR'],
+          'gpuRenderer': 'Apple GPU',
+          'sdkVersion': '1.1.0',
           'locale': 'en-US',
           'gaid': '38400000-8cf0-11bd-b23e-10b96e40000d',
         },
@@ -214,6 +219,11 @@ void main() {
     expect(attributionParams['gclid'], 'gclid_123');
     expect(appSprintId, 'app_123');
     expect(deviceInfo.deviceModel, 'iPhone15,2');
+    expect(deviceInfo.screenScale, 3);
+    expect(deviceInfo.hardwareConcurrency, 6);
+    expect(deviceInfo.preferredLanguages, ['en-US', 'fr-FR']);
+    expect(deviceInfo.gpuRenderer, 'Apple GPU');
+    expect(deviceInfo.sdkVersion, '1.1.0');
     expect(deviceInfo.locale, 'en-US');
     expect(deviceInfo.gaid, '38400000-8cf0-11bd-b23e-10b96e40000d');
   });

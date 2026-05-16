@@ -15,7 +15,7 @@ Add the package to `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  appsprint_flutter: ^1.0.1
+  appsprint_flutter: ^1.1.0
 ```
 
 Fetch dependencies:
@@ -200,7 +200,7 @@ The native Android SDK reads GAID during install registration, off the main thre
 
 The vendored iOS framework ships a `PrivacyInfo.xcprivacy` manifest declaring `UserDefaults` access plus `DeviceID`, `ProductInteraction`, `UserID`, `CoarseLocation`, and `OtherDataTypes` collection, all marked `Tracking: true`, with `api.appsprint.app` listed as a tracking domain.
 
-For Android, include advertising ID collection, device IDs, app activity, and (if you set `customerUserId`) user ID in your Play Console Data safety answers.
+For Android, include advertising ID collection, device IDs, approximate location/network-derived country, device or other identifiers, app activity, and (if you set `customerUserId`) user ID in your Play Console Data safety answers.
 
 Don't pass raw PII through `params` or `customerUserId`. Both persist to native storage for retry durability. Use hashed or opaque identifiers instead (SHA-256 of an email, RevenueCat or Superwall `app_user_id`, your internal user UUID).
 
@@ -249,7 +249,7 @@ import 'package:appsprint_flutter/appsprint_flutter.dart';
 import 'package:appsprint_flutter/appsprint_flutter.dart';
 ```
 
-- `getDeviceInfo()` returns the device fingerprint payload.
+- `getDeviceInfo()` returns the attribution device signal payload.
 - `getAdServicesToken()` returns Apple's AdServices token on iOS; `null` on Android.
 - `requestTrackingAuthorization()` shows the ATT prompt on iOS; resolves `true` on Android.
 

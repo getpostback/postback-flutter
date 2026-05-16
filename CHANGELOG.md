@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- Updated vendored native SDKs to iOS v1.1.0 and Android v1.1.0.
+- Exposed enriched `getDeviceInfo()` fields including native screen size, screen scale, CPU count, memory bucket, preferred languages, timezone offset, battery/network/carrier metadata, GPU renderer, and SDK version where platform-available.
+
 ## 1.0.1
 
 - Added Google Ads consent configuration and event payload parity.
