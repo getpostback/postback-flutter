@@ -1,9 +1,13 @@
 # Changelog
 
+## 1.1.1
+
+- Updated the vendored iOS SDK to v1.1.1 with reliability improvements for iOS attribution payloads.
+
 ## 1.1.0
 
 - Updated vendored native SDKs to iOS v1.1.0 and Android v1.1.0.
-- Exposed enriched `getDeviceInfo()` fields including native screen size, screen scale, CPU count, memory bucket, preferred languages, timezone offset, battery/network/carrier metadata, GPU renderer, and SDK version where platform-available.
+- Exposed additional platform-safe `getDeviceInfo()` fields for attribution quality and rollout debugging.
 
 ## 1.0.1
 

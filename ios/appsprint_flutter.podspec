@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'appsprint_flutter'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'Flutter AppSprint attribution SDK'
   s.description      = 'Flutter plugin wrapper for AppSprint attribution.'
   s.homepage         = 'https://appsprint.app'
@@ -12,4 +12,5 @@ Pod::Spec.new do |s|
   s.platform = :ios, '14.0'
   s.swift_version = '5.0'
   s.ios.vendored_frameworks = 'AppSprintSDK.xcframework'
+  s.frameworks = 'Foundation', 'UIKit', 'CoreTelephony', 'Metal', 'CoreGraphics', 'CryptoKit', 'AdServices', 'AppTrackingTransparency', 'AdSupport'
 end

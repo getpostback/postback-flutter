@@ -5,12 +5,14 @@
 import AdServices
 import AdSupport
 import AppTrackingTransparency
+import CoreTelephony
 import CryptoKit
 import Foundation
 import Foundation/*.Bundle*/
 import Foundation/*.ProcessInfo*/
 import Foundation/*.URL*/
 import Metal
+import Network
 import Swift
 import UIKit
 import _Concurrency

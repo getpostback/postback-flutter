@@ -29,7 +29,9 @@ void main() {
           'hardwareConcurrency': 6,
           'preferredLanguages': ['en-US', 'fr-FR'],
           'gpuRenderer': 'Apple GPU',
-          'sdkVersion': '1.1.0',
+          'connectionType': 'cellular',
+          'networkType': '5g',
+          'sdkVersion': '1.1.1',
           'locale': 'en-US',
           'gaid': '38400000-8cf0-11bd-b23e-10b96e40000d',
         },
@@ -223,7 +225,9 @@ void main() {
     expect(deviceInfo.hardwareConcurrency, 6);
     expect(deviceInfo.preferredLanguages, ['en-US', 'fr-FR']);
     expect(deviceInfo.gpuRenderer, 'Apple GPU');
-    expect(deviceInfo.sdkVersion, '1.1.0');
+    expect(deviceInfo.connectionType, 'cellular');
+    expect(deviceInfo.networkType, '5g');
+    expect(deviceInfo.sdkVersion, '1.1.1');
     expect(deviceInfo.locale, 'en-US');
     expect(deviceInfo.gaid, '38400000-8cf0-11bd-b23e-10b96e40000d');
   });
