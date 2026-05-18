@@ -31,6 +31,7 @@ void main() {
           'gpuRenderer': 'Apple GPU',
           'connectionType': 'cellular',
           'networkType': '5g',
+          'colorScheme': 'dark',
           'sdkVersion': '1.1.1',
           'locale': 'en-US',
           'gaid': '38400000-8cf0-11bd-b23e-10b96e40000d',
@@ -227,6 +228,7 @@ void main() {
     expect(deviceInfo.gpuRenderer, 'Apple GPU');
     expect(deviceInfo.connectionType, 'cellular');
     expect(deviceInfo.networkType, '5g');
+    expect(deviceInfo.colorScheme, 'dark');
     expect(deviceInfo.sdkVersion, '1.1.1');
     expect(deviceInfo.locale, 'en-US');
     expect(deviceInfo.gaid, '38400000-8cf0-11bd-b23e-10b96e40000d');

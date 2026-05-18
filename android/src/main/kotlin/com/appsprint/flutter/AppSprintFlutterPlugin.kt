@@ -185,6 +185,7 @@ class AppSprintFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                         "gpuRenderer" to deviceInfo.gpuRenderer,
                         "connectionType" to deviceInfo.connectionType,
                         "networkType" to deviceInfo.networkType,
+                        "colorScheme" to deviceInfo.colorScheme,
                         "carrierName" to deviceInfo.carrierName,
                         "carrierCountryCode" to deviceInfo.carrierCountryCode,
                         "mobileCountryCode" to deviceInfo.mobileCountryCode,

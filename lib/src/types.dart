@@ -166,6 +166,7 @@ class DeviceInfo {
     this.gpuRenderer,
     this.connectionType,
     this.networkType,
+    this.colorScheme,
     this.carrierName,
     this.carrierCountryCode,
     this.mobileCountryCode,
@@ -209,6 +210,7 @@ class DeviceInfo {
       gpuRenderer: json['gpuRenderer'] as String?,
       connectionType: json['connectionType'] as String?,
       networkType: json['networkType'] as String?,
+      colorScheme: json['colorScheme'] as String?,
       carrierName: json['carrierName'] as String?,
       carrierCountryCode: json['carrierCountryCode'] as String?,
       mobileCountryCode: json['mobileCountryCode'] as String?,
@@ -249,6 +251,7 @@ class DeviceInfo {
   final String? gpuRenderer;
   final String? connectionType;
   final String? networkType;
+  final String? colorScheme;
   final String? carrierName;
   final String? carrierCountryCode;
   final String? mobileCountryCode;
