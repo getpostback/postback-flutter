@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.2
+
+- Updated vendored native SDKs to iOS v1.1.2 and Android v1.1.1.
+- Exposed the native `colorScheme` diagnostic field through `getDeviceInfo()`.
+
 ## 1.1.1
 
 - Updated the vendored iOS SDK to v1.1.1 with reliability improvements for iOS attribution payloads.

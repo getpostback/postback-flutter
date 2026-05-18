@@ -10611,7 +10611,7 @@
       "kind": "StringLiteral",
       "offset": 523,
       "length": 7,
-      "value": "\"1.1.1\""
+      "value": "\"1.1.2\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
