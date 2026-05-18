@@ -5,7 +5,8 @@ import 'types.dart';
 class AppSprintNative {
   AppSprintNative._();
 
-  static const MethodChannel _channel = MethodChannel('appsprint_flutter/native');
+  static const MethodChannel _channel =
+      MethodChannel('appsprint_flutter/native');
 
   // Core SDK
 
@@ -38,7 +39,8 @@ class AppSprintNative {
   }
 
   static Future<bool> enableAppleAdsAttribution() async {
-    return await _channel.invokeMethod<bool>('enableAppleAdsAttribution') ?? false;
+    return await _channel.invokeMethod<bool>('enableAppleAdsAttribution') ??
+        false;
   }
 
   static Future<String?> getAppSprintId() {
@@ -50,7 +52,8 @@ class AppSprintNative {
   }
 
   static Future<Map<String, String>> getAttributionParams() async {
-    final result = await _channel.invokeMethod<Map<dynamic, dynamic>>('getAttributionParams');
+    final result = await _channel
+        .invokeMethod<Map<dynamic, dynamic>>('getAttributionParams');
     final params = <String, String>{};
     (result ?? const <dynamic, dynamic>{}).forEach((key, value) {
       if (key != null && value != null) {
@@ -75,8 +78,13 @@ class AppSprintNative {
   // Utility
 
   static Future<DeviceInfo> getDeviceInfo() async {
-    final result = await _channel.invokeMethod<Map<dynamic, dynamic>>('getDeviceInfo');
+    final result =
+        await _channel.invokeMethod<Map<dynamic, dynamic>>('getDeviceInfo');
     return DeviceInfo.fromJson(result ?? const <dynamic, dynamic>{});
+  }
+
+  static Future<String?> getWebViewUserAgent() {
+    return _channel.invokeMethod<String>('getWebViewUserAgent');
   }
 
   static Future<String?> getAdServicesToken() {
@@ -84,6 +92,7 @@ class AppSprintNative {
   }
 
   static Future<bool> requestTrackingAuthorization() async {
-    return await _channel.invokeMethod<bool>('requestTrackingAuthorization') ?? false;
+    return await _channel.invokeMethod<bool>('requestTrackingAuthorization') ??
+        false;
   }
 }

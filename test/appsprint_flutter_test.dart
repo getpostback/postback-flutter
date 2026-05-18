@@ -32,10 +32,14 @@ void main() {
           'connectionType': 'cellular',
           'networkType': '5g',
           'colorScheme': 'dark',
-          'sdkVersion': '1.1.2',
+          'sdkVersion': '1.1.3',
+          'sdkWebViewUserAgent':
+              'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
           'locale': 'en-US',
           'gaid': '38400000-8cf0-11bd-b23e-10b96e40000d',
         },
+        'getWebViewUserAgent':
+            'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
       });
 
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
@@ -229,9 +233,22 @@ void main() {
     expect(deviceInfo.connectionType, 'cellular');
     expect(deviceInfo.networkType, '5g');
     expect(deviceInfo.colorScheme, 'dark');
-    expect(deviceInfo.sdkVersion, '1.1.2');
+    expect(deviceInfo.sdkVersion, '1.1.3');
+    expect(
+      deviceInfo.sdkWebViewUserAgent,
+      'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
+    );
     expect(deviceInfo.locale, 'en-US');
     expect(deviceInfo.gaid, '38400000-8cf0-11bd-b23e-10b96e40000d');
+  });
+
+  test('native WebView user-agent helper is available for diagnostics',
+      () async {
+    final userAgent = await AppSprintNative.getWebViewUserAgent();
+
+    expect(userAgent,
+        'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148');
+    expect(calls.single.method, 'getWebViewUserAgent');
   });
 
   test('refreshAttribution returns updated native attribution', () async {

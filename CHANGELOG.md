@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.3
+
+- Updated vendored native SDKs to iOS v1.1.3 and Android v1.1.2.
+- Exposed `sdkWebViewUserAgent` through `getDeviceInfo()` and added a direct `getWebViewUserAgent()` diagnostic helper.
+
 ## 1.1.2
 
 - Updated vendored native SDKs to iOS v1.1.2 and Android v1.1.1.

@@ -15,7 +15,7 @@ Add the package to `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  appsprint_flutter: ^1.1.2
+  appsprint_flutter: ^1.1.3
 ```
 
 Fetch dependencies:

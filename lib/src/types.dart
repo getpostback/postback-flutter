@@ -173,6 +173,7 @@ class DeviceInfo {
     this.mobileNetworkCode,
     this.sdkPlatform,
     this.sdkVersion,
+    this.sdkWebViewUserAgent,
     this.locale,
     this.timezone,
     this.osVersion,
@@ -217,6 +218,7 @@ class DeviceInfo {
       mobileNetworkCode: json['mobileNetworkCode'] as String?,
       sdkPlatform: json['sdkPlatform'] as String?,
       sdkVersion: json['sdkVersion'] as String?,
+      sdkWebViewUserAgent: json['sdkWebViewUserAgent'] as String?,
       locale: json['locale'] as String?,
       timezone: json['timezone'] as String?,
       osVersion: json['osVersion'] as String?,
@@ -258,6 +260,7 @@ class DeviceInfo {
   final String? mobileNetworkCode;
   final String? sdkPlatform;
   final String? sdkVersion;
+  final String? sdkWebViewUserAgent;
   final String? locale;
   final String? timezone;
   final String? osVersion;

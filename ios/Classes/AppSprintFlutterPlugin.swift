@@ -178,6 +178,12 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
     case "getDeviceInfo":
       Task { @MainActor in
         let info = AppSprintNative.getDeviceInfo()
+        let sdkWebViewUserAgent: String?
+        if let userAgent = info.sdkWebViewUserAgent {
+          sdkWebViewUserAgent = userAgent
+        } else {
+          sdkWebViewUserAgent = await AppSprintNative.getWebViewUserAgent()
+        }
         var dict: [String: Any] = [:]
         if let m = info.deviceModel { dict["deviceModel"] = m }
         if let w = info.screenWidth { dict["screenWidth"] = w }
@@ -209,6 +215,7 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
         if let value = info.mobileNetworkCode { dict["mobileNetworkCode"] = value }
         if let value = info.sdkPlatform { dict["sdkPlatform"] = value }
         if let value = info.sdkVersion { dict["sdkVersion"] = value }
+        if let value = sdkWebViewUserAgent { dict["sdkWebViewUserAgent"] = value }
         if let l = info.locale { dict["locale"] = l }
         if let t = info.timezone { dict["timezone"] = t }
         if let o = info.osVersion { dict["osVersion"] = o }
@@ -218,6 +225,12 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
         if let tk = info.adServicesToken { dict["adServicesToken"] = tk }
         if let attStatus = info.attStatus { dict["attStatus"] = attStatus.rawValue }
         result(dict)
+      }
+
+    case "getWebViewUserAgent":
+      Task { @MainActor in
+        let userAgent = await AppSprintNative.getWebViewUserAgent()
+        result(userAgent as Any)
       }
 
     case "getAdServicesToken":

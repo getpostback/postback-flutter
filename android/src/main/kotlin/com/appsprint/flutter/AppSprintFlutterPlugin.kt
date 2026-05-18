@@ -192,12 +192,22 @@ class AppSprintFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                         "mobileNetworkCode" to deviceInfo.mobileNetworkCode,
                         "sdkPlatform" to deviceInfo.sdkPlatform,
                         "sdkVersion" to deviceInfo.sdkVersion,
+                        "sdkWebViewUserAgent" to deviceInfo.sdkWebViewUserAgent,
                         "locale" to deviceInfo.locale,
                         "timezone" to deviceInfo.timezone,
                         "osVersion" to deviceInfo.osVersion,
                         "appVersion" to deviceInfo.appVersion,
                         "gaid" to deviceInfo.gaid,
                     ).filterValues { it != null })
+                }
+            }
+
+            "getWebViewUserAgent" -> {
+                runAsync(result, "WEBVIEW_USER_AGENT_ERROR") {
+                    val userAgent = AppSprintNative(context)
+                        .getDeviceInfo(includeAdvertisingId = false)
+                        .sdkWebViewUserAgent
+                    result.success(userAgent)
                 }
             }
 

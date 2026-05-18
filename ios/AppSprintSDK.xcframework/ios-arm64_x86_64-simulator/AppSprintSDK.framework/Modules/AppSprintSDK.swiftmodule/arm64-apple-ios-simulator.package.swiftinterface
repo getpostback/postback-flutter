@@ -15,6 +15,7 @@ import Metal
 import Network
 import Swift
 import UIKit
+import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -58,6 +59,7 @@ public struct AppSprintConfig : Swift.Sendable {
 public enum AppSprintNative {
   @_Concurrency.MainActor public static func getDeviceInfo() -> AppSprintSDK.DeviceInfo
   public static func getAdServicesToken() -> Swift.String?
+  @_Concurrency.MainActor public static func getWebViewUserAgent() async -> Swift.String?
   @_Concurrency.MainActor public static func requestTrackingAuthorization() async -> Swift.Bool
   public static func storageSet(_ key: Swift.String, value: Swift.String)
   public static func storageGet(_ key: Swift.String) -> Swift.String?
@@ -211,6 +213,7 @@ public struct DeviceInfo : Swift.Codable, Swift.Equatable, Swift.Sendable {
   public let mobileNetworkCode: Swift.String?
   public let sdkPlatform: Swift.String?
   public let sdkVersion: Swift.String?
+  public let sdkWebViewUserAgent: Swift.String?
   public let locale: Swift.String?
   public let timezone: Swift.String?
   public let osVersion: Swift.String?
@@ -219,7 +222,7 @@ public struct DeviceInfo : Swift.Codable, Swift.Equatable, Swift.Sendable {
   public let idfa: Swift.String?
   public let adServicesToken: Swift.String?
   public let attStatus: AppSprintSDK.AppSprintAttStatus?
-  public init(deviceModel: Swift.String? = nil, screenWidth: Swift.Int? = nil, screenHeight: Swift.Int? = nil, nativeScreenWidth: Swift.Int? = nil, nativeScreenHeight: Swift.Int? = nil, screenScale: Swift.Double? = nil, hardwareConcurrency: Swift.Int? = nil, processorCount: Swift.Int? = nil, maxTouchPoints: Swift.Int? = nil, memoryGb: Swift.Int? = nil, lowPowerMode: Swift.Bool? = nil, batteryState: Swift.String? = nil, batteryLevelBucket: Swift.String? = nil, preferredLanguages: [Swift.String]? = nil, timezoneOffsetMinutes: Swift.Int? = nil, deviceManufacturer: Swift.String? = nil, deviceBrand: Swift.String? = nil, deviceProduct: Swift.String? = nil, deviceHardware: Swift.String? = nil, gpuVendor: Swift.String? = nil, gpuRenderer: Swift.String? = nil, connectionType: Swift.String? = nil, networkType: Swift.String? = nil, colorScheme: Swift.String? = nil, carrierName: Swift.String? = nil, carrierCountryCode: Swift.String? = nil, mobileCountryCode: Swift.String? = nil, mobileNetworkCode: Swift.String? = nil, sdkPlatform: Swift.String? = nil, sdkVersion: Swift.String? = nil, locale: Swift.String? = nil, timezone: Swift.String? = nil, osVersion: Swift.String? = nil, appVersion: Swift.String? = nil, idfv: Swift.String? = nil, idfa: Swift.String? = nil, adServicesToken: Swift.String? = nil, attStatus: AppSprintSDK.AppSprintAttStatus? = nil)
+  public init(deviceModel: Swift.String? = nil, screenWidth: Swift.Int? = nil, screenHeight: Swift.Int? = nil, nativeScreenWidth: Swift.Int? = nil, nativeScreenHeight: Swift.Int? = nil, screenScale: Swift.Double? = nil, hardwareConcurrency: Swift.Int? = nil, processorCount: Swift.Int? = nil, maxTouchPoints: Swift.Int? = nil, memoryGb: Swift.Int? = nil, lowPowerMode: Swift.Bool? = nil, batteryState: Swift.String? = nil, batteryLevelBucket: Swift.String? = nil, preferredLanguages: [Swift.String]? = nil, timezoneOffsetMinutes: Swift.Int? = nil, deviceManufacturer: Swift.String? = nil, deviceBrand: Swift.String? = nil, deviceProduct: Swift.String? = nil, deviceHardware: Swift.String? = nil, gpuVendor: Swift.String? = nil, gpuRenderer: Swift.String? = nil, connectionType: Swift.String? = nil, networkType: Swift.String? = nil, colorScheme: Swift.String? = nil, carrierName: Swift.String? = nil, carrierCountryCode: Swift.String? = nil, mobileCountryCode: Swift.String? = nil, mobileNetworkCode: Swift.String? = nil, sdkPlatform: Swift.String? = nil, sdkVersion: Swift.String? = nil, sdkWebViewUserAgent: Swift.String? = nil, locale: Swift.String? = nil, timezone: Swift.String? = nil, osVersion: Swift.String? = nil, appVersion: Swift.String? = nil, idfv: Swift.String? = nil, idfa: Swift.String? = nil, adServicesToken: Swift.String? = nil, attStatus: AppSprintSDK.AppSprintAttStatus? = nil)
   public static func == (a: AppSprintSDK.DeviceInfo, b: AppSprintSDK.DeviceInfo) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws

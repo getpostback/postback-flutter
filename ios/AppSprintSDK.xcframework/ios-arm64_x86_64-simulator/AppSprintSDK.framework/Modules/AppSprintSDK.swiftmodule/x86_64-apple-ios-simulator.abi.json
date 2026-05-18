@@ -1691,6 +1691,13 @@
         "moduleName": "AppSprintSDK"
       },
       {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "AppSprintSDK"
+      },
+      {
         "kind": "TypeDecl",
         "name": "AppSprintNative",
         "printedName": "AppSprintNative",
@@ -1745,6 +1752,37 @@
             "static": true,
             "declAttributes": [
               "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getWebViewUserAgent",
+            "printedName": "getWebViewUserAgent()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12AppSprintSDK0aB6NativeO19getWebViewUserAgentSSSgyYaFZ",
+            "mangledName": "$s12AppSprintSDK0aB6NativeO19getWebViewUserAgentSSSgyYaFZ",
+            "moduleName": "AppSprintSDK",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "Custom"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -8257,6 +8295,66 @@
           },
           {
             "kind": "Var",
+            "name": "sdkWebViewUserAgent",
+            "printedName": "sdkWebViewUserAgent",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12AppSprintSDK10DeviceInfoV19sdkWebViewUserAgentSSSgvp",
+            "mangledName": "$s12AppSprintSDK10DeviceInfoV19sdkWebViewUserAgentSSSgvp",
+            "moduleName": "AppSprintSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12AppSprintSDK10DeviceInfoV19sdkWebViewUserAgentSSSgvg",
+                "mangledName": "$s12AppSprintSDK10DeviceInfoV19sdkWebViewUserAgentSSSgvg",
+                "moduleName": "AppSprintSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "locale",
             "printedName": "locale",
             "children": [
@@ -8738,7 +8836,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(deviceModel:screenWidth:screenHeight:nativeScreenWidth:nativeScreenHeight:screenScale:hardwareConcurrency:processorCount:maxTouchPoints:memoryGb:lowPowerMode:batteryState:batteryLevelBucket:preferredLanguages:timezoneOffsetMinutes:deviceManufacturer:deviceBrand:deviceProduct:deviceHardware:gpuVendor:gpuRenderer:connectionType:networkType:colorScheme:carrierName:carrierCountryCode:mobileCountryCode:mobileNetworkCode:sdkPlatform:sdkVersion:locale:timezone:osVersion:appVersion:idfv:idfa:adServicesToken:attStatus:)",
+            "printedName": "init(deviceModel:screenWidth:screenHeight:nativeScreenWidth:nativeScreenHeight:screenScale:hardwareConcurrency:processorCount:maxTouchPoints:memoryGb:lowPowerMode:batteryState:batteryLevelBucket:preferredLanguages:timezoneOffsetMinutes:deviceManufacturer:deviceBrand:deviceProduct:deviceHardware:gpuVendor:gpuRenderer:connectionType:networkType:colorScheme:carrierName:carrierCountryCode:mobileCountryCode:mobileNetworkCode:sdkPlatform:sdkVersion:sdkWebViewUserAgent:locale:timezone:osVersion:appVersion:idfv:idfa:adServicesToken:attStatus:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9312,6 +9410,21 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
                 "printedName": "AppSprintSDK.AppSprintAttStatus?",
                 "children": [
                   {
@@ -9326,8 +9439,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:12AppSprintSDK10DeviceInfoV11deviceModel11screenWidth0H6Height012nativeScreenI00klJ00H5Scale19hardwareConcurrency14processorCount14maxTouchPoints8memoryGb12lowPowerMode12batteryState0Z11LevelBucket18preferredLanguages21timezoneOffsetMinutes0F12Manufacturer0F5Brand0F7Product0F8Hardware9gpuVendor11gpuRenderer14connectionType11networkType11colorScheme11carrierName18carrierCountryCode17mobileCountryCode17mobileNetworkCode11sdkPlatform10sdkVersion6locale8timezone9osVersion10appVersion4idfv4idfa15adServicesToken9attStatusACSSSg_SiSgA15_A15_A15_SdSgA15_A15_A15_A15_SbSgA14_A14_SaySSGSgA15_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_AA0aB9AttStatusOSgtcfc",
-            "mangledName": "$s12AppSprintSDK10DeviceInfoV11deviceModel11screenWidth0H6Height012nativeScreenI00klJ00H5Scale19hardwareConcurrency14processorCount14maxTouchPoints8memoryGb12lowPowerMode12batteryState0Z11LevelBucket18preferredLanguages21timezoneOffsetMinutes0F12Manufacturer0F5Brand0F7Product0F8Hardware9gpuVendor11gpuRenderer14connectionType11networkType11colorScheme11carrierName18carrierCountryCode17mobileCountryCode17mobileNetworkCode11sdkPlatform10sdkVersion6locale8timezone9osVersion10appVersion4idfv4idfa15adServicesToken9attStatusACSSSg_SiSgA15_A15_A15_SdSgA15_A15_A15_A15_SbSgA14_A14_SaySSGSgA15_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_A14_AA0aB9AttStatusOSgtcfc",
+            "usr": "s:12AppSprintSDK10DeviceInfoV11deviceModel11screenWidth0H6Height012nativeScreenI00klJ00H5Scale19hardwareConcurrency14processorCount14maxTouchPoints8memoryGb12lowPowerMode12batteryState0Z11LevelBucket18preferredLanguages21timezoneOffsetMinutes0F12Manufacturer0F5Brand0F7Product0F8Hardware9gpuVendor11gpuRenderer14connectionType11networkType11colorScheme11carrierName18carrierCountryCode17mobileCountryCode17mobileNetworkCode11sdkPlatform10sdkVersion19sdkWebViewUserAgent6locale8timezone9osVersion10appVersion4idfv4idfa15adServicesToken9attStatusACSSSg_SiSgA16_A16_A16_SdSgA16_A16_A16_A16_SbSgA15_A15_SaySSGSgA16_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_AA0aB9AttStatusOSgtcfc",
+            "mangledName": "$s12AppSprintSDK10DeviceInfoV11deviceModel11screenWidth0H6Height012nativeScreenI00klJ00H5Scale19hardwareConcurrency14processorCount14maxTouchPoints8memoryGb12lowPowerMode12batteryState0Z11LevelBucket18preferredLanguages21timezoneOffsetMinutes0F12Manufacturer0F5Brand0F7Product0F8Hardware9gpuVendor11gpuRenderer14connectionType11networkType11colorScheme11carrierName18carrierCountryCode17mobileCountryCode17mobileNetworkCode11sdkPlatform10sdkVersion19sdkWebViewUserAgent6locale8timezone9osVersion10appVersion4idfv4idfa15adServicesToken9attStatusACSSSg_SiSgA16_A16_A16_SdSgA16_A16_A16_A16_SbSgA15_A15_SaySSGSgA16_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_A15_AA0aB9AttStatusOSgtcfc",
             "moduleName": "AppSprintSDK",
             "declAttributes": [
               "AccessControl"
@@ -10609,49 +10722,56 @@
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 523,
+      "offset": 577,
       "length": 7,
-      "value": "\"1.1.2\""
+      "value": "\"1.1.3\""
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
+      "kind": "Dictionary",
+      "offset": 715,
+      "length": 3,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 635,
+      "offset": 830,
       "length": 15,
       "value": "\"com.appsprint\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 688,
+      "offset": 883,
       "length": 86,
       "value": "\"AppSprint could not open UserDefaults suite com.appsprint; falling back to standard.\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 13049,
+      "offset": 14076,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 16014,
+      "offset": 17041,
       "length": 32,
       "value": "\"app.appsprint.sdk.network-path\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 16106,
+      "offset": 17133,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "FloatLiteral",
-      "offset": 16271,
+      "offset": 17298,
       "length": 4,
       "value": "0.12"
     },
@@ -10833,21 +10953,21 @@
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
-      "offset": 10442,
+      "offset": 10585,
       "length": 9,
       "value": "\"GRANTED\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
-      "offset": 10470,
+      "offset": 10613,
       "length": 8,
       "value": "\"DENIED\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
-      "offset": 10502,
+      "offset": 10645,
       "length": 13,
       "value": "\"UNSPECIFIED\""
     }
