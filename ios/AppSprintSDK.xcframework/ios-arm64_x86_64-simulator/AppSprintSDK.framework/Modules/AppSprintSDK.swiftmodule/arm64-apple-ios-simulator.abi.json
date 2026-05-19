@@ -10720,11 +10720,25 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
+      "kind": "Array",
+      "offset": 4136,
+      "length": 117,
+      "value": "[250000000, 500000000, 1000000000, 1500000000, 2000000000]"
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4309,
+      "length": 1,
+      "value": "3"
+    },
+    {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
       "offset": 577,
       "length": 7,
-      "value": "\"1.1.5\""
+      "value": "\"1.1.6\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",

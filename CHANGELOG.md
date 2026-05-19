@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.6
+
+- Updated the vendored iOS SDK to v1.1.6 so iOS install registration treats the retained WKWebView user-agent as a critical attribution signal and defers early attempts while WebKit is still unavailable.
+
 ## 1.1.5
 
 - Updated the vendored iOS SDK to v1.1.5 so install registration uses the retained WKWebView user-agent probe and nested diagnostic event payloads are preserved.
