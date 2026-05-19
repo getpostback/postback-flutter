@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.5
+
+- Updated the vendored iOS SDK to v1.1.5 so install registration uses the retained WKWebView user-agent probe and nested diagnostic event payloads are preserved.
+
 ## 1.1.4
 
 - Updated the vendored iOS SDK to v1.1.4 so install registration reliably includes the SDK WebView user-agent during app launch.

@@ -10721,78 +10721,50 @@
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
-      "kind": "BooleanLiteral",
-      "offset": 775,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 1726,
+      "offset": 577,
       "length": 7,
-      "value": "\"1.1.4\""
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1807,
-      "length": 13,
-      "value": "1000000000"
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
-      "kind": "Array",
-      "offset": 1895,
-      "length": 59,
-      "value": "[0, 150000000, 500000000]"
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
-      "kind": "Dictionary",
-      "offset": 2117,
-      "length": 3,
-      "value": "[]"
+      "value": "\"1.1.5\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 2232,
+      "offset": 893,
       "length": 15,
       "value": "\"com.appsprint\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 2285,
+      "offset": 946,
       "length": 86,
       "value": "\"AppSprint could not open UserDefaults suite com.appsprint; falling back to standard.\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 18290,
+      "offset": 14455,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 21255,
+      "offset": 17420,
       "length": 32,
       "value": "\"app.appsprint.sdk.network-path\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 21347,
+      "offset": 17512,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "FloatLiteral",
-      "offset": 21512,
+      "offset": 17677,
       "length": 4,
       "value": "0.12"
     },
