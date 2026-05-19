@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4
+
+- Updated the vendored iOS SDK to v1.1.4 so install registration reliably includes the SDK WebView user-agent during app launch.
+
 ## 1.1.3
 
 - Updated vendored native SDKs to iOS v1.1.3 and Android v1.1.2.
