@@ -192,13 +192,13 @@ The native Android SDK reads GAID during install registration, off the main thre
 
 - `configure()` resolves after local-state restore. Install registration runs in the background and retries with backoff on transient failures.
 - Events queue locally on native storage and survive app restarts.
-- iOS uses connectivity-aware networking, so transient offline windows queue inside the OS rather than failing fast.
+- iOS fails fast on connectivity errors and retries through the SDK queue, so blocked or offline requests surface real errors instead of sitting in an OS connectivity wait.
 - A rejected API key (`401` or `403`) disables the SDK. Future events drop until `clearData()` is called.
 - Late identity updates (`setCustomerUserId`, iOS Apple Ads opt-in) retry automatically on the next `configure()` or foreground. If the cached install is no longer recognized, the SDK self-heals by re-registering.
 
 ## Privacy
 
-The vendored iOS framework ships a `PrivacyInfo.xcprivacy` manifest declaring `UserDefaults` access plus `DeviceID`, `ProductInteraction`, `UserID`, `CoarseLocation`, and `OtherDataTypes` collection, all marked `Tracking: true`, with `api.appsprint.app` listed as a tracking domain.
+The vendored iOS framework ships a `PrivacyInfo.xcprivacy` manifest declaring `UserDefaults` access plus `DeviceID`, `ProductInteraction`, `UserID`, `CoarseLocation`, and `OtherDataTypes` collection, all marked `Tracking: false`. The core AppSprint API domain is not declared as a tracking domain, so ATT denial does not block install or event delivery.
 
 For Android, include advertising ID collection, device IDs, approximate location/network-derived country, device or other identifiers, app activity, and (if you set `customerUserId`) user ID in your Play Console Data safety answers.
 

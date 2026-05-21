@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.7
+
+- Updated the vendored iOS SDK to v1.1.7 so the core AppSprint API is no longer declared as an iOS tracking domain and ATT denial cannot block install or event delivery.
+- iOS connectivity failures now fail fast and retry through the SDK queue instead of hanging behind `waitsForConnectivity`.
+
 ## 1.1.6
 
 - Updated the vendored iOS SDK to v1.1.6 so iOS install registration treats the retained WKWebView user-agent as a critical attribution signal and defers early attempts while WebKit is still unavailable.
