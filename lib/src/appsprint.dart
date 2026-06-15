@@ -16,6 +16,7 @@ class AppSprint {
     String? customerUserId,
     bool autoTrackSessions = true,
     bool autoRefreshAttribution = true,
+    bool eventTrackingEnabled = true,
     GoogleAdsConsent? googleAdsConsent,
   }) {
     final AppSprintConfig normalizedConfig;
@@ -31,6 +32,7 @@ class AppSprint {
         customerUserId: customerUserId,
         autoTrackSessions: autoTrackSessions,
         autoRefreshAttribution: autoRefreshAttribution,
+        eventTrackingEnabled: eventTrackingEnabled,
         googleAdsConsent: googleAdsConsent,
       );
     } else {
@@ -58,6 +60,7 @@ class AppSprint {
       'customerUserId': normalizedConfig.customerUserId,
       'autoTrackSessions': normalizedConfig.autoTrackSessions,
       'autoRefreshAttribution': normalizedConfig.autoRefreshAttribution,
+      'eventTrackingEnabled': normalizedConfig.eventTrackingEnabled,
       if (normalizedConfig.googleAdsConsent != null)
         'googleAdsConsent': normalizedConfig.googleAdsConsent!.toJson(),
     });

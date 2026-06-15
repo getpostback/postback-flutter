@@ -28,6 +28,7 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
         let customerUserId = args["customerUserId"] as? String
         let autoTrackSessions = args["autoTrackSessions"] as? Bool ?? true
         let autoRefreshAttribution = args["autoRefreshAttribution"] as? Bool ?? true
+        let eventTrackingEnabled = args["eventTrackingEnabled"] as? Bool ?? true
         let googleAdsConsent = Self.googleAdsConsent(from: args["googleAdsConsent"])
 
         let logLevel: AppSprintLogLevel
@@ -45,6 +46,7 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
           customerUserId: customerUserId,
           autoTrackSessions: autoTrackSessions,
           autoRefreshAttribution: autoRefreshAttribution,
+          eventTrackingEnabled: eventTrackingEnabled,
           googleAdsConsent: googleAdsConsent
         )
 
@@ -59,6 +61,7 @@ public class AppSprintFlutterPlugin: NSObject, FlutterPlugin {
             customerUserId: customerUserId,
             autoTrackSessions: autoTrackSessions,
             autoRefreshAttribution: autoRefreshAttribution,
+            eventTrackingEnabled: eventTrackingEnabled,
             googleAdsConsent: googleAdsConsent
           )
         }

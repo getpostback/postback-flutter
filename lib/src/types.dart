@@ -76,6 +76,7 @@ class AppSprintConfig {
     this.customerUserId,
     this.autoTrackSessions = true,
     this.autoRefreshAttribution = true,
+    this.eventTrackingEnabled = true,
     this.googleAdsConsent,
   })  : logLevel = logLevel ?? (isDebug ? 0 : 2),
         assert(logLevel == null || (logLevel >= 0 && logLevel <= 3),
@@ -89,6 +90,7 @@ class AppSprintConfig {
   final String? customerUserId;
   final bool autoTrackSessions;
   final bool autoRefreshAttribution;
+  final bool eventTrackingEnabled;
   final GoogleAdsConsent? googleAdsConsent;
 }
 

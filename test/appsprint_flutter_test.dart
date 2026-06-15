@@ -75,8 +75,50 @@ void main() {
       'customerUserId': null,
       'autoTrackSessions': true,
       'autoRefreshAttribution': true,
+      'eventTrackingEnabled': true,
       'googleAdsConsent': {'adUserData': 'GRANTED'},
     });
+  });
+
+  test('Apple Ads facade builds locked iOS config', () {
+    final config = AppSprintAppleAds.buildConfig(
+      'as_ios_live_test',
+      apiUrl: 'https://edge.example.com',
+      isDebug: true,
+    );
+
+    expect(config.apiKey, 'as_ios_live_test');
+    expect(config.apiUrl, 'https://edge.example.com');
+    expect(config.enableAppleAdsAttribution, true);
+    expect(config.isDebug, true);
+    expect(config.customerUserId, isNull);
+    expect(config.autoTrackSessions, false);
+    expect(config.autoRefreshAttribution, false);
+    expect(config.eventTrackingEnabled, false);
+  });
+
+  test('Apple Ads facade rejects unsupported platforms clearly', () {
+    expect(
+      () => AppSprintAppleAds.configure('as_ios_live_test'),
+      throwsA(isA<UnsupportedError>()),
+    );
+    expect(
+      () => AppSprintAppleAds.getAppSprintId(),
+      throwsA(isA<UnsupportedError>()),
+    );
+    expect(
+      () => AppSprintAppleAds.getAttributionParams(),
+      throwsA(isA<UnsupportedError>()),
+    );
+    expect(
+      () => AppSprintAppleAds.getAttribution(),
+      throwsA(isA<UnsupportedError>()),
+    );
+    expect(
+      () => AppSprintAppleAds.refreshAttribution(),
+      throwsA(isA<UnsupportedError>()),
+    );
+    expect(calls, isEmpty);
   });
 
   test('configure accepts Appstack-style apiKey and options', () async {
@@ -99,6 +141,7 @@ void main() {
       'customerUserId': null,
       'autoTrackSessions': false,
       'autoRefreshAttribution': false,
+      'eventTrackingEnabled': true,
     });
   });
 

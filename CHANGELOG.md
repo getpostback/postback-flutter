@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.8
+
+- Adds `AppSprintAppleAds`, an iOS-only Apple Ads ROAS facade that configures the native SDK with Apple Ads attribution enabled and event/session tracking disabled.
+- Returns a clear unsupported-platform error when the Apple Ads facade is used on Android.
+- Updates the vendored iOS SDK to v1.1.8.
+
 ## 1.1.7
 
 - Updated the vendored iOS SDK to v1.1.7 so the core AppSprint API is no longer declared as an iOS tracking domain and ATT denial cannot block install or event delivery.

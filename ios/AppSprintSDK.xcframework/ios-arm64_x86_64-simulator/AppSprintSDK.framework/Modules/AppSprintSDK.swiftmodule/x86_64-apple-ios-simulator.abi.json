@@ -610,6 +610,232 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "AppSprintAppleAds",
+        "printedName": "AppSprintAppleAds",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "configure",
+            "printedName": "configure(apiKey:apiURL:isDebug:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.URL?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12AppSprintSDK0aB8AppleAdsO9configure6apiKey0G3URL7isDebugySS_10Foundation0I0VSgSbtYaFZ",
+            "mangledName": "$s12AppSprintSDK0aB8AppleAdsO9configure6apiKey0G3URL7isDebugySS_10Foundation0I0VSgSbtYaFZ",
+            "moduleName": "AppSprintSDK",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAppSprintId",
+            "printedName": "getAppSprintId()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12AppSprintSDK0aB8AppleAdsO03getaB2IdSSSgyFZ",
+            "mangledName": "$s12AppSprintSDK0aB8AppleAdsO03getaB2IdSSSgyFZ",
+            "moduleName": "AppSprintSDK",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAttributionParams",
+            "printedName": "getAttributionParams()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12AppSprintSDK0aB8AppleAdsO20getAttributionParamsSDyS2SGyFZ",
+            "mangledName": "$s12AppSprintSDK0aB8AppleAdsO20getAttributionParamsSDyS2SGyFZ",
+            "moduleName": "AppSprintSDK",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getAttribution",
+            "printedName": "getAttribution()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AppSprintSDK.AttributionResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AttributionResult",
+                    "printedName": "AppSprintSDK.AttributionResult",
+                    "usr": "s:12AppSprintSDK17AttributionResultV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12AppSprintSDK0aB8AppleAdsO14getAttributionAA0G6ResultVSgyFZ",
+            "mangledName": "$s12AppSprintSDK0aB8AppleAdsO14getAttributionAA0G6ResultVSgyFZ",
+            "moduleName": "AppSprintSDK",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "refreshAttribution",
+            "printedName": "refreshAttribution()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "AppSprintSDK.AttributionResult?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AttributionResult",
+                    "printedName": "AppSprintSDK.AttributionResult",
+                    "usr": "s:12AppSprintSDK17AttributionResultV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:12AppSprintSDK0aB8AppleAdsO18refreshAttributionAA0G6ResultVSgyYaFZ",
+            "mangledName": "$s12AppSprintSDK0aB8AppleAdsO18refreshAttributionAA0G6ResultVSgyYaFZ",
+            "moduleName": "AppSprintSDK",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl",
+              "DiscardableResult"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:12AppSprintSDK0aB8AppleAdsO",
+        "mangledName": "$s12AppSprintSDK0aB8AppleAdsO",
+        "moduleName": "AppSprintSDK",
+        "declAttributes": [
+          "AccessControl",
+          "Custom"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "AppSprintSDK"
+      },
+      {
+        "kind": "TypeDecl",
         "name": "AppSprintConfig",
         "printedName": "AppSprintConfig",
         "children": [
@@ -1367,6 +1593,91 @@
           },
           {
             "kind": "Var",
+            "name": "eventTrackingEnabled",
+            "printedName": "eventTrackingEnabled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12AppSprintSDK0aB6ConfigV20eventTrackingEnabledSbvp",
+            "mangledName": "$s12AppSprintSDK0aB6ConfigV20eventTrackingEnabledSbvp",
+            "moduleName": "AppSprintSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12AppSprintSDK0aB6ConfigV20eventTrackingEnabledSbvg",
+                "mangledName": "$s12AppSprintSDK0aB6ConfigV20eventTrackingEnabledSbvg",
+                "moduleName": "AppSprintSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12AppSprintSDK0aB6ConfigV20eventTrackingEnabledSbvs",
+                "mangledName": "$s12AppSprintSDK0aB6ConfigV20eventTrackingEnabledSbvs",
+                "moduleName": "AppSprintSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12AppSprintSDK0aB6ConfigV20eventTrackingEnabledSbvM",
+                "mangledName": "$s12AppSprintSDK0aB6ConfigV20eventTrackingEnabledSbvM",
+                "moduleName": "AppSprintSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "googleAdsConsent",
             "printedName": "googleAdsConsent",
             "children": [
@@ -1478,7 +1789,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(apiKey:apiURL:enableAppleAdsAttribution:isDebug:logLevel:customerUserId:autoTrackSessions:autoRefreshAttribution:googleAdsConsent:)",
+            "printedName": "init(apiKey:apiURL:enableAppleAdsAttribution:isDebug:logLevel:customerUserId:autoTrackSessions:autoRefreshAttribution:eventTrackingEnabled:googleAdsConsent:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1551,6 +1862,13 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Optional",
                 "printedName": "AppSprintSDK.GoogleAdsConsent?",
                 "children": [
@@ -1566,8 +1884,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:12AppSprintSDK0aB6ConfigV6apiKey0E3URL25enableAppleAdsAttribution7isDebug8logLevel14customerUserId17autoTrackSessions0s7RefreshK006googleJ7ConsentACSS_10Foundation0G0VS2bAA0ab3LogO0OSSSgS2bAA06GooglejX0VSgtcfc",
-            "mangledName": "$s12AppSprintSDK0aB6ConfigV6apiKey0E3URL25enableAppleAdsAttribution7isDebug8logLevel14customerUserId17autoTrackSessions0s7RefreshK006googleJ7ConsentACSS_10Foundation0G0VS2bAA0ab3LogO0OSSSgS2bAA06GooglejX0VSgtcfc",
+            "usr": "s:12AppSprintSDK0aB6ConfigV6apiKey0E3URL25enableAppleAdsAttribution7isDebug8logLevel14customerUserId17autoTrackSessions0s7RefreshK020eventTrackingEnabled06googleJ7ConsentACSS_10Foundation0G0VS2bAA0ab3LogO0OSSSgS3bAA06GoogleJ7ConsentVSgtcfc",
+            "mangledName": "$s12AppSprintSDK0aB6ConfigV6apiKey0E3URL25enableAppleAdsAttribution7isDebug8logLevel14customerUserId17autoTrackSessions0s7RefreshK020eventTrackingEnabled06googleJ7ConsentACSS_10Foundation0G0VS2bAA0ab3LogO0OSSSgS3bAA06GoogleJ7ConsentVSgtcfc",
             "moduleName": "AppSprintSDK",
             "declAttributes": [
               "AccessControl"
@@ -2195,13 +2513,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
             "name": "Hashable",
             "printedName": "Hashable",
             "usr": "s:SH",
@@ -2256,6 +2567,13 @@
             "printedName": "SendableMetatype",
             "usr": "s:s16SendableMetatypeP",
             "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           }
         ]
       },
@@ -3162,13 +3480,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
             "name": "Hashable",
             "printedName": "Hashable",
             "usr": "s:SH",
@@ -3253,6 +3564,13 @@
             "printedName": "SendableMetatype",
             "usr": "s:s16SendableMetatypeP",
             "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           }
         ]
       },
@@ -3507,13 +3825,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
             "name": "Hashable",
             "printedName": "Hashable",
             "usr": "s:SH",
@@ -3568,6 +3879,13 @@
             "printedName": "SendableMetatype",
             "usr": "s:s16SendableMetatypeP",
             "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           }
         ]
       },
@@ -3765,13 +4083,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -3790,6 +4101,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -4734,13 +5052,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -4759,6 +5070,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -5797,13 +6115,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -5822,6 +6133,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -6226,13 +6544,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -6244,6 +6555,13 @@
             "printedName": "Encodable",
             "usr": "s:SE",
             "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -6437,17 +6755,17 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -9541,13 +9859,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -9566,6 +9877,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -9797,13 +10115,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
             "name": "Hashable",
             "printedName": "Hashable",
             "usr": "s:SH",
@@ -9858,6 +10169,13 @@
             "printedName": "SendableMetatype",
             "usr": "s:s16SendableMetatypeP",
             "mangledName": "$ss16SendableMetatypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           }
         ]
       },
@@ -10038,13 +10356,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -10063,6 +10374,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -10261,13 +10579,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -10286,6 +10597,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           },
           {
             "kind": "Conformance",
@@ -10419,553 +10737,574 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/appsprint-ios\/IntermediateBuildFilesPath\/appsprint-ios.build\/Release-iphonesimulator\/AppSprintSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/appsprint-ios\/IntermediateBuildFilesPath\/appsprint-ios.build\/Release-iphonesimulator\/AppSprintSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
       "kind": "StringLiteral",
       "offset": 295,
       "length": 28,
       "value": "\"appsprint-ios_AppSprintSDK\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/appsprint-ios\/IntermediateBuildFilesPath\/appsprint-ios.build\/Release-iphonesimulator\/AppSprintSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/appsprint-ios\/IntermediateBuildFilesPath\/appsprint-ios.build\/Release-iphonesimulator\/AppSprintSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
       "kind": "Array",
       "offset": 970,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/appsprint-ios\/IntermediateBuildFilesPath\/appsprint-ios.build\/Release-iphonesimulator\/AppSprintSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/appsprint-ios\/IntermediateBuildFilesPath\/appsprint-ios.build\/Release-iphonesimulator\/AppSprintSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
       "kind": "StringLiteral",
       "offset": 1497,
       "length": 9,
       "value": "\".bundle\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/appsprint-ios\/IntermediateBuildFilesPath\/appsprint-ios.build\/Release-iphonesimulator\/AppSprintSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/appsprint-ios\/IntermediateBuildFilesPath\/appsprint-ios.build\/Release-iphonesimulator\/AppSprintSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
       "kind": "StringLiteral",
       "offset": 1649,
       "length": 56,
       "value": "\"unable to find bundle named appsprint-ios_AppSprintSDK\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
       "offset": 190,
       "length": 15,
       "value": "\"@appsprint:id\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
       "offset": 239,
       "length": 24,
       "value": "\"@appsprint:attribution\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
       "offset": 303,
       "length": 31,
       "value": "\"@appsprint:attribution_params\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
       "offset": 368,
       "length": 21,
       "value": "\"@appsprint:disabled\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
       "offset": 420,
       "length": 22,
       "value": "\"@appsprint:idfa_sent\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
       "offset": 482,
       "length": 31,
       "value": "\"@appsprint:install_registered\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
-      "offset": 550,
+      "offset": 555,
+      "length": 34,
+      "value": "\"@appsprint:server_install_stored\""
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "kind": "StringLiteral",
+      "offset": 626,
       "length": 29,
       "value": "\"@appsprint:customer_user_id\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
-      "offset": 608,
+      "offset": 684,
       "length": 20,
       "value": "\"@appsprint:api_key\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
-      "offset": 667,
+      "offset": 743,
       "length": 30,
       "value": "\"@appsprint:install_timestamp\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
-      "offset": 736,
+      "offset": 812,
       "length": 34,
       "value": "\"@appsprint:last_session_start_ms\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "StringLiteral",
-      "offset": 1175,
+      "offset": 1251,
       "length": 44,
       "value": "\"@appsprint:pending_ad_services_token_retry\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "Dictionary",
-      "offset": 1401,
+      "offset": 1477,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "BooleanLiteral",
-      "offset": 1435,
+      "offset": 1511,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "BooleanLiteral",
-      "offset": 1471,
+      "offset": 1547,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "BooleanLiteral",
-      "offset": 1768,
+      "offset": 1844,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "BooleanLiteral",
-      "offset": 1806,
+      "offset": 1882,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 1850,
+      "offset": 1926,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 1888,
+      "offset": 1964,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 1935,
+      "offset": 2011,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2313,
+      "offset": 2449,
       "length": 2,
       "value": "50"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2628,
+      "offset": 2764,
       "length": 6,
       "value": "95000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2680,
+      "offset": 2816,
       "length": 6,
       "value": "90000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2742,
+      "offset": 2878,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2747,
+      "offset": 2883,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2752,
+      "offset": 2888,
       "length": 4,
       "value": "1000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2832,
+      "offset": 2968,
       "length": 2,
       "value": "75"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 2837,
+      "offset": 2973,
       "length": 13,
       "value": "1000000000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprint.swift",
       "kind": "IntegerLiteral",
-      "offset": 13774,
+      "offset": 14510,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintAppleAds.swift",
+      "kind": "BooleanLiteral",
+      "offset": 172,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
       "kind": "StringLiteral",
       "offset": 111,
       "length": 27,
       "value": "\"https:\/\/api.appsprint.app\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
       "kind": "StringLiteral",
       "offset": 172,
       "length": 3,
       "value": "\"\/\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 664,
+      "offset": 706,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 694,
+      "offset": 736,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 819,
+      "offset": 861,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 864,
+      "offset": 906,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintConfig.swift",
+      "kind": "BooleanLiteral",
+      "offset": 949,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 1013,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 1067,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 1124,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
       "kind": "BooleanLiteral",
       "offset": 1171,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
       "kind": "Array",
       "offset": 3252,
       "length": 117,
       "value": "[250000000, 500000000, 1000000000, 1500000000, 2000000000]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 3425,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
       "offset": 577,
       "length": 7,
-      "value": "\"1.1.7\""
+      "value": "\"1.1.8\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
       "offset": 893,
       "length": 15,
       "value": "\"com.appsprint\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
       "offset": 946,
       "length": 86,
       "value": "\"AppSprint could not open UserDefaults suite com.appsprint; falling back to standard.\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "BooleanLiteral",
       "offset": 14455,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
       "offset": 17420,
       "length": 32,
       "value": "\"app.appsprint.sdk.network-path\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "BooleanLiteral",
       "offset": 17512,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "FloatLiteral",
       "offset": 17677,
       "length": 4,
       "value": "0.12"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintQueueStore.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintQueueStore.swift",
       "kind": "StringLiteral",
       "offset": 80,
       "length": 24,
       "value": "\"@appsprint:event_queue\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintQueueStore.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintQueueStore.swift",
       "kind": "StringLiteral",
       "offset": 130,
       "length": 28,
       "value": "\"@appsprint:event_queue_ids\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintQueueStore.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintQueueStore.swift",
       "kind": "StringLiteral",
       "offset": 191,
       "length": 30,
       "value": "\"@appsprint:event_queue_item:\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintQueueStore.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintQueueStore.swift",
       "kind": "IntegerLiteral",
       "offset": 253,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 92,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 110,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 128,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 147,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 250,
       "length": 15,
       "value": "\"session_start\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 299,
       "length": 9,
       "value": "\"sign_up\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 386,
       "length": 13,
       "value": "\"start_trial\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 426,
       "length": 18,
       "value": "\"add_payment_info\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 466,
       "length": 13,
       "value": "\"add_to_cart\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 505,
       "length": 17,
       "value": "\"add_to_wishlist\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 551,
       "length": 19,
       "value": "\"initiate_checkout\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 594,
       "length": 14,
       "value": "\"view_content\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 629,
       "length": 11,
       "value": "\"view_item\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 700,
       "length": 19,
       "value": "\"tutorial_complete\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 744,
       "length": 15,
       "value": "\"achieve_level\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 782,
       "length": 13,
       "value": "\"level_start\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 821,
       "length": 16,
       "value": "\"level_complete\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 942,
       "length": 16,
       "value": "\"not_determined\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 3306,
       "length": 8,
       "value": "\"source\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 3526,
       "length": 12,
       "value": "\"confidence\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 3573,
       "length": 14,
       "value": "\"campaignName\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 10585,
       "length": 9,
       "value": "\"GRANTED\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 10613,
       "length": 8,
       "value": "\"DENIED\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/appsprint-ios\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/app-sprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintTypes.swift",
       "kind": "StringLiteral",
       "offset": 10645,
       "length": 13,

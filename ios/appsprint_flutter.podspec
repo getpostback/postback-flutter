@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'appsprint_flutter'
-  s.version          = '1.1.7'
+  s.version          = '1.1.8'
   s.summary          = 'Flutter AppSprint attribution SDK'
   s.description      = 'Flutter plugin wrapper for AppSprint attribution.'
   s.homepage         = 'https://appsprint.app'
