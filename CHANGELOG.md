@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.9
+
+- Updates the vendored native SDKs to iOS v1.1.9 and Android v1.1.3 so attribution params use `appsprintId` only.
+- Removes legacy competitor-name fixtures from SDK tests.
+
 ## 1.1.8
 
 - Adds `AppSprintAppleAds`, an iOS-only Apple Ads ROAS facade that configures the native SDK with Apple Ads attribution enabled and event/session tracking disabled.
