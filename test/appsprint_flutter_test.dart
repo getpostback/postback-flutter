@@ -20,7 +20,6 @@ void main() {
         'sendTestEvent': {'success': true, 'message': 'ok'},
         'getAttributionParams': {
           'appsprintId': 'app_123',
-          'appstackId': 'app_123',
           'gclid': 'gclid_123',
         },
         'getDeviceInfo': {
@@ -121,7 +120,7 @@ void main() {
     expect(calls, isEmpty);
   });
 
-  test('configure accepts Appstack-style apiKey and options', () async {
+  test('configure accepts apiKey overload and endpointBaseUrl options', () async {
     final configured = await AppSprint.instance.configure(
       'test-key',
       endpointBaseUrl: 'https://edge.example.com',
@@ -218,7 +217,7 @@ void main() {
     });
   });
 
-  test('event vocabulary includes Appstack parity events', () {
+  test('event vocabulary includes alternate event name spellings', () {
     expect(appSprintEventTypeValues[AppSprintEventType.sessionStart],
         'session_start');
     expect(appSprintEventTypeValues[AppSprintEventType.addPaymentInfo],
