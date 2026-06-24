@@ -31,7 +31,7 @@ void main() {
           'connectionType': 'cellular',
           'networkType': '5g',
           'colorScheme': 'dark',
-          'sdkVersion': '1.1.3',
+          'sdkVersion': '1.1.4',
           'sdkWebViewUserAgent':
               'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
           'locale': 'en-US',
@@ -275,7 +275,7 @@ void main() {
     expect(deviceInfo.connectionType, 'cellular');
     expect(deviceInfo.networkType, '5g');
     expect(deviceInfo.colorScheme, 'dark');
-    expect(deviceInfo.sdkVersion, '1.1.3');
+    expect(deviceInfo.sdkVersion, '1.1.4');
     expect(
       deviceInfo.sdkWebViewUserAgent,
       'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',

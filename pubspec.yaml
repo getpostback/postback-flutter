@@ -1,6 +1,6 @@
 name: appsprint_flutter
 description: Flutter AppSprint attribution SDK.
-version: 1.1.9
+version: 1.1.10
 homepage: https://appsprint.app
 repository: https://github.com/getappsprint/appsprint-flutter
 issue_tracker: https://github.com/getappsprint/appsprint-flutter/issues

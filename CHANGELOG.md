@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.10
+
+- Updates the vendored Android SDK to v1.1.4 so optional cellular-network subtype probes cannot crash startup on newer Android versions that deny telephony access.
+
 ## 1.1.9
 
 - Updates the vendored native SDKs to iOS v1.1.9 and Android v1.1.3 so attribution params use `appsprintId` only.
