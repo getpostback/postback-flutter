@@ -11069,48 +11069,48 @@
       "filePath": "\/Users\/arthur\/Dev\/appsprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
       "offset": 577,
-      "length": 7,
-      "value": "\"1.1.9\""
+      "length": 8,
+      "value": "\"1.1.10\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/appsprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 893,
+      "offset": 894,
       "length": 15,
       "value": "\"com.appsprint\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/appsprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 946,
+      "offset": 947,
       "length": 86,
       "value": "\"AppSprint could not open UserDefaults suite com.appsprint; falling back to standard.\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/appsprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 14455,
+      "offset": 14456,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/appsprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "StringLiteral",
-      "offset": 17420,
+      "offset": 17421,
       "length": 32,
       "value": "\"app.appsprint.sdk.network-path\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/appsprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 17512,
+      "offset": 17513,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/appsprint\/SDKs\/appsprint-ios\/Sources\/AppSprintSDK\/AppSprintNative.swift",
       "kind": "FloatLiteral",
-      "offset": 17677,
+      "offset": 17678,
       "length": 4,
       "value": "0.12"
     },

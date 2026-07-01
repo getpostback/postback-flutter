@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.11
+
+- Updates the vendored iOS SDK to v1.1.10 so AppSprintSDK dSYMs are included for App Store Connect upload validation.
+
 ## 1.1.10
 
 - Updates the vendored Android SDK to v1.1.4 so optional cellular-network subtype probes cannot crash startup on newer Android versions that deny telephony access.
