@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+## 1.1.12 - 2026-07-14
+
+- The iOS-only `AppSprintAppleAds` facade now registers all installs and enables automatic session and event tracking, so ASO keys collect first-party analytics for organic users as well as Apple Ads users.
+- Updates the vendored iOS SDK to v1.1.11 with API-key scope isolation and compile-time macOS exclusion for the ASO facade.
+
 ## 1.1.11
 
 - Updates the vendored iOS SDK to v1.1.10 so AppSprintSDK dSYMs are included for App Store Connect upload validation.

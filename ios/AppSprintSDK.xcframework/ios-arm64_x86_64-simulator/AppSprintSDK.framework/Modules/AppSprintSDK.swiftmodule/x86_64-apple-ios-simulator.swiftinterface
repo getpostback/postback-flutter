@@ -44,11 +44,16 @@ import os
   @objc deinit
 }
 @_Concurrency.MainActor public enum AppSprintAppleAds {
+  @available(macOS, unavailable, message: "AppSprintAppleAds is only supported on iOS.")
   @_Concurrency.MainActor public static func configure(apiKey: Swift.String, apiURL: Foundation.URL? = nil, isDebug: Swift.Bool = false) async
+  @available(macOS, unavailable, message: "AppSprintAppleAds is only supported on iOS.")
   @_Concurrency.MainActor public static func getAppSprintId() -> Swift.String?
+  @available(macOS, unavailable, message: "AppSprintAppleAds is only supported on iOS.")
   @_Concurrency.MainActor public static func getAttributionParams() -> [Swift.String : Swift.String]
+  @available(macOS, unavailable, message: "AppSprintAppleAds is only supported on iOS.")
   @_Concurrency.MainActor public static func getAttribution() -> AppSprintSDK.AttributionResult?
   @discardableResult
+  @available(macOS, unavailable, message: "AppSprintAppleAds is only supported on iOS.")
   @_Concurrency.MainActor public static func refreshAttribution() async -> AppSprintSDK.AttributionResult?
 }
 public struct AppSprintConfig : Swift.Sendable {

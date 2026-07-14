@@ -48,9 +48,9 @@ class AppSprintAppleAds {
       enableAppleAdsAttribution: true,
       isDebug: isDebug,
       customerUserId: null,
-      autoTrackSessions: false,
+      autoTrackSessions: true,
       autoRefreshAttribution: false,
-      eventTrackingEnabled: false,
+      eventTrackingEnabled: true,
     );
   }
 

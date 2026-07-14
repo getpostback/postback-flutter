@@ -79,7 +79,7 @@ void main() {
     });
   });
 
-  test('Apple Ads facade builds locked iOS config', () {
+  test('Apple Ads facade builds all-user analytics iOS config', () {
     final config = AppSprintAppleAds.buildConfig(
       'as_ios_live_test',
       apiUrl: 'https://edge.example.com',
@@ -91,9 +91,9 @@ void main() {
     expect(config.enableAppleAdsAttribution, true);
     expect(config.isDebug, true);
     expect(config.customerUserId, isNull);
-    expect(config.autoTrackSessions, false);
+    expect(config.autoTrackSessions, true);
     expect(config.autoRefreshAttribution, false);
-    expect(config.eventTrackingEnabled, false);
+    expect(config.eventTrackingEnabled, true);
   });
 
   test('Apple Ads facade rejects unsupported platforms clearly', () {
