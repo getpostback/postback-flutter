@@ -10843,41 +10843,41 @@
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
       "offset": 892,
-      "length": 14,
-      "value": "\"com.postback\""
+      "length": 13,
+      "value": "\"sh.postback\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 944,
-      "length": 84,
-      "value": "\"Postback could not open UserDefaults suite com.postback; falling back to standard.\""
+      "offset": 943,
+      "length": 83,
+      "value": "\"Postback could not open UserDefaults suite sh.postback; falling back to standard.\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 14447,
+      "offset": 14445,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 17407,
-      "length": 31,
-      "value": "\"app.postback.sdk.network-path\""
+      "offset": 17405,
+      "length": 30,
+      "value": "\"sh.postback.sdk.network-path\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 17498,
+      "offset": 17495,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "FloatLiteral",
-      "offset": 17662,
+      "offset": 17659,
       "length": 4,
       "value": "0.12"
     },
