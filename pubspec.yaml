@@ -1,10 +1,10 @@
-name: appsprint_flutter
-description: Flutter AppSprint attribution SDK.
-version: 1.1.12
-homepage: https://appsprint.app
-repository: https://github.com/getappsprint/appsprint-flutter
-issue_tracker: https://github.com/getappsprint/appsprint-flutter/issues
-documentation: https://pub.dev/packages/appsprint_flutter
+name: postback_flutter
+description: Flutter Postback attribution SDK.
+version: 1.0.0
+homepage: https://postback.sh
+repository: https://github.com/getpostback/postback-flutter
+issue_tracker: https://github.com/getpostback/postback-flutter/issues
+documentation: https://pub.dev/packages/postback_flutter
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -23,7 +23,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.appsprint.flutter
-        pluginClass: AppSprintFlutterPlugin
+        package: sh.postback.flutter
+        pluginClass: PostbackFlutterPlugin
       ios:
-        pluginClass: AppSprintFlutterPlugin
+        pluginClass: PostbackFlutterPlugin

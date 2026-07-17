@@ -1,4 +1,4 @@
-enum AppSprintEventType {
+enum PostbackEventType {
   sessionStart,
   login,
   signUp,
@@ -21,27 +21,27 @@ enum AppSprintEventType {
   custom,
 }
 
-const Map<AppSprintEventType, String> appSprintEventTypeValues = {
-  AppSprintEventType.sessionStart: 'session_start',
-  AppSprintEventType.login: 'login',
-  AppSprintEventType.signUp: 'sign_up',
-  AppSprintEventType.register: 'register',
-  AppSprintEventType.purchase: 'purchase',
-  AppSprintEventType.subscribe: 'subscribe',
-  AppSprintEventType.startTrial: 'start_trial',
-  AppSprintEventType.addPaymentInfo: 'add_payment_info',
-  AppSprintEventType.addToCart: 'add_to_cart',
-  AppSprintEventType.addToWishlist: 'add_to_wishlist',
-  AppSprintEventType.initiateCheckout: 'initiate_checkout',
-  AppSprintEventType.viewContent: 'view_content',
-  AppSprintEventType.viewItem: 'view_item',
-  AppSprintEventType.search: 'search',
-  AppSprintEventType.share: 'share',
-  AppSprintEventType.tutorialComplete: 'tutorial_complete',
-  AppSprintEventType.achieveLevel: 'achieve_level',
-  AppSprintEventType.levelStart: 'level_start',
-  AppSprintEventType.levelComplete: 'level_complete',
-  AppSprintEventType.custom: 'custom',
+const Map<PostbackEventType, String> postbackEventTypeValues = {
+  PostbackEventType.sessionStart: 'session_start',
+  PostbackEventType.login: 'login',
+  PostbackEventType.signUp: 'sign_up',
+  PostbackEventType.register: 'register',
+  PostbackEventType.purchase: 'purchase',
+  PostbackEventType.subscribe: 'subscribe',
+  PostbackEventType.startTrial: 'start_trial',
+  PostbackEventType.addPaymentInfo: 'add_payment_info',
+  PostbackEventType.addToCart: 'add_to_cart',
+  PostbackEventType.addToWishlist: 'add_to_wishlist',
+  PostbackEventType.initiateCheckout: 'initiate_checkout',
+  PostbackEventType.viewContent: 'view_content',
+  PostbackEventType.viewItem: 'view_item',
+  PostbackEventType.search: 'search',
+  PostbackEventType.share: 'share',
+  PostbackEventType.tutorialComplete: 'tutorial_complete',
+  PostbackEventType.achieveLevel: 'achieve_level',
+  PostbackEventType.levelStart: 'level_start',
+  PostbackEventType.levelComplete: 'level_complete',
+  PostbackEventType.custom: 'custom',
 };
 
 enum GoogleAdsConsentStatus {
@@ -66,10 +66,10 @@ class GoogleAdsConsent {
       };
 }
 
-class AppSprintConfig {
-  const AppSprintConfig({
+class PostbackConfig {
+  const PostbackConfig({
     required this.apiKey,
-    this.apiUrl = 'https://api.appsprint.app',
+    this.apiUrl = 'https://api.postback.sh',
     this.enableAppleAdsAttribution = true,
     this.isDebug = false,
     int? logLevel,

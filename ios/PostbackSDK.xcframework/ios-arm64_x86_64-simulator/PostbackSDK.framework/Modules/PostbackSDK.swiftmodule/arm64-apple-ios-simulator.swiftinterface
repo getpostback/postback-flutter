@@ -1,0 +1,271 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.1 effective-5.10 (swiftlang-6.3.1.1.2 clang-2100.0.123.102)
+// swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name PostbackSDK -package-name postback_ios
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.1
+import AdServices
+import AdSupport
+import AppTrackingTransparency
+import CoreTelephony
+import CryptoKit
+import Foundation
+import Foundation/*.Bundle*/
+import Foundation/*.ProcessInfo*/
+import Foundation/*.URL*/
+import Metal
+import Network
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os
+@_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class Postback {
+  @_Concurrency.MainActor public static let shared: PostbackSDK.Postback
+  @_Concurrency.MainActor final public var isInitialized: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor public init()
+  @_Concurrency.MainActor final public func configure(_ config: PostbackSDK.PostbackConfig) async
+  @_Concurrency.MainActor final public func sendEvent(_ eventType: PostbackSDK.PostbackEventType, name: Swift.String? = nil, params: [Swift.String : Any]? = nil) async
+  @_Concurrency.MainActor final public func flush() async
+  @_Concurrency.MainActor final public func clearData()
+  @_Concurrency.MainActor final public func isSdkDisabled() -> Swift.Bool
+  @_Concurrency.MainActor final public func setCustomerUserId(_ userId: Swift.String) async
+  @_Concurrency.MainActor final public func sendTestEvent() async -> PostbackSDK.TestEventResult
+  @_Concurrency.MainActor final public func getPostbackId() -> Swift.String?
+  @_Concurrency.MainActor final public func getAttribution() -> PostbackSDK.AttributionResult?
+  @_Concurrency.MainActor final public func getAttributionParams() -> [Swift.String : Swift.String]
+  @discardableResult
+  @_Concurrency.MainActor final public func refreshAttribution() async -> PostbackSDK.AttributionResult?
+  @discardableResult
+  @_Concurrency.MainActor final public func enableAppleAdsAttribution() -> Swift.Bool
+  @_Concurrency.MainActor final public func destroy()
+  @objc deinit
+}
+public struct PostbackConfig : Swift.Sendable {
+  public static let defaultAPIURL: Foundation.URL
+  public var apiKey: Swift.String
+  public var apiURL: Foundation.URL
+  public var enableAppleAdsAttribution: Swift.Bool
+  public var isDebug: Swift.Bool
+  public var logLevel: PostbackSDK.PostbackLogLevel
+  public var customerUserId: Swift.String?
+  public var autoTrackSessions: Swift.Bool
+  public var autoRefreshAttribution: Swift.Bool
+  public var eventTrackingEnabled: Swift.Bool
+  public var googleAdsConsent: PostbackSDK.GoogleAdsConsent?
+  public init(apiKey: Swift.String, apiURL: Foundation.URL = PostbackConfig.defaultAPIURL, enableAppleAdsAttribution: Swift.Bool = true, isDebug: Swift.Bool = false, logLevel: PostbackSDK.PostbackLogLevel = .warn, customerUserId: Swift.String? = nil, autoTrackSessions: Swift.Bool = true, autoRefreshAttribution: Swift.Bool = true, eventTrackingEnabled: Swift.Bool = true, googleAdsConsent: PostbackSDK.GoogleAdsConsent? = nil)
+}
+public enum PostbackNative {
+  @_Concurrency.MainActor public static func getDeviceInfo() -> PostbackSDK.DeviceInfo
+  public static func getAdServicesToken() -> Swift.String?
+  @_Concurrency.MainActor public static func getWebViewUserAgent() async -> Swift.String?
+  @_Concurrency.MainActor public static func requestTrackingAuthorization() async -> Swift.Bool
+  public static func storageSet(_ key: Swift.String, value: Swift.String)
+  public static func storageGet(_ key: Swift.String) -> Swift.String?
+  public static func storageRemove(_ key: Swift.String)
+}
+public enum PostbackLogLevel : Swift.Int, Swift.Codable, Swift.Sendable {
+  case debug
+  case info
+  case warn
+  case error
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum PostbackEventType : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
+  case sessionStart
+  case login
+  case signUp
+  case register
+  case purchase
+  case subscribe
+  case startTrial
+  case addPaymentInfo
+  case addToCart
+  case addToWishlist
+  case initiateCheckout
+  case viewContent
+  case viewItem
+  case search
+  case share
+  case tutorialComplete
+  case achieveLevel
+  case levelStart
+  case levelComplete
+  case custom
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [PostbackSDK.PostbackEventType]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PostbackSDK.PostbackEventType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PostbackAttStatus : Swift.String, Swift.Codable, Swift.Sendable {
+  case notDetermined
+  case restricted
+  case denied
+  case authorized
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct AttributionLink : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let id: Swift.String
+  public let name: Swift.String
+  public static func == (a: PostbackSDK.AttributionLink, b: PostbackSDK.AttributionLink) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AppleAdsAttribution : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let campaignId: Swift.String
+  public let orgId: Swift.String?
+  public let adGroupId: Swift.String?
+  public let keywordId: Swift.String?
+  public let adId: Swift.String?
+  public let countryOrRegion: Swift.String?
+  public let claimType: Swift.String?
+  public let clickDate: Swift.String?
+  public let impressionDate: Swift.String?
+  public let conversionType: Swift.String?
+  public let supplyPlacement: Swift.String?
+  public init(campaignId: Swift.String, orgId: Swift.String? = nil, adGroupId: Swift.String? = nil, keywordId: Swift.String? = nil, adId: Swift.String? = nil, countryOrRegion: Swift.String? = nil, claimType: Swift.String? = nil, clickDate: Swift.String? = nil, impressionDate: Swift.String? = nil, conversionType: Swift.String? = nil, supplyPlacement: Swift.String? = nil)
+  public static func == (a: PostbackSDK.AppleAdsAttribution, b: PostbackSDK.AppleAdsAttribution) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AttributionResult : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let isAttributed: Swift.Bool
+  public let matchType: Swift.String?
+  public let link: PostbackSDK.AttributionLink?
+  public let appleAds: PostbackSDK.AppleAdsAttribution?
+  public let utmSource: Swift.String?
+  public let utmMedium: Swift.String?
+  public let utmCampaign: Swift.String?
+  public let utmContent: Swift.String?
+  public let utmTerm: Swift.String?
+  public var source: Swift.String {
+    get
+  }
+  public var confidence: Swift.Double {
+    get
+  }
+  public var campaignName: Swift.String? {
+    get
+  }
+  public init(source: Swift.String, confidence: Swift.Double, campaignName: Swift.String? = nil, utmSource: Swift.String? = nil, utmMedium: Swift.String? = nil, utmCampaign: Swift.String? = nil)
+  public init(isAttributed: Swift.Bool, source: Swift.String? = nil, matchType: Swift.String? = nil, link: PostbackSDK.AttributionLink? = nil, appleAds: PostbackSDK.AppleAdsAttribution? = nil, utmSource: Swift.String? = nil, utmMedium: Swift.String? = nil, utmCampaign: Swift.String? = nil, utmContent: Swift.String? = nil, utmTerm: Swift.String? = nil)
+  public static func == (a: PostbackSDK.AttributionResult, b: PostbackSDK.AttributionResult) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct InstallResponse : Swift.Codable, Swift.Sendable {
+  public let postbackId: Swift.String
+  public let installId: Swift.String?
+  public let attribution: PostbackSDK.AttributionResult
+  public let attributionParams: [Swift.String : Swift.String]?
+  public init(postbackId: Swift.String, installId: Swift.String? = nil, attribution: PostbackSDK.AttributionResult, attributionParams: [Swift.String : Swift.String]? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TestEventResult : Swift.Equatable, Swift.Sendable {
+  public let success: Swift.Bool
+  public let message: Swift.String
+  public init(success: Swift.Bool, message: Swift.String)
+  public static func == (a: PostbackSDK.TestEventResult, b: PostbackSDK.TestEventResult) -> Swift.Bool
+}
+public struct DeviceInfo : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let deviceModel: Swift.String?
+  public let screenWidth: Swift.Int?
+  public let screenHeight: Swift.Int?
+  public let nativeScreenWidth: Swift.Int?
+  public let nativeScreenHeight: Swift.Int?
+  public let screenScale: Swift.Double?
+  public let hardwareConcurrency: Swift.Int?
+  public let processorCount: Swift.Int?
+  public let maxTouchPoints: Swift.Int?
+  public let memoryGb: Swift.Int?
+  public let lowPowerMode: Swift.Bool?
+  public let batteryState: Swift.String?
+  public let batteryLevelBucket: Swift.String?
+  public let preferredLanguages: [Swift.String]?
+  public let timezoneOffsetMinutes: Swift.Int?
+  public let deviceManufacturer: Swift.String?
+  public let deviceBrand: Swift.String?
+  public let deviceProduct: Swift.String?
+  public let deviceHardware: Swift.String?
+  public let gpuVendor: Swift.String?
+  public let gpuRenderer: Swift.String?
+  public let connectionType: Swift.String?
+  public let networkType: Swift.String?
+  public let colorScheme: Swift.String?
+  public let carrierName: Swift.String?
+  public let carrierCountryCode: Swift.String?
+  public let mobileCountryCode: Swift.String?
+  public let mobileNetworkCode: Swift.String?
+  public let sdkPlatform: Swift.String?
+  public let sdkVersion: Swift.String?
+  public let sdkWebViewUserAgent: Swift.String?
+  public let locale: Swift.String?
+  public let timezone: Swift.String?
+  public let osVersion: Swift.String?
+  public let appVersion: Swift.String?
+  public let idfv: Swift.String?
+  public let idfa: Swift.String?
+  public let adServicesToken: Swift.String?
+  public let attStatus: PostbackSDK.PostbackAttStatus?
+  public init(deviceModel: Swift.String? = nil, screenWidth: Swift.Int? = nil, screenHeight: Swift.Int? = nil, nativeScreenWidth: Swift.Int? = nil, nativeScreenHeight: Swift.Int? = nil, screenScale: Swift.Double? = nil, hardwareConcurrency: Swift.Int? = nil, processorCount: Swift.Int? = nil, maxTouchPoints: Swift.Int? = nil, memoryGb: Swift.Int? = nil, lowPowerMode: Swift.Bool? = nil, batteryState: Swift.String? = nil, batteryLevelBucket: Swift.String? = nil, preferredLanguages: [Swift.String]? = nil, timezoneOffsetMinutes: Swift.Int? = nil, deviceManufacturer: Swift.String? = nil, deviceBrand: Swift.String? = nil, deviceProduct: Swift.String? = nil, deviceHardware: Swift.String? = nil, gpuVendor: Swift.String? = nil, gpuRenderer: Swift.String? = nil, connectionType: Swift.String? = nil, networkType: Swift.String? = nil, colorScheme: Swift.String? = nil, carrierName: Swift.String? = nil, carrierCountryCode: Swift.String? = nil, mobileCountryCode: Swift.String? = nil, mobileNetworkCode: Swift.String? = nil, sdkPlatform: Swift.String? = nil, sdkVersion: Swift.String? = nil, sdkWebViewUserAgent: Swift.String? = nil, locale: Swift.String? = nil, timezone: Swift.String? = nil, osVersion: Swift.String? = nil, appVersion: Swift.String? = nil, idfv: Swift.String? = nil, idfa: Swift.String? = nil, adServicesToken: Swift.String? = nil, attStatus: PostbackSDK.PostbackAttStatus? = nil)
+  public static func == (a: PostbackSDK.DeviceInfo, b: PostbackSDK.DeviceInfo) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum GoogleAdsConsentStatus : Swift.String, Swift.Codable, Swift.Sendable {
+  case granted
+  case denied
+  case unspecified
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct GoogleAdsConsent : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let adUserData: PostbackSDK.GoogleAdsConsentStatus
+  public init(adUserData: PostbackSDK.GoogleAdsConsentStatus)
+  public static func == (a: PostbackSDK.GoogleAdsConsent, b: PostbackSDK.GoogleAdsConsent) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AnyCodable : Swift.Codable, Swift.Equatable, Swift.Sendable {
+  public let value: PostbackSDK.AnySendable
+  public init(_ value: some Sendable)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: PostbackSDK.AnyCodable, b: PostbackSDK.AnyCodable) -> Swift.Bool
+}
+public struct AnySendable : @unchecked Swift.Sendable, Swift.Equatable {
+  public init(_ base: Any)
+  public static func == (lhs: PostbackSDK.AnySendable, rhs: PostbackSDK.AnySendable) -> Swift.Bool
+}
+extension PostbackSDK.Postback : Swift.Sendable {}
+extension PostbackSDK.PostbackAttStatus : Swift.Equatable {}
+extension PostbackSDK.PostbackAttStatus : Swift.Hashable {}
+extension PostbackSDK.PostbackAttStatus : Swift.RawRepresentable {}
+extension PostbackSDK.PostbackLogLevel : Swift.Equatable {}
+extension PostbackSDK.PostbackLogLevel : Swift.Hashable {}
+extension PostbackSDK.PostbackLogLevel : Swift.RawRepresentable {}
+extension PostbackSDK.PostbackEventType : Swift.Equatable {}
+extension PostbackSDK.PostbackEventType : Swift.Hashable {}
+extension PostbackSDK.PostbackEventType : Swift.RawRepresentable {}
+extension PostbackSDK.GoogleAdsConsentStatus : Swift.Equatable {}
+extension PostbackSDK.GoogleAdsConsentStatus : Swift.Hashable {}
+extension PostbackSDK.GoogleAdsConsentStatus : Swift.RawRepresentable {}

@@ -1,0 +1,4 @@
+framework module PostbackSDK {
+  header "PostbackSDK-Swift.h"
+  requires objc
+}

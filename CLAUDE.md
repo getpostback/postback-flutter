@@ -1,8 +1,8 @@
-# CLAUDE.md — appsprint-flutter
+# CLAUDE.md — postback-flutter
 
 ## What This Is
 
-**Flutter bridge SDK** for AppSprint attribution. A thin Dart wrapper that delegates all work to pre-compiled native binaries (iOS XCFramework + Android AAR) via Flutter method channels.
+**Flutter bridge SDK** for Postback attribution. A thin Dart wrapper that delegates all work to pre-compiled native binaries (iOS XCFramework + Android AAR) via Flutter method channels.
 
 This is a **bridge SDK** — it contains no attribution logic. All logic lives in the core iOS and Android SDKs.
 
@@ -25,41 +25,41 @@ flutter pub publish --dry-run        # Validate pub.dev readiness
 
 ```
 lib/                                 # Dart public API
-├── appsprint_flutter.dart          # Barrel export
+├── postback_flutter.dart          # Barrel export
 └── src/
-    ├── appsprint.dart              # Singleton class — validates config, delegates to native
-    ├── appsprint_native.dart       # MethodChannel bridge to native platforms
+    ├── postback.dart              # Singleton class — validates config, delegates to native
+    ├── postback_native.dart       # MethodChannel bridge to native platforms
     └── types.dart                  # Enums, config, result types
 
 ios/                                 # iOS native bridge
 ├── Classes/
-│   └── AppSprintFlutterPlugin.swift # FlutterPlugin — calls AppSprintSDK
-├── appsprint_flutter.podspec       # CocoaPods spec
-└── AppSprintSDK.xcframework/       # Pre-built iOS SDK binary (VENDORED)
+│   └── PostbackFlutterPlugin.swift # FlutterPlugin — calls PostbackSDK
+├── postback_flutter.podspec       # CocoaPods spec
+└── PostbackSDK.xcframework/       # Pre-built iOS SDK binary (VENDORED)
 
 android/                             # Android native bridge
-├── src/main/kotlin/com/appsprint/flutter/
-│   └── AppSprintFlutterPlugin.kt   # FlutterPlugin + MethodCallHandler — calls AAR
-├── libs/appsprint-sdk.aar          # Pre-built Android SDK binary (VENDORED)
+├── src/main/kotlin/com/postback/flutter/
+│   └── PostbackFlutterPlugin.kt   # FlutterPlugin + MethodCallHandler — calls AAR
+├── libs/postback-sdk.aar          # Pre-built Android SDK binary (VENDORED)
 └── build.gradle                    # Android build config
 
 test/                                # Tests
-├── appsprint_flutter_test.dart     # Unit tests (mocked MethodChannel)
+├── postback_flutter_test.dart     # Unit tests (mocked MethodChannel)
 └── release_artifacts_test.dart     # Binary presence validation
 ```
 
 ### Key Patterns
 
 - **Thin bridge:** Dart validates `apiKey` then passes everything to native via MethodChannel
-- **Single method channel:** `appsprint_flutter/native` for all Dart → Native calls
+- **Single method channel:** `postback_flutter/native` for all Dart → Native calls
 - **Zero dependencies:** Only Flutter SDK dependencies
 - **Pub.dev ready:** Passes `flutter pub publish --dry-run`
 - **Prebuilt validation:** Tests verify AAR and XCFramework binaries exist
 
 ### Native Binaries (Vendored)
 
-- `ios/AppSprintSDK.xcframework` — Built from `appsprint-ios` via `build-xcframework.sh`
-- `android/libs/appsprint-sdk.aar` — Built from `appsprint-android` via Gradle
+- `ios/PostbackSDK.xcframework` — Built from `postback-ios` via `build-xcframework.sh`
+- `android/libs/postback-sdk.aar` — Built from `postback-android` via Gradle
 
 Update these with `make vendor-all` from the `SDKs/` directory.
 
@@ -75,7 +75,7 @@ The SDK doesn't talk to the API directly — it delegates to the native plugins 
 
 - **Dart 3.3.0+**, Flutter 3.22.0+
 - **iOS native:** Swift plugin, requires iOS 14.0+
-- **Android native:** Kotlin plugin, requires API 24+, compileSdk 35
+- **Android native:** Kotlin plugin, requires API 24+, compileSdk 36
 - **Dependencies:** None beyond Flutter SDK
 - **Dev dependencies:** flutter_test, flutter_lints
 
@@ -88,11 +88,11 @@ The SDK doesn't talk to the API directly — it delegates to the native plugins 
 
 ### pub.dev Publishing
 
-- **Package:** `appsprint_flutter` on pub.dev
-- **Publisher:** `appsprint.app` (verified domain)
+- **Package:** `postback_flutter` on pub.dev
+- **Publisher:** `postback.sh` (verified domain)
 - **Auth:** Manual `flutter pub publish` today; pub.dev automated publishing can be enabled separately
 - **CI:** `release.yml` runs analysis + tests before publish
-- Consumers install via: `appsprint_flutter: ^x.y.z` in `pubspec.yaml`
+- Consumers install via: `postback_flutter: ^x.y.z` in `pubspec.yaml`
 
 ---
 

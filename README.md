@@ -1,6 +1,6 @@
-# AppSprint for Flutter
+# Postback for Flutter
 
-Mobile attribution and event tracking for Flutter apps, backed by the native iOS and Android AppSprint SDKs. The Dart layer is a thin pass-through to the same engines as our standalone iOS and Android SDKs, so behavior matches across platforms.
+Mobile attribution and event tracking for Flutter apps, backed by the native iOS and Android Postback SDKs. The Dart layer is a thin pass-through to the same engines as our standalone iOS and Android SDKs, so behavior matches across platforms.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ Add the package to `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  appsprint_flutter: ^1.1.11
+  postback_flutter: ^1.0.0
 ```
 
 Fetch dependencies:
@@ -32,13 +32,13 @@ Call `configure` once in `main()`, before `runApp`. It returns a future that res
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:appsprint_flutter/appsprint_flutter.dart';
+import 'package:postback_flutter/postback_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await AppSprint.instance.configure(
-    const AppSprintConfig(apiKey: 'YOUR_API_KEY'),
+  await Postback.instance.configure(
+    const PostbackConfig(apiKey: 'YOUR_API_KEY'),
   );
 
   runApp(const MyApp());
@@ -48,9 +48,9 @@ Future<void> main() async {
 If you prefer the named-argument form for parity with web SDKs:
 
 ```dart
-await AppSprint.instance.configure(
+await Postback.instance.configure(
   'YOUR_API_KEY',
-  endpointBaseUrl: 'https://api.appsprint.app',
+  endpointBaseUrl: 'https://api.postback.sh',
 );
 ```
 
@@ -58,8 +58,8 @@ await AppSprint.instance.configure(
 
 | Option | Type | Default | What it does |
 |---|---|---|---|
-| `apiKey` | `String` | required | Your AppSprint app key. |
-| `apiUrl` | `String` | `https://api.appsprint.app` | Override for staging or self-hosted environments. |
+| `apiKey` | `String` | required | Your Postback app key. |
+| `apiUrl` | `String` | `https://api.postback.sh` | Override for staging or self-hosted environments. |
 | `endpointBaseUrl` | `String` | alias for `apiUrl` | Accepted for compatibility. |
 | `enableAppleAdsAttribution` | `bool` | `true` | iOS only. Fetches Apple AdServices at install time. |
 | `customerUserId` | `String?` | `null` | Your internal user ID. Persists across launches and replays if the first send fails. |
@@ -68,28 +68,24 @@ await AppSprint.instance.configure(
 | `isDebug` | `bool` | `false` | Forces debug-level logging on the native side. |
 | `logLevel` | `int` | `2` | `0 = debug`, `1 = info`, `2 = warn`, `3 = error`. |
 
-ASO integrations may continue using `AppSprintAppleAds.configure(...)`. This
-facade remains iOS-only, keeps Apple Ads attribution enabled, and now also
-registers organic installs, automatic sessions, and events for all iOS users.
-
 ## Track events
 
 ```dart
-import 'package:appsprint_flutter/appsprint_flutter.dart';
+import 'package:postback_flutter/postback_flutter.dart';
 
-await AppSprint.instance.sendEvent(AppSprintEventType.login);
-await AppSprint.instance.sendEvent(AppSprintEventType.signUp);
+await Postback.instance.sendEvent(PostbackEventType.login);
+await Postback.instance.sendEvent(PostbackEventType.signUp);
 
-await AppSprint.instance.sendEvent(
-  AppSprintEventType.purchase,
+await Postback.instance.sendEvent(
+  PostbackEventType.purchase,
   params: {
     'revenue': 9.99,
     'currency': 'USD',
   },
 );
 
-await AppSprint.instance.sendEvent(
-  AppSprintEventType.custom,
+await Postback.instance.sendEvent(
+  PostbackEventType.custom,
   name: 'onboarding_step',
   params: {
     'screen': 'welcome',
@@ -109,8 +105,8 @@ await AppSprint.instance.sendEvent(
 Pass `revenue` (or `price` as an alias) plus `currency`. Currency must be a 3-letter ISO code; anything else is dropped on the native side before the request goes out.
 
 ```dart
-await AppSprint.instance.sendEvent(
-  AppSprintEventType.subscribe,
+await Postback.instance.sendEvent(
+  PostbackEventType.subscribe,
   params: {
     'revenue': 4.99,
     'currency': 'EUR',
@@ -122,8 +118,8 @@ await AppSprint.instance.sendEvent(
 ### Custom events
 
 ```dart
-await AppSprint.instance.sendEvent(
-  AppSprintEventType.custom,
+await Postback.instance.sendEvent(
+  PostbackEventType.custom,
   name: 'level_skip',
   params: {'level': 12},
 );
@@ -136,20 +132,20 @@ Use `name` to label custom events. Keep the name stable so your dashboard groups
 Once an install registers, attribution is cached on the native side. You can read it any time:
 
 ```dart
-final attribution = await AppSprint.instance.getAttribution();
-final appsprintId = await AppSprint.instance.getAppSprintId();
+final attribution = await Postback.instance.getAttribution();
+final postbackId = await Postback.instance.getPostbackId();
 ```
 
 `AttributionResult.source` is one of `apple_ads`, `tracking_link`, or `organic`.
 
 ### Link RevenueCat or Superwall
 
-For revenue webhooks, set only the `appsprintId` subscriber/user attribute. Do not forward the full `getAttributionParams()` map to RevenueCat; it contains attribution details such as `source` and `isAttributed` for diagnostics and custom integrations.
+For revenue webhooks, set only the `postbackId` subscriber/user attribute. Do not forward the full `getAttributionParams()` map to RevenueCat; it contains attribution details such as `source` and `isAttributed` for diagnostics and custom integrations.
 
 ```dart
-final appsprintId = await AppSprint.instance.getAppSprintId();
-if (appsprintId != null) {
-  await Purchases.setAttributes({'appsprintId': appsprintId});
+final postbackId = await Postback.instance.getPostbackId();
+if (postbackId != null) {
+  await Purchases.setAttributes({'postbackId': postbackId});
 }
 ```
 
@@ -158,14 +154,14 @@ if (appsprintId != null) {
 If you need the latest server-side resolution, call `refreshAttribution()`:
 
 ```dart
-final updated = await AppSprint.instance.refreshAttribution();
+final updated = await Postback.instance.refreshAttribution();
 debugPrint('source = ${updated?.source}');
 ```
 
 ## App Tracking Transparency (iOS only)
 
 ```dart
-final authorized = await AppSprintNative.requestTrackingAuthorization();
+final authorized = await PostbackNative.requestTrackingAuthorization();
 ```
 
 The helper waits for the app to reach foreground-active before showing the system prompt, so calling it from `main()` or `initState()` is safe.
@@ -179,7 +175,7 @@ Add `NSUserTrackingUsageDescription` to `ios/Runner/Info.plist`:
 
 If you use SKAdNetwork postbacks, also add `NSAdvertisingAttributionReportEndpoint`.
 
-`AppSprintNative.requestTrackingAuthorization()` resolves `true` on Android without prompting; ATT is iOS-only.
+`PostbackNative.requestTrackingAuthorization()` resolves `true` on Android without prompting; ATT is iOS-only.
 
 ## Google Advertising ID (Android only)
 
@@ -203,7 +199,7 @@ The native Android SDK reads GAID during install registration, off the main thre
 
 ## Privacy
 
-The vendored iOS framework ships a `PrivacyInfo.xcprivacy` manifest declaring `UserDefaults` access plus `DeviceID`, `ProductInteraction`, `UserID`, `CoarseLocation`, and `OtherDataTypes` collection, all marked `Tracking: false`. The core AppSprint API domain is not declared as a tracking domain, so ATT denial does not block install or event delivery.
+The vendored iOS framework ships a `PrivacyInfo.xcprivacy` manifest declaring `UserDefaults` access plus `DeviceID`, `ProductInteraction`, `UserID`, `CoarseLocation`, and `OtherDataTypes` collection, all marked `Tracking: false`. The core Postback API domain is not declared as a tracking domain, so ATT denial does not block install or event delivery.
 
 For Android, include advertising ID collection, device IDs, approximate location/network-derived country, device or other identifiers, app activity, and (if you set `customerUserId`) user ID in your Play Console Data safety answers.
 
@@ -212,8 +208,8 @@ Don't pass raw PII through `params` or `customerUserId`. Both persist to native 
 ## Local development
 
 ```dart
-await AppSprint.instance.configure(
-  const AppSprintConfig(
+await Postback.instance.configure(
+  const PostbackConfig(
     apiKey: 'YOUR_DEV_KEY',
     apiUrl: 'http://localhost:3000',
     isDebug: true,
@@ -223,24 +219,24 @@ await AppSprint.instance.configure(
 
 On Android emulator, use `http://10.0.2.2:3000` to reach the host machine's localhost.
 
-`isDebug: true` raises native log level to `debug`. iOS logs flow into Console.app; Android logs flow into `logcat` under the `AppSprint` tag.
+`isDebug: true` raises native log level to `debug`. iOS logs flow into Console.app; Android logs flow into `logcat` under the `Postback` tag.
 
 ## Public API reference
 
-### `AppSprint`
+### `Postback`
 
 ```dart
-import 'package:appsprint_flutter/appsprint_flutter.dart';
+import 'package:postback_flutter/postback_flutter.dart';
 ```
 
-- `AppSprint.instance.configure(config)` initializes the SDK.
+- `Postback.instance.configure(config)` initializes the SDK.
 - `sendEvent(eventType, {name, params})` enqueues an event.
 - `flush()` drains the queue immediately.
 - `refreshAttribution()` fetches the latest attribution from the backend.
 - `setCustomerUserId(userId)` updates the customer user ID.
 - `getAttribution()` returns the cached attribution.
 - `getAttributionParams()` returns a flat attribution/debug payload for custom integrations.
-- `getAppSprintId()` returns the SDK install identifier.
+- `getPostbackId()` returns the SDK install identifier.
 - `enableAppleAdsAttribution()` re-enables Apple Ads at runtime on iOS; returns `false` on Android.
 - `sendTestEvent()` posts a diagnostic event and resolves to `{ success, message }`.
 - `isInitialized()` reports whether `configure()` resolved.
@@ -248,10 +244,10 @@ import 'package:appsprint_flutter/appsprint_flutter.dart';
 - `clearData()` wipes local state.
 - `destroy()` removes native lifecycle observers.
 
-### `AppSprintNative`
+### `PostbackNative`
 
 ```dart
-import 'package:appsprint_flutter/appsprint_flutter.dart';
+import 'package:postback_flutter/postback_flutter.dart';
 ```
 
 - `getDeviceInfo()` returns the attribution device signal payload.
@@ -260,7 +256,7 @@ import 'package:appsprint_flutter/appsprint_flutter.dart';
 
 ## Support
 
-Issues and feature requests on the [GitHub repo](https://github.com/getappsprint/appsprint-flutter). Direct support at support@appsprint.app.
+Issues and feature requests on the [GitHub repo](https://github.com/getpostback/postback-flutter). Direct support at support@postback.sh.
 
 ## License
 
