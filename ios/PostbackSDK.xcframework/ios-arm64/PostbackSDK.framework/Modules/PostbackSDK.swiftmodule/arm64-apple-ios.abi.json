@@ -10702,42 +10702,49 @@
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
-      "offset": 2858,
+      "offset": 2852,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2911,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
-      "offset": 2863,
+      "offset": 2916,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
-      "offset": 2868,
+      "offset": 2921,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
-      "offset": 2948,
+      "offset": 3001,
       "length": 2,
       "value": "75"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
-      "offset": 2953,
+      "offset": 3006,
       "length": 13,
       "value": "1000000000"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
-      "offset": 14461,
+      "offset": 15119,
       "length": 2,
       "value": "13"
     },
@@ -10837,7 +10844,7 @@
       "kind": "StringLiteral",
       "offset": 576,
       "length": 7,
-      "value": "\"1.0.0\""
+      "value": "\"1.0.1\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",

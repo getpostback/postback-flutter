@@ -76,16 +76,23 @@ public class PostbackFlutterPlugin: NSObject, FlutterPlugin {
         result(FlutterError(code: "SEND_EVENT_ERROR", message: "eventType is required", details: nil))
         return
       }
+      let type = PostbackEventType(rawValue: eventTypeStr) ?? .custom
+      let normalizedName = Self.normalizedEventName(args["name"] as? String)
+      guard type != .custom || normalizedName != nil else {
+        result(false)
+        return
+      }
+
       Task { @MainActor in
-        let type = PostbackEventType(rawValue: eventTypeStr) ?? .custom
-        let name = args["name"] as? String
         var params: [String: Any]? = args["parameters"] as? [String: Any]
+        let normalizedCurrency = Self.normalizedCurrency((args["currency"] as? String) ?? (params?["currency"] as? String))
+        params?.removeValue(forKey: "currency")
 
         if let rev = Self.numberValue(args["revenue"] ?? args["price"]) {
           if params == nil { params = [:] }
           params?["revenue"] = rev
         }
-        if let cur = args["currency"] as? String {
+        if let cur = normalizedCurrency {
           if params == nil { params = [:] }
           params?["currency"] = cur
         }
@@ -94,7 +101,7 @@ public class PostbackFlutterPlugin: NSObject, FlutterPlugin {
           params?["googleAdsConsent"] = googleAdsConsent
         }
 
-        await Postback.shared.sendEvent(type, name: name, params: params)
+        await Postback.shared.sendEvent(type, name: normalizedName, params: params)
         result(true)
       }
 
@@ -266,6 +273,25 @@ public class PostbackFlutterPlugin: NSObject, FlutterPlugin {
     default:
       return nil
     }
+  }
+
+  private static func normalizedEventName(_ name: String?) -> String? {
+    guard let normalized = name?.trimmingCharacters(in: .whitespacesAndNewlines),
+          !normalized.isEmpty,
+          normalized.utf16.count <= 255,
+          !normalized.contains("\u{0}") else {
+      return nil
+    }
+    return normalized
+  }
+
+  private static func normalizedCurrency(_ currency: String?) -> String? {
+    guard let normalized = currency?.trimmingCharacters(in: .whitespacesAndNewlines),
+          normalized.utf8.count == 3,
+          normalized.utf8.allSatisfy({ (65...90).contains($0) || (97...122).contains($0) }) else {
+      return nil
+    }
+    return normalized.uppercased()
   }
 
   private static func googleAdsConsent(from value: Any?) -> GoogleAdsConsent? {

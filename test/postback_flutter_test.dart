@@ -202,6 +202,125 @@ void main() {
     });
   });
 
+  test('sendEvent ignores custom events without a valid name', () async {
+    expect(
+      await Postback.instance.sendEvent(PostbackEventType.custom),
+      false,
+    );
+    expect(
+      await Postback.instance.sendEvent(
+        PostbackEventType.custom,
+        name: '   ',
+      ),
+      false,
+    );
+    expect(
+      await Postback.instance.sendEvent(
+        PostbackEventType.custom,
+        name: 'n' * 256,
+      ),
+      false,
+    );
+    expect(
+      await Postback.instance.sendEvent(
+        PostbackEventType.custom,
+        name: '😀' * 128,
+      ),
+      false,
+    );
+    expect(
+      await Postback.instance.sendEvent(
+        PostbackEventType.custom,
+        name: 'checkout\u0000complete',
+      ),
+      false,
+    );
+    expect(calls, isEmpty);
+  });
+
+  test('sendEvent trims custom names and accepts the 255 UTF-16 unit boundary',
+      () async {
+    final boundaryName = '${'😀' * 127}x';
+    expect(boundaryName.length, 255);
+
+    expect(
+      await Postback.instance.sendEvent(
+        PostbackEventType.custom,
+        name: '  $boundaryName  ',
+      ),
+      true,
+    );
+
+    expect(calls.single.method, 'sendEvent');
+    expect(calls.single.arguments, {
+      'eventType': 'custom',
+      'name': boundaryName,
+      'revenue': null,
+      'currency': null,
+      'parameters': null,
+    });
+  });
+
+  test('sendEvent omits an invalid optional name from built-in events',
+      () async {
+    expect(
+      await Postback.instance.sendEvent(
+        PostbackEventType.purchase,
+        name: 'n' * 256,
+      ),
+      true,
+    );
+
+    expect(calls.single.method, 'sendEvent');
+    expect(calls.single.arguments, {
+      'eventType': 'purchase',
+      'name': null,
+      'revenue': null,
+      'currency': null,
+      'parameters': null,
+    });
+
+    await Postback.instance.sendEvent(
+      PostbackEventType.login,
+      name: 'opened\u0000home',
+    );
+    expect(calls[1].arguments, {
+      'eventType': 'login',
+      'name': null,
+      'revenue': null,
+      'currency': null,
+      'parameters': null,
+    });
+  });
+
+  test('sendEvent only forwards normalized three-letter ASCII currency codes',
+      () async {
+    await Postback.instance.sendEvent(
+      PostbackEventType.purchase,
+      params: {'revenue': 2.5, 'currency': ' usd '},
+    );
+    await Postback.instance.sendEvent(
+      PostbackEventType.purchase,
+      params: {'revenue': 3.5, 'currency': 'éur'},
+    );
+
+    expect(calls, hasLength(2));
+    expect(calls[0].arguments, {
+      'eventType': 'purchase',
+      'name': null,
+      'revenue': 2.5,
+      'currency': 'USD',
+      'parameters': null,
+    });
+    expect(calls[1].arguments, {
+      'eventType': 'purchase',
+      'name': null,
+      'revenue': 3.5,
+      'currency': null,
+      'parameters': null,
+    });
+  });
+
   test('public API returns typed values', () async {
     responseMap['getAttribution'] = {
       'isAttributed': true,

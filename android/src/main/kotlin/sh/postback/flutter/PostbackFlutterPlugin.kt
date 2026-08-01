@@ -75,17 +75,23 @@ class PostbackFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
 
             "sendEvent" -> {
                 val eventTypeStr = call.argument<String>("eventType") ?: "custom"
+                val type = PostbackEventType.entries.find { it.wireValue == eventTypeStr } ?: PostbackEventType.CUSTOM
+                val normalizedName = normalizedEventName(call.argument<String>("name"))
+                if (type == PostbackEventType.CUSTOM && normalizedName == null) {
+                    result.success(false)
+                    return
+                }
+
                 runAsync(result, "SEND_EVENT_ERROR") {
-                    val type = PostbackEventType.entries.find { it.wireValue == eventTypeStr } ?: PostbackEventType.CUSTOM
-                    val name = call.argument<String>("name")
                     val params = mutableMapOf<String, Any?>()
                     call.argument<Map<String, Any?>>("parameters")?.forEach { (k, v) -> params[k] = v }
                     val revenue = numberArgument(call, "revenue")
-                    val currency = call.argument<String>("currency")
+                    val currency = normalizedCurrency(call.argument<String>("currency") ?: params["currency"] as? String)
+                    params.remove("currency")
                     call.argument<Map<String, Any?>>("googleAdsConsent")?.let { params["googleAdsConsent"] = it }
                     if (revenue != null) params["revenue"] = revenue
                     if (currency != null) params["currency"] = currency
-                    sdk().sendEvent(type, name, if (params.isNotEmpty()) params else null)
+                    sdk().sendEvent(type, normalizedName, if (params.isNotEmpty()) params else null)
                     result.success(true)
                 }
             }
@@ -231,6 +237,21 @@ class PostbackFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
         }
     }
 
+    private fun normalizedEventName(name: String?): String? {
+        val normalized = name?.trim()
+        return normalized?.takeIf {
+            it.isNotEmpty() && it.length <= MAX_EVENT_NAME_LENGTH && '\u0000' !in it
+        }
+    }
+
+    private fun normalizedCurrency(currency: String?): String? {
+        val normalized = currency?.trim() ?: return null
+        if (normalized.length != 3 || normalized.any { it !in 'A'..'Z' && it !in 'a'..'z' }) {
+            return null
+        }
+        return normalized.uppercase(java.util.Locale.US)
+    }
+
     private fun googleAdsConsentFrom(value: Map<String, Any?>?): GoogleAdsConsent? {
         val status = googleAdsConsentStatus(value?.get("adUserData")) ?: return null
         return GoogleAdsConsent(status)
@@ -272,5 +293,9 @@ class PostbackFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
         attr.utmContent?.let { map["utmContent"] = it }
         attr.utmTerm?.let { map["utmTerm"] = it }
         return map
+    }
+
+    private companion object {
+        const val MAX_EVENT_NAME_LENGTH = 255
     }
 }

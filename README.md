@@ -15,7 +15,7 @@ Add the package to `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  postback_flutter: ^1.0.0
+  postback_flutter: ^1.0.1
 ```
 
 Fetch dependencies:
@@ -94,7 +94,7 @@ await Postback.instance.sendEvent(
 );
 ```
 
-`sendEvent` resolves once the native side has queued the event locally. The actual HTTP send happens on the next flush trigger.
+`sendEvent` resolves to `true` once the native side has queued the event locally. It resolves to `false` when a custom event is ignored because its name is missing or invalid. The actual HTTP send happens on the next flush trigger.
 
 ### Built-in event types
 
@@ -102,7 +102,7 @@ await Postback.instance.sendEvent(
 
 ### Revenue events
 
-Pass `revenue` (or `price` as an alias) plus `currency`. Currency must be a 3-letter ISO code; anything else is dropped on the native side before the request goes out.
+Pass `revenue` (or `price` as an alias) plus `currency`. Currency is trimmed, must contain exactly three ASCII letters, and is normalized to uppercase. An invalid currency is omitted while the event still sends.
 
 ```dart
 await Postback.instance.sendEvent(
@@ -125,7 +125,7 @@ await Postback.instance.sendEvent(
 );
 ```
 
-Use `name` to label custom events. Keep the name stable so your dashboard groups them correctly.
+Custom events require a `name` containing 1–255 UTF-16 code units after trimming, with no NUL (`U+0000`) characters. A custom event with a missing or invalid name is ignored. Keep the name stable so your dashboard groups it correctly.
 
 ## Read attribution
 

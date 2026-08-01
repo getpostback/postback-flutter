@@ -68,16 +68,39 @@ class Postback {
 
   Future<bool> sendEvent(PostbackEventType eventType,
       {String? name, Map<String, Object?>? params}) {
+    final normalizedName = _normalizedEventName(name);
+    if (eventType == PostbackEventType.custom && normalizedName == null) {
+      return Future<bool>.value(false);
+    }
+
     final googleAdsConsent = _googleAdsConsentValue(params);
     return PostbackNative.sendEvent({
       'eventType': postbackEventTypeValues[eventType],
-      'name': name,
+      'name': normalizedName,
       'revenue': params?['revenue'] ?? params?['price'],
-      'currency': params?['currency'],
+      'currency': _normalizedCurrency(params?['currency']),
       if (googleAdsConsent != null)
         'googleAdsConsent': googleAdsConsent.toJson(),
       'parameters': _eventParametersWithoutHoistedFields(params),
     });
+  }
+
+  static String? _normalizedEventName(String? name) {
+    final normalized = name?.trim();
+    if (normalized == null ||
+        normalized.isEmpty ||
+        normalized.length > 255 ||
+        normalized.contains('\u0000')) {
+      return null;
+    }
+    return normalized;
+  }
+
+  static String? _normalizedCurrency(Object? currency) {
+    if (currency is! String) return null;
+    final normalized = currency.trim();
+    if (!RegExp(r'^[A-Za-z]{3}$').hasMatch(normalized)) return null;
+    return normalized.toUpperCase();
   }
 
   static Map<String, Object?>? _eventParametersWithoutHoistedFields(
