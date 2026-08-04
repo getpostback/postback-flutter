@@ -1,5 +1,5 @@
 group 'sh.postback.flutter'
-version '1.0.1'
+version '1.0.2'
 
 buildscript {
     ext.kotlin_version = '2.0.21'
