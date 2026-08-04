@@ -206,18 +206,7 @@ class PostbackFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                 }
             }
 
-            "getWebViewUserAgent" -> {
-                runAsync(result, "WEBVIEW_USER_AGENT_ERROR") {
-                    val userAgent = PostbackNative(context)
-                        .getDeviceInfo(includeAdvertisingId = false)
-                        .sdkWebViewUserAgent
-                    result.success(userAgent)
-                }
-            }
-
             "getAdServicesToken" -> result.success(null) // iOS only
-
-            "requestTrackingAuthorization" -> result.success(PostbackNative(context).requestTrackingAuthorization())
 
             else -> result.notImplemented()
         }

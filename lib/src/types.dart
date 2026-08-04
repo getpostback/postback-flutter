@@ -181,10 +181,6 @@ class DeviceInfo {
     this.osVersion,
     this.appVersion,
     this.gaid,
-    this.idfv,
-    this.idfa,
-    this.adServicesToken,
-    this.attStatus,
   });
   factory DeviceInfo.fromJson(Map<dynamic, dynamic> json) {
     return DeviceInfo(
@@ -226,10 +222,6 @@ class DeviceInfo {
       osVersion: json['osVersion'] as String?,
       appVersion: json['appVersion'] as String?,
       gaid: json['gaid'] as String?,
-      idfv: json['idfv'] as String?,
-      idfa: json['idfa'] as String?,
-      adServicesToken: json['adServicesToken'] as String?,
-      attStatus: json['attStatus'] as String?,
     );
   }
   final String? deviceModel;
@@ -268,10 +260,6 @@ class DeviceInfo {
   final String? osVersion;
   final String? appVersion;
   final String? gaid;
-  final String? idfv;
-  final String? idfa;
-  final String? adServicesToken;
-  final String? attStatus;
 }
 
 class TestEventResult {

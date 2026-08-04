@@ -30,3 +30,37 @@ jobs:
     permissions:
       id-token: write
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+
+  github-release:
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Create GitHub Release
+        run: |
+          set -euo pipefail
+
+          RELEASE_TAG="${GITHUB_REF_NAME}"
+          if gh release view "${RELEASE_TAG}" >/dev/null 2>&1; then
+            RELEASE_TAG_NAME="$(gh release view "${RELEASE_TAG}" --json tagName --jq '.tagName')"
+            RELEASE_IS_DRAFT="$(gh release view "${RELEASE_TAG}" --json isDraft --jq '.isDraft')"
+            RELEASE_IS_PRERELEASE="$(gh release view "${RELEASE_TAG}" --json isPrerelease --jq '.isPrerelease')"
+            if [ "${RELEASE_TAG_NAME}" != "${RELEASE_TAG}" ] || \
+               [ "${RELEASE_IS_DRAFT}" != "false" ] || \
+               [ "${RELEASE_IS_PRERELEASE}" != "false" ]; then
+              echo "Unexpected GitHub Release state: tag=${RELEASE_TAG_NAME}, draft=${RELEASE_IS_DRAFT}, prerelease=${RELEASE_IS_PRERELEASE}" >&2
+              exit 1
+            fi
+            echo "GitHub Release ${RELEASE_TAG} already exists; leaving it unchanged"
+            exit 0
+          fi
+
+          gh release create "${RELEASE_TAG}" \
+            --verify-tag \
+            --title "postback_flutter ${RELEASE_TAG}" \
+            --generate-notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}

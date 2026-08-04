@@ -1,4 +1,8 @@
 {
   "ios": "1.0.1",
-  "android": "1.0.1"
+  "android": "1.0.1",
+  "artifacts": {
+    "iosXcframeworkSha256": "57a4a664d1b1c83970e4720e9e22d0b8ef1bdf4b07ab528b693e23b93f21df1c",
+    "androidAarSha256": "99f1525944e1fd60414c531230bf72c42f35f6eadf6b4f696818020da15a210e"
+  }
 }

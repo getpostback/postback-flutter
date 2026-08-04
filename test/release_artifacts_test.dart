@@ -25,6 +25,14 @@ void main() {
     expect(manifest, contains('com.google.android.gms.permission.AD_ID'));
   });
 
+  test('iOS package does not link ATT or advertising identifier frameworks', () {
+    final podspec = File('ios/postback_flutter.podspec').readAsStringSync();
+
+    expect(podspec, isNot(contains('AppTrackingTransparency')));
+    expect(podspec, isNot(contains('AdSupport')));
+    expect(podspec, contains("s.weak_frameworks = 'AdServices'"));
+  });
+
   test('android wrapper declares local AAR runtime dependencies', () {
     final gradle = File('android/build.gradle').readAsStringSync();
 

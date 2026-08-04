@@ -23,22 +23,11 @@ void main() {
           'gclid': 'gclid_123',
         },
         'getDeviceInfo': {
-          'deviceModel': 'iPhone15,2',
-          'screenScale': 3,
-          'hardwareConcurrency': 6,
-          'preferredLanguages': ['en-US', 'fr-FR'],
-          'gpuRenderer': 'Apple GPU',
-          'connectionType': 'cellular',
-          'networkType': '5g',
-          'colorScheme': 'dark',
+          'sdkPlatform': 'ios',
           'sdkVersion': '1.0.0',
-          'sdkWebViewUserAgent':
-              'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
-          'locale': 'en-US',
-          'gaid': '38400000-8cf0-11bd-b23e-10b96e40000d',
+          'osVersion': '18.7',
+          'appVersion': '1.0',
         },
-        'getWebViewUserAgent':
-            'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
       });
 
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
@@ -79,7 +68,8 @@ void main() {
     });
   });
 
-  test('configure accepts apiKey overload and endpointBaseUrl options', () async {
+  test('configure accepts apiKey overload and endpointBaseUrl options',
+      () async {
     final configured = await Postback.instance.configure(
       'test-key',
       endpointBaseUrl: 'https://edge.example.com',
@@ -345,30 +335,10 @@ void main() {
     expect(attribution?.link?['name'], 'spring');
     expect(attributionParams['gclid'], 'gclid_123');
     expect(postbackId, 'app_123');
-    expect(deviceInfo.deviceModel, 'iPhone15,2');
-    expect(deviceInfo.screenScale, 3);
-    expect(deviceInfo.hardwareConcurrency, 6);
-    expect(deviceInfo.preferredLanguages, ['en-US', 'fr-FR']);
-    expect(deviceInfo.gpuRenderer, 'Apple GPU');
-    expect(deviceInfo.connectionType, 'cellular');
-    expect(deviceInfo.networkType, '5g');
-    expect(deviceInfo.colorScheme, 'dark');
+    expect(deviceInfo.sdkPlatform, 'ios');
     expect(deviceInfo.sdkVersion, '1.0.0');
-    expect(
-      deviceInfo.sdkWebViewUserAgent,
-      'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
-    );
-    expect(deviceInfo.locale, 'en-US');
-    expect(deviceInfo.gaid, '38400000-8cf0-11bd-b23e-10b96e40000d');
-  });
-
-  test('native WebView user-agent helper is available for diagnostics',
-      () async {
-    final userAgent = await PostbackNative.getWebViewUserAgent();
-
-    expect(userAgent,
-        'Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148');
-    expect(calls.single.method, 'getWebViewUserAgent');
+    expect(deviceInfo.osVersion, '18.7');
+    expect(deviceInfo.appVersion, '1.0');
   });
 
   test('refreshAttribution returns updated native attribution', () async {
@@ -389,7 +359,6 @@ void main() {
   test('native utility API surface matches documented wrapper methods',
       () async {
     await PostbackNative.getAdServicesToken();
-    await PostbackNative.requestTrackingAuthorization();
     await Postback.instance.refreshAttribution();
     await Postback.instance.enableAppleAdsAttribution();
     await Postback.instance.destroy();
@@ -398,7 +367,6 @@ void main() {
         calls.map((call) => call.method),
         containsAll(<String>[
           'getAdServicesToken',
-          'requestTrackingAuthorization',
           'refreshAttribution',
           'enableAppleAdsAttribution',
           'destroy',

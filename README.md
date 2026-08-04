@@ -127,6 +127,8 @@ await Postback.instance.sendEvent(
 
 Custom events require a `name` containing 1–255 UTF-16 code units after trimming, with no NUL (`U+0000`) characters. A custom event with a missing or invalid name is ignored. Keep the name stable so your dashboard groups it correctly.
 
+Names on built-in events are optional; an invalid optional name is omitted while the event still sends. Events restored from an older native queue are revalidated on flush: invalid legacy custom events are dropped, while invalid legacy names on built-in events are omitted. Invalid legacy currency fields are also omitted on Android; current cross-platform calls normalize currency before queuing on either platform.
+
 ## Read attribution
 
 Once an install registers, attribution is cached on the native side. You can read it any time:
@@ -158,24 +160,9 @@ final updated = await Postback.instance.refreshAttribution();
 debugPrint('source = ${updated?.source}');
 ```
 
-## App Tracking Transparency (iOS only)
+## Privacy on iOS
 
-```dart
-final authorized = await PostbackNative.requestTrackingAuthorization();
-```
-
-The helper waits for the app to reach foreground-active before showing the system prompt, so calling it from `main()` or `initState()` is safe.
-
-Add `NSUserTrackingUsageDescription` to `ios/Runner/Info.plist`:
-
-```xml
-<key>NSUserTrackingUsageDescription</key>
-<string>This identifier helps us deliver personalized ads.</string>
-```
-
-If you use SKAdNetwork postbacks, also add `NSAdvertisingAttributionReportEndpoint`.
-
-`PostbackNative.requestTrackingAuthorization()` resolves `true` on Android without prompting; ATT is iOS-only.
+The iOS SDK does not import AppTrackingTransparency or AdSupport, request ATT permission, read IDFA or IDFV, or collect device/browser characteristics for fingerprint matching. Do not add `NSUserTrackingUsageDescription` solely for Postback. Apple Ads attribution uses Apple's privacy-preserving AdServices token.
 
 ## Google Advertising ID (Android only)
 
@@ -250,9 +237,8 @@ import 'package:postback_flutter/postback_flutter.dart';
 import 'package:postback_flutter/postback_flutter.dart';
 ```
 
-- `getDeviceInfo()` returns the attribution device signal payload.
+- `getDeviceInfo()` returns SDK/platform, OS, and app version metadata on iOS. Android also returns its platform-specific attribution metadata.
 - `getAdServicesToken()` returns Apple's AdServices token on iOS; `null` on Android.
-- `requestTrackingAuthorization()` shows the ATT prompt on iOS; resolves `true` on Android.
 
 ## Support
 
