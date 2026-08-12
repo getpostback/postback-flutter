@@ -1,7 +1,5 @@
 import 'package:flutter/services.dart';
 
-import 'types.dart';
-
 class PostbackNative {
   PostbackNative._();
 
@@ -75,19 +73,4 @@ class PostbackNative {
     return _channel.invokeMethod<void>('destroy');
   }
 
-  // Utility
-
-  static Future<DeviceInfo> getDeviceInfo() async {
-    final result =
-        await _channel.invokeMethod<Map<dynamic, dynamic>>('getDeviceInfo');
-    return DeviceInfo.fromJson(result ?? const <dynamic, dynamic>{});
-  }
-
-  static Future<String?> getWebViewUserAgent() {
-    return _channel.invokeMethod<String>('getWebViewUserAgent');
-  }
-
-  static Future<String?> getAdServicesToken() {
-    return _channel.invokeMethod<String>('getAdServicesToken');
-  }
 }

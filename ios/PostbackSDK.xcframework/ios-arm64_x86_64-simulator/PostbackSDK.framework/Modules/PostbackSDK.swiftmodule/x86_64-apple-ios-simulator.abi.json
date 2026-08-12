@@ -13,27 +13,6 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "PostbackSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "PostbackSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "PostbackSDK"
-      },
-      {
-        "kind": "Import",
         "name": "CryptoKit",
         "printedName": "CryptoKit",
         "declKind": "Import",
@@ -1787,7 +1766,10 @@
             "declKind": "EnumElement",
             "usr": "s:11PostbackSDK11InstallTypeO05freshC0yA2CmF",
             "mangledName": "$s11PostbackSDK11InstallTypeO05freshC0yA2CmF",
-            "moduleName": "PostbackSDK"
+            "moduleName": "PostbackSDK",
+            "spi_group_names": [
+              "PostbackTesting"
+            ]
           },
           {
             "kind": "Var",
@@ -1824,7 +1806,10 @@
             "declKind": "EnumElement",
             "usr": "s:11PostbackSDK11InstallTypeO9reinstallyA2CmF",
             "mangledName": "$s11PostbackSDK11InstallTypeO9reinstallyA2CmF",
-            "moduleName": "PostbackSDK"
+            "moduleName": "PostbackSDK",
+            "spi_group_names": [
+              "PostbackTesting"
+            ]
           },
           {
             "kind": "Var",
@@ -1861,7 +1846,10 @@
             "declKind": "EnumElement",
             "usr": "s:11PostbackSDK11InstallTypeO9appUpdateyA2CmF",
             "mangledName": "$s11PostbackSDK11InstallTypeO9appUpdateyA2CmF",
-            "moduleName": "PostbackSDK"
+            "moduleName": "PostbackSDK",
+            "spi_group_names": [
+              "PostbackTesting"
+            ]
           },
           {
             "kind": "Var",
@@ -1898,7 +1886,10 @@
             "declKind": "EnumElement",
             "usr": "s:11PostbackSDK11InstallTypeO16sdkAddedOnUpdateyA2CmF",
             "mangledName": "$s11PostbackSDK11InstallTypeO16sdkAddedOnUpdateyA2CmF",
-            "moduleName": "PostbackSDK"
+            "moduleName": "PostbackSDK",
+            "spi_group_names": [
+              "PostbackTesting"
+            ]
           },
           {
             "kind": "Var",
@@ -1935,7 +1926,10 @@
             "declKind": "EnumElement",
             "usr": "s:11PostbackSDK11InstallTypeO7restoreyA2CmF",
             "mangledName": "$s11PostbackSDK11InstallTypeO7restoreyA2CmF",
-            "moduleName": "PostbackSDK"
+            "moduleName": "PostbackSDK",
+            "spi_group_names": [
+              "PostbackTesting"
+            ]
           },
           {
             "kind": "Var",
@@ -1972,7 +1966,10 @@
             "declKind": "EnumElement",
             "usr": "s:11PostbackSDK11InstallTypeO7unknownyA2CmF",
             "mangledName": "$s11PostbackSDK11InstallTypeO7unknownyA2CmF",
-            "moduleName": "PostbackSDK"
+            "moduleName": "PostbackSDK",
+            "spi_group_names": [
+              "PostbackTesting"
+            ]
           },
           {
             "kind": "Constructor",
@@ -2005,6 +2002,9 @@
             "mangledName": "$s11PostbackSDK11InstallTypeO8rawValueACSgSS_tcfc",
             "moduleName": "PostbackSDK",
             "implicit": true,
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "init_kind": "Designated"
           },
           {
@@ -2024,6 +2024,9 @@
             "mangledName": "$s11PostbackSDK11InstallTypeO8rawValueSSvp",
             "moduleName": "PostbackSDK",
             "implicit": true,
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "accessors": [
               {
                 "kind": "Accessor",
@@ -2042,6 +2045,9 @@
                 "mangledName": "$s11PostbackSDK11InstallTypeO8rawValueSSvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -2075,6 +2081,9 @@
             "declAttributes": [
               "Nonisolated"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "accessors": [
               {
                 "kind": "Accessor",
@@ -2102,6 +2111,9 @@
                 "moduleName": "PostbackSDK",
                 "static": true,
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -2112,7 +2124,11 @@
         "mangledName": "$s11PostbackSDK11InstallTypeO",
         "moduleName": "PostbackSDK",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "PostbackTesting"
         ],
         "enumRawTypeName": "String",
         "conformances": [
@@ -2248,6 +2264,48 @@
         "moduleName": "PostbackSDK"
       },
       {
+        "kind": "Import",
+        "name": "AdSupport",
+        "printedName": "AdSupport",
+        "declKind": "Import",
+        "moduleName": "PostbackSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "AppTrackingTransparency",
+        "printedName": "AppTrackingTransparency",
+        "declKind": "Import",
+        "moduleName": "PostbackSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Metal",
+        "printedName": "Metal",
+        "declKind": "Import",
+        "moduleName": "PostbackSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Network",
+        "printedName": "Network",
+        "declKind": "Import",
+        "moduleName": "PostbackSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "CoreTelephony",
+        "printedName": "CoreTelephony",
+        "declKind": "Import",
+        "moduleName": "PostbackSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "PostbackSDK"
+      },
+      {
         "kind": "TypeDecl",
         "name": "PostbackNative",
         "printedName": "PostbackNative",
@@ -2273,6 +2331,9 @@
               "AccessControl",
               "Custom"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "funcSelfKind": "NonMutating"
           },
           {
@@ -2296,6 +2357,9 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "accessors": [
               {
                 "kind": "Accessor",
@@ -2314,6 +2378,9 @@
                 "mangledName": "$s11PostbackSDK0A6NativeO34signalCollectionModeForDiagnosticsSSvgZ",
                 "moduleName": "PostbackSDK",
                 "static": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -2346,6 +2413,9 @@
             "declAttributes": [
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "funcSelfKind": "NonMutating"
           },
           {
@@ -2376,6 +2446,9 @@
             "declAttributes": [
               "AccessControl",
               "Custom"
+            ],
+            "spi_group_names": [
+              "PostbackTesting"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -2409,6 +2482,9 @@
             "static": true,
             "declAttributes": [
               "AccessControl"
+            ],
+            "spi_group_names": [
+              "PostbackTesting"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -2446,6 +2522,9 @@
             "declAttributes": [
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "funcSelfKind": "NonMutating"
           },
           {
@@ -2472,6 +2551,9 @@
             "static": true,
             "declAttributes": [
               "AccessControl"
+            ],
+            "spi_group_names": [
+              "PostbackTesting"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -2510,6 +2592,9 @@
               "AccessControl",
               "RawDocComment"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "funcSelfKind": "NonMutating"
           }
         ],
@@ -2518,7 +2603,11 @@
         "mangledName": "$s11PostbackSDK0A6NativeO",
         "moduleName": "PostbackSDK",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "PostbackTesting"
         ],
         "conformances": [
           {
@@ -6804,6 +6893,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -6832,6 +6924,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11deviceModelSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -6864,6 +6959,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -6892,6 +6990,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11screenWidthSiSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -6924,6 +7025,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -6952,6 +7056,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV12screenHeightSiSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -6984,6 +7091,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7012,6 +7122,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV17nativeScreenWidthSiSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7044,6 +7157,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7072,6 +7188,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV18nativeScreenHeightSiSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7104,6 +7223,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7132,6 +7254,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11screenScaleSdSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7164,6 +7289,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7192,6 +7320,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV19hardwareConcurrencySiSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7224,6 +7355,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7252,6 +7386,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV14processorCountSiSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7284,6 +7421,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7312,6 +7452,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV14maxTouchPointsSiSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7344,6 +7487,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7372,6 +7518,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV8memoryGbSiSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7404,6 +7553,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7432,6 +7584,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV12lowPowerModeSbSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7464,6 +7619,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7492,6 +7650,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV12batteryStateSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7524,6 +7685,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7552,6 +7716,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV18batteryLevelBucketSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7592,6 +7759,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7628,6 +7798,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV18preferredLanguagesSaySSGSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7660,6 +7833,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7688,6 +7864,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV21timezoneOffsetMinutesSiSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7720,6 +7899,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7748,6 +7930,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV18deviceManufacturerSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7780,6 +7965,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7808,6 +7996,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11deviceBrandSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7840,6 +8031,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7868,6 +8062,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV13deviceProductSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7900,6 +8097,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7928,6 +8128,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV14deviceHardwareSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -7960,6 +8163,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -7988,6 +8194,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV9gpuVendorSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8020,6 +8229,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8048,6 +8260,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11gpuRendererSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8080,6 +8295,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8108,6 +8326,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV14connectionTypeSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8140,6 +8361,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8168,6 +8392,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11networkTypeSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8200,6 +8427,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8228,6 +8458,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11installTypeAA07InstallF0OSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8260,6 +8493,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8288,6 +8524,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV5isVPNSbSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8320,6 +8559,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8348,6 +8590,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV13isLowDataModeSbSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8380,6 +8625,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8408,6 +8656,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV18isExpensiveNetworkSbSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8440,6 +8691,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8468,6 +8722,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11colorSchemeSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8502,6 +8759,9 @@
               "Available",
               "RawDocComment"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "accessors": [
               {
                 "kind": "Accessor",
@@ -8527,6 +8787,9 @@
                 "usr": "s:11PostbackSDK10DeviceInfoV11carrierNameSSSgvg",
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11carrierNameSSSgvg",
                 "moduleName": "PostbackSDK",
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8561,6 +8824,9 @@
               "Available",
               "RawDocComment"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "accessors": [
               {
                 "kind": "Accessor",
@@ -8586,6 +8852,9 @@
                 "usr": "s:11PostbackSDK10DeviceInfoV18carrierCountryCodeSSSgvg",
                 "mangledName": "$s11PostbackSDK10DeviceInfoV18carrierCountryCodeSSSgvg",
                 "moduleName": "PostbackSDK",
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8620,6 +8889,9 @@
               "Available",
               "RawDocComment"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "accessors": [
               {
                 "kind": "Accessor",
@@ -8645,6 +8917,9 @@
                 "usr": "s:11PostbackSDK10DeviceInfoV17mobileCountryCodeSSSgvg",
                 "mangledName": "$s11PostbackSDK10DeviceInfoV17mobileCountryCodeSSSgvg",
                 "moduleName": "PostbackSDK",
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8679,6 +8954,9 @@
               "Available",
               "RawDocComment"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "accessors": [
               {
                 "kind": "Accessor",
@@ -8704,6 +8982,9 @@
                 "usr": "s:11PostbackSDK10DeviceInfoV17mobileNetworkCodeSSSgvg",
                 "mangledName": "$s11PostbackSDK10DeviceInfoV17mobileNetworkCodeSSSgvg",
                 "moduleName": "PostbackSDK",
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8736,6 +9017,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8764,6 +9048,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV11sdkPlatformSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8796,6 +9083,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8824,6 +9114,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV10sdkVersionSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8856,6 +9149,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8884,6 +9180,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV19sdkWebViewUserAgentSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8916,6 +9215,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -8944,6 +9246,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV6localeSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -8976,6 +9281,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -9004,6 +9312,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV8timezoneSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -9036,6 +9347,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -9064,6 +9378,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV9osVersionSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -9096,6 +9413,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -9124,6 +9444,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV10appVersionSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -9156,6 +9479,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -9184,6 +9510,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV4idfaSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -9216,6 +9545,9 @@
               "HasStorage",
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -9244,6 +9576,9 @@
                 "mangledName": "$s11PostbackSDK10DeviceInfoV4idfvSSSgvg",
                 "moduleName": "PostbackSDK",
                 "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -9890,6 +10225,9 @@
             "declAttributes": [
               "AccessControl"
             ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "init_kind": "Designated"
           },
           {
@@ -9915,6 +10253,9 @@
             "mangledName": "$s11PostbackSDK10DeviceInfoV4fromACs7Decoder_p_tKcfc",
             "moduleName": "PostbackSDK",
             "implicit": true,
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           },
@@ -9940,6 +10281,9 @@
             "mangledName": "$s11PostbackSDK10DeviceInfoV6encode2toys7Encoder_p_tKF",
             "moduleName": "PostbackSDK",
             "implicit": true,
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
           },
@@ -9973,6 +10317,9 @@
             "moduleName": "PostbackSDK",
             "static": true,
             "implicit": true,
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
             "funcSelfKind": "NonMutating"
           }
         ],
@@ -9981,7 +10328,11 @@
         "mangledName": "$s11PostbackSDK10DeviceInfoV",
         "moduleName": "PostbackSDK",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "SPIAccessControl"
+        ],
+        "spi_group_names": [
+          "PostbackTesting"
         ],
         "conformances": [
           {
@@ -10871,688 +11222,695 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/postback-ios\/IntermediateBuildFilesPath\/postback-ios.build\/Release-iphonesimulator\/PostbackSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
-      "kind": "StringLiteral",
-      "offset": 295,
-      "length": 26,
-      "value": "\"postback-ios_PostbackSDK\""
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/postback-ios\/IntermediateBuildFilesPath\/postback-ios.build\/Release-iphonesimulator\/PostbackSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
-      "kind": "Array",
-      "offset": 968,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/postback-ios\/IntermediateBuildFilesPath\/postback-ios.build\/Release-iphonesimulator\/PostbackSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
-      "kind": "StringLiteral",
-      "offset": 1495,
-      "length": 9,
-      "value": "\".bundle\""
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/.build\/xcframework\/dd-simulator\/Build\/Intermediates.noindex\/ArchiveIntermediates\/postback-ios\/IntermediateBuildFilesPath\/postback-ios.build\/Release-iphonesimulator\/PostbackSDK.build\/DerivedSources\/resource_bundle_accessor.swift",
-      "kind": "StringLiteral",
-      "offset": 1647,
-      "length": 54,
-      "value": "\"unable to find bundle named postback-ios_PostbackSDK\""
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 187,
       "length": 14,
       "value": "\"@postback:id\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 235,
       "length": 23,
       "value": "\"@postback:attribution\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 298,
       "length": 30,
       "value": "\"@postback:attribution_params\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 362,
       "length": 20,
       "value": "\"@postback:disabled\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 422,
       "length": 30,
       "value": "\"@postback:install_registered\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 494,
       "length": 33,
       "value": "\"@postback:server_install_stored\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 564,
       "length": 28,
       "value": "\"@postback:customer_user_id\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 621,
       "length": 19,
       "value": "\"@postback:api_key\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 679,
       "length": 29,
       "value": "\"@postback:install_timestamp\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 749,
       "length": 32,
       "value": "\"@postback:install_type_current\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 826,
       "length": 41,
       "value": "\"@postback:install_type_current_evidence\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 906,
       "length": 33,
       "value": "\"@postback:last_session_start_ms\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 1344,
       "length": 43,
       "value": "\"@postback:pending_ad_services_token_retry\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "Dictionary",
       "offset": 1567,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "BooleanLiteral",
       "offset": 1601,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "BooleanLiteral",
       "offset": 1637,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "BooleanLiteral",
       "offset": 1931,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "BooleanLiteral",
       "offset": 1969,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2013,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2051,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2098,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2601,
       "length": 2,
       "value": "50"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2916,
       "length": 6,
       "value": "95000"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2968,
       "length": 6,
       "value": "90000"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3024,
       "length": 3,
       "value": "255"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3083,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3088,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3093,
       "length": 4,
       "value": "1000"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3173,
       "length": 2,
       "value": "75"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3178,
       "length": 13,
       "value": "1000000000"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 17406,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "StringLiteral",
       "offset": 110,
       "length": 25,
       "value": "\"https:\/\/api.postback.sh\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "StringLiteral",
       "offset": 169,
       "length": 3,
       "value": "\"\/\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 701,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 731,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 855,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 900,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 943,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 1004,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 1058,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 1115,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "BooleanLiteral",
       "offset": 1162,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3622,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3710,
       "length": 17,
       "value": "\"CFBundleVersion\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3759,
       "length": 9,
       "value": "\"unknown\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3810,
       "length": 17,
       "value": "\"CFBundleVersion\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3843,
       "length": 9,
       "value": "\"unknown\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 243,
+      "offset": 266,
       "length": 15,
       "value": "\"fresh_install\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 299,
+      "offset": 322,
       "length": 12,
       "value": "\"app_update\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 340,
+      "offset": 363,
       "length": 21,
       "value": "\"sdk_added_on_update\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 1475,
+      "offset": 1498,
       "length": 14,
       "value": "\"device-token\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 4109,
+      "offset": 4132,
       "length": 35,
       "value": "\"@postback:install_state_record_v1\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 4174,
+      "offset": 4197,
       "length": 32,
       "value": "\"@postback:install_type_pending\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 4244,
+      "offset": 4267,
       "length": 33,
       "value": "\"@postback:install_type_evidence\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 4314,
+      "offset": 4337,
       "length": 40,
       "value": "\"@postback:install_type_last_successful\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 4399,
+      "offset": 4422,
       "length": 49,
       "value": "\"@postback:install_type_last_successful_evidence\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 4478,
+      "offset": 4501,
       "length": 32,
       "value": "\"@postback:install_type_current\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
-      "offset": 4548,
+      "offset": 4571,
       "length": 41,
       "value": "\"@postback:install_type_current_evidence\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 808,
+      "offset": 599,
       "length": 7,
-      "value": "\"1.1.0\""
+      "value": "\"2.0.0\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "kind": "BooleanLiteral",
+      "offset": 876,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "kind": "Array",
+      "offset": 986,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 1464,
+      "offset": 1191,
       "length": 13,
       "value": "\"sh.postback\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 1515,
+      "offset": 1242,
       "length": 83,
       "value": "\"Postback could not open UserDefaults suite sh.postback; falling back to standard.\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "kind": "StringLiteral",
+      "offset": 17438,
+      "length": 30,
+      "value": "\"sh.postback.sdk.network-path\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "kind": "BooleanLiteral",
+      "offset": 17528,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "kind": "BooleanLiteral",
+      "offset": 17561,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
       "kind": "StringLiteral",
       "offset": 79,
       "length": 23,
       "value": "\"@postback:event_queue\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
       "kind": "StringLiteral",
       "offset": 128,
       "length": 27,
       "value": "\"@postback:event_queue_ids\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
       "kind": "StringLiteral",
       "offset": 188,
       "length": 29,
       "value": "\"@postback:event_queue_item:\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
       "kind": "IntegerLiteral",
       "offset": 249,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
       "kind": "BooleanLiteral",
-      "offset": 676,
-      "length": 5,
-      "value": "false"
+      "offset": 132,
+      "length": 4,
+      "value": "true"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
       "kind": "StringLiteral",
-      "offset": 714,
-      "length": 17,
-      "value": "\"production_safe\""
+      "offset": 169,
+      "length": 14,
+      "value": "\"full_signals\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 91,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 109,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 127,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 146,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 248,
       "length": 15,
       "value": "\"session_start\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 297,
       "length": 9,
       "value": "\"sign_up\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 384,
       "length": 13,
       "value": "\"start_trial\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 424,
       "length": 18,
       "value": "\"add_payment_info\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 464,
       "length": 13,
       "value": "\"add_to_cart\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 503,
       "length": 17,
       "value": "\"add_to_wishlist\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 549,
       "length": 19,
       "value": "\"initiate_checkout\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 592,
       "length": 14,
       "value": "\"view_content\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 627,
       "length": 11,
       "value": "\"view_item\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 698,
       "length": 19,
       "value": "\"tutorial_complete\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 742,
       "length": 15,
       "value": "\"achieve_level\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 780,
       "length": 13,
       "value": "\"level_start\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 819,
       "length": 16,
       "value": "\"level_complete\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 3143,
       "length": 8,
       "value": "\"source\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 3363,
       "length": 12,
       "value": "\"confidence\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 3410,
       "length": 14,
       "value": "\"campaignName\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 12724,
+      "offset": 12747,
       "length": 13,
       "value": "\"carrierName\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 12778,
+      "offset": 12801,
       "length": 20,
       "value": "\"carrierCountryCode\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 12838,
+      "offset": 12861,
       "length": 19,
       "value": "\"mobileCountryCode\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 12897,
+      "offset": 12920,
       "length": 19,
       "value": "\"mobileNetworkCode\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 13216,
+      "offset": 13239,
       "length": 9,
       "value": "\"GRANTED\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 13244,
+      "offset": 13267,
       "length": 8,
       "value": "\"DENIED\""
     },
     {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 13276,
+      "offset": 13299,
       "length": 13,
       "value": "\"UNSPECIFIED\""
     }

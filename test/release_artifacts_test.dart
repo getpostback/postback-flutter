@@ -28,57 +28,50 @@ void main() {
     expect(manifest, contains('com.google.android.gms.permission.AD_ID'));
   });
 
-  test('iOS package links only production-safe native dependencies', () {
+  test('iOS package links full attribution dependencies without a prompt API', () {
     final podspec = File('ios/postback_flutter.podspec').readAsStringSync();
     final binary = latin1.decode(File(
             'ios/PostbackSDK.xcframework/ios-arm64/PostbackSDK.framework/PostbackSDK')
         .readAsBytesSync());
 
-    expect(podspec, isNot(contains('AppTrackingTransparency')));
+    expect(podspec, contains('AppTrackingTransparency'));
+    expect(podspec, contains("'Network'"));
+    expect(podspec, contains("'WebKit'"));
     for (final framework in <String>[
       'AdSupport',
       'CoreTelephony',
       'Metal',
-      'Network',
       'WebKit',
     ]) {
-      expect(podspec, isNot(contains("'$framework'")));
       expect(
         binary,
-        isNot(contains(
-            '/System/Library/Frameworks/$framework.framework/$framework')),
-        reason: 'production binary must not link $framework',
+        contains('/System/Library/Frameworks/$framework.framework/$framework'),
+        reason: 'release binary must link $framework',
       );
     }
+    expect(binary, contains('/usr/lib/swift/libswiftNetwork.dylib'));
     expect(podspec, contains("'Security'"));
-    expect(podspec, contains("s.weak_frameworks = 'AdServices', 'StoreKit'"));
-    expect(binary, isNot(contains('AppTrackingTransparency.framework')));
+    expect(podspec, contains("s.weak_frameworks = 'AdServices', 'AppTrackingTransparency', 'AdSupport', 'StoreKit'"));
+    expect(binary, contains('AppTrackingTransparency.framework'));
     expect(binary,
         contains('/System/Library/Frameworks/Security.framework/Security'));
     expect(binary,
         contains('/System/Library/Frameworks/StoreKit.framework/StoreKit'));
-    expect(binary, isNot(contains('ATTrackingManager')));
+    expect(binary, contains('ATTrackingManager'));
     expect(binary, isNot(contains('requestTrackingAuthorization')));
   });
 
-  test('iOS privacy manifest declares non-tracking collection', () {
-    final manifest = File(
-            'ios/PostbackSDK.xcframework/ios-arm64/PostbackSDK.framework/PrivacyInfo.xcprivacy')
-        .readAsStringSync();
-
-    expect(
-        manifest,
-        matches(RegExp(r'<key>NSPrivacyTracking</key>\s*<false\s*/>',
-            multiLine: true)));
-    expect(
-        manifest,
-        isNot(matches(RegExp(
-            r'<key>NSPrivacyCollectedDataTypeTracking</key>\s*<true\s*/>',
-            multiLine: true))));
-    expect(manifest, isNot(contains('NSPrivacyTrackingDomains')));
+  test('iOS binary distribution does not embed a privacy manifest', () {
+    for (final slice in <String>['ios-arm64', 'ios-arm64_x86_64-simulator']) {
+      expect(
+        File('ios/PostbackSDK.xcframework/$slice/PostbackSDK.framework/PrivacyInfo.xcprivacy')
+            .existsSync(),
+        isFalse,
+      );
+    }
   });
 
-  test('iOS bridge exposes lifecycle and safe metadata only', () {
+  test('iOS wrapper keeps the native signal collector out of its public bridge', () {
     final swiftInterface = File(
       'ios/PostbackSDK.xcframework/ios-arm64/PostbackSDK.framework/Modules/'
       'PostbackSDK.swiftmodule/arm64-apple-ios.swiftinterface',
@@ -86,107 +79,13 @@ void main() {
     final bridge =
         File('ios/Classes/PostbackFlutterPlugin.swift').readAsStringSync();
 
-    const sourceCompatibleFields = <String>[
-      'deviceModel',
-      'screenWidth',
-      'screenHeight',
-      'nativeScreenWidth',
-      'nativeScreenHeight',
-      'screenScale',
-      'hardwareConcurrency',
-      'processorCount',
-      'maxTouchPoints',
-      'memoryGb',
-      'lowPowerMode',
-      'batteryState',
-      'batteryLevelBucket',
-      'preferredLanguages',
-      'timezoneOffsetMinutes',
-      'deviceManufacturer',
-      'deviceBrand',
-      'deviceProduct',
-      'deviceHardware',
-      'gpuVendor',
-      'gpuRenderer',
-      'connectionType',
-      'networkType',
-      'installType',
-      'isVPN',
-      'isLowDataMode',
-      'isExpensiveNetwork',
-      'colorScheme',
-      'sdkPlatform',
-      'sdkVersion',
-      'sdkWebViewUserAgent',
-      'locale',
-      'timezone',
-      'osVersion',
-      'appVersion',
-      'idfa',
-      'idfv',
-    ];
-
-    for (final field in sourceCompatibleFields) {
-      expect(swiftInterface, contains('public let $field:'));
-    }
-
-    for (final field in <String>[
-      'installType',
-      'sdkPlatform',
-      'sdkVersion',
-      'osVersion',
-      'appVersion',
-    ]) {
-      expect(bridge, contains('dict["$field"] ='));
-    }
-
-    const omittedFields = <String>[
-      'deviceModel',
-      'screenWidth',
-      'screenHeight',
-      'nativeScreenWidth',
-      'nativeScreenHeight',
-      'screenScale',
-      'hardwareConcurrency',
-      'processorCount',
-      'maxTouchPoints',
-      'memoryGb',
-      'lowPowerMode',
-      'batteryState',
-      'batteryLevelBucket',
-      'preferredLanguages',
-      'timezoneOffsetMinutes',
-      'deviceManufacturer',
-      'deviceBrand',
-      'deviceProduct',
-      'deviceHardware',
-      'gpuVendor',
-      'gpuRenderer',
-      'connectionType',
-      'networkType',
-      'isVPN',
-      'isLowDataMode',
-      'isExpensiveNetwork',
-      'colorScheme',
-      'sdkWebViewUserAgent',
-      'locale',
-      'timezone',
-      'idfa',
-      'idfv',
-      'carrierName',
-      'carrierCountryCode',
-      'mobileCountryCode',
-      'mobileNetworkCode',
-    ];
-
-    for (final field in omittedFields) {
-      expect(bridge, isNot(contains('dict["$field"] =')));
-    }
-    expect(bridge, isNot(contains('PostbackNative.getWebViewUserAgent()')));
-    expect(
-        bridge,
-        matches(RegExp(r'case "getWebViewUserAgent":\s*result\(nil\)',
-            multiLine: true)));
+    expect(swiftInterface, isNot(contains('PostbackNative')));
+    expect(swiftInterface, isNot(contains('DeviceInfo')));
+    expect(swiftInterface, isNot(contains('InstallType')));
+    expect(bridge, isNot(contains('PostbackNative')));
+    expect(bridge, isNot(contains('getDeviceInfo')));
+    expect(bridge, isNot(contains('getWebViewUserAgent')));
+    expect(bridge, isNot(contains('getAdServicesToken')));
   });
 
   test('android wrapper declares local AAR runtime dependencies', () {
@@ -201,23 +100,9 @@ void main() {
     expect(gradle, contains('lifecycle-process:2.10.0'));
     expect(gradle, contains('play-services-ads-identifier:18.3.0'));
     expect(gradle, contains('installreferrer:installreferrer:2.2'));
-    expect(bridge, contains('getDeviceInfo(includeAdvertisingId = true)'));
-    expect(bridge, contains('"carrierName" to deviceInfo.carrierName'));
-    expect(bridge,
-        contains('"carrierCountryCode" to deviceInfo.carrierCountryCode'));
-    expect(bridge,
-        contains('"mobileCountryCode" to deviceInfo.mobileCountryCode'));
-    expect(bridge,
-        contains('"mobileNetworkCode" to deviceInfo.mobileNetworkCode'));
-    expect(bridge, contains('"gaid" to deviceInfo.gaid'));
-    expect(bridge, contains('"installReferrer" to deviceInfo.installReferrer'));
-    expect(
-        bridge,
-        contains(
-            '"referrerClickTimestamp" to deviceInfo.referrerClickTimestamp'));
-    expect(
-        bridge,
-        contains(
-            '"referrerInstallBeginTimestamp" to deviceInfo.referrerInstallBeginTimestamp'));
+    expect(bridge, isNot(contains('PostbackNative')));
+    expect(bridge, isNot(contains('getDeviceInfo')));
+    expect(bridge, isNot(contains('getWebViewUserAgent')));
+    expect(bridge, isNot(contains('getAdServicesToken')));
   });
 }

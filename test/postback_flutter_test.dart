@@ -22,14 +22,6 @@ void main() {
           'postbackId': 'app_123',
           'gclid': 'gclid_123',
         },
-        'getDeviceInfo': {
-          'installType': 'app_update',
-          'sdkPlatform': 'ios',
-          'sdkVersion': '1.0.0',
-          'osVersion': '18.7',
-          'appVersion': '1.0',
-        },
-        'getWebViewUserAgent': null,
       });
 
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
@@ -327,7 +319,6 @@ void main() {
     final attribution = await Postback.instance.getAttribution();
     final attributionParams = await Postback.instance.getAttributionParams();
     final postbackId = await Postback.instance.getPostbackId();
-    final deviceInfo = await PostbackNative.getDeviceInfo();
 
     expect(testResult.success, true);
     expect(testResult.message, 'ok');
@@ -337,50 +328,6 @@ void main() {
     expect(attribution?.link?['name'], 'spring');
     expect(attributionParams['gclid'], 'gclid_123');
     expect(postbackId, 'app_123');
-    expect(deviceInfo.installType, InstallType.appUpdate);
-    expect(deviceInfo.sdkPlatform, 'ios');
-    expect(deviceInfo.sdkVersion, '1.0.0');
-    expect(deviceInfo.osVersion, '18.7');
-    expect(deviceInfo.appVersion, '1.0');
-  });
-
-  test('shared device type retains Android diagnostics', () async {
-    responseMap['getDeviceInfo'] = {
-      'deviceModel': 'Pixel 10',
-      'screenWidth': 1080,
-      'networkType': '5g',
-      'carrierName': 'Example Mobile',
-      'gaid': '11111111-2222-3333-4444-555555555555',
-      'sdkPlatform': 'android',
-    };
-
-    final deviceInfo = await PostbackNative.getDeviceInfo();
-
-    expect(deviceInfo.deviceModel, 'Pixel 10');
-    expect(deviceInfo.screenWidth, 1080);
-    expect(deviceInfo.networkType, '5g');
-    expect(deviceInfo.carrierName, 'Example Mobile');
-    expect(deviceInfo.gaid, '11111111-2222-3333-4444-555555555555');
-    expect(deviceInfo.sdkPlatform, 'android');
-  });
-
-  test('unknown future install lifecycle values remain safe', () async {
-    responseMap['getDeviceInfo'] = {'installType': 'future_install_type'};
-
-    final deviceInfo = await PostbackNative.getDeviceInfo();
-
-    expect(deviceInfo.installType, InstallType.unknown);
-  });
-
-  test('install lifecycle enum preserves the native wire contract', () {
-    expect(installTypeValues, {
-      InstallType.freshInstall: 'fresh_install',
-      InstallType.reinstall: 'reinstall',
-      InstallType.appUpdate: 'app_update',
-      InstallType.sdkAddedOnUpdate: 'sdk_added_on_update',
-      InstallType.restore: 'restore',
-      InstallType.unknown: 'unknown',
-    });
   });
 
   test('refreshAttribution returns updated native attribution', () async {
@@ -398,10 +345,7 @@ void main() {
     expect(attribution?.appleAds?['campaignId'], '123');
   });
 
-  test('native utility API surface matches documented wrapper methods',
-      () async {
-    await PostbackNative.getWebViewUserAgent();
-    await PostbackNative.getAdServicesToken();
+  test('public API surface matches documented wrapper methods', () async {
     await Postback.instance.refreshAttribution();
     await Postback.instance.enableAppleAdsAttribution();
     await Postback.instance.destroy();
@@ -409,8 +353,6 @@ void main() {
     expect(
         calls.map((call) => call.method),
         containsAll(<String>[
-          'getWebViewUserAgent',
-          'getAdServicesToken',
           'refreshAttribution',
           'enableAppleAdsAttribution',
           'destroy',

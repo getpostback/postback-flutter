@@ -183,29 +183,6 @@ public class PostbackFlutterPlugin: NSObject, FlutterPlugin {
         result(nil)
       }
 
-    // MARK: - Utility
-
-    case "getDeviceInfo":
-      Task { @MainActor in
-        let info = PostbackNative.getDeviceInfo()
-        // Keep the public bridge on the production allowlist even though the
-        // native collector also returns experimental compatibility fields as nil.
-        var dict: [String: Any] = [:]
-        if let value = info.installType { dict["installType"] = value.rawValue }
-        if let value = info.sdkPlatform { dict["sdkPlatform"] = value }
-        if let value = info.sdkVersion { dict["sdkVersion"] = value }
-        if let o = info.osVersion { dict["osVersion"] = o }
-        if let appVersion = info.appVersion { dict["appVersion"] = appVersion }
-        result(dict)
-      }
-
-    case "getWebViewUserAgent":
-      result(nil)
-
-    case "getAdServicesToken":
-      let token = PostbackNative.getAdServicesToken()
-      result(token as Any)
-
     default:
       result(FlutterMethodNotImplemented)
     }

@@ -1,6 +1,6 @@
 name: postback_flutter
 description: Flutter Postback attribution SDK.
-version: 1.1.0
+version: 2.0.0
 homepage: https://postback.sh
 repository: https://github.com/getpostback/postback-flutter
 issue_tracker: https://github.com/getpostback/postback-flutter/issues

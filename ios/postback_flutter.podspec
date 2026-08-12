@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'postback_flutter'
-  s.version          = '1.1.0'
+  s.version          = '2.0.0'
   s.summary          = 'Flutter Postback attribution SDK'
   s.description      = 'Flutter plugin wrapper for Postback attribution.'
   s.homepage         = 'https://postback.sh'
@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.platform = :ios, '14.0'
   s.swift_version = '5.0'
   s.ios.vendored_frameworks = 'PostbackSDK.xcframework'
-  s.frameworks = 'Foundation', 'UIKit', 'CryptoKit', 'Security'
-  s.weak_frameworks = 'AdServices', 'StoreKit'
+  s.frameworks = 'Foundation', 'UIKit', 'CoreTelephony', 'Metal', 'Network', 'WebKit', 'CoreGraphics', 'CryptoKit', 'Security'
+  s.weak_frameworks = 'AdServices', 'AppTrackingTransparency', 'AdSupport', 'StoreKit'
 end

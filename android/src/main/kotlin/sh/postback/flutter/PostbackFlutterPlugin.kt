@@ -4,7 +4,6 @@ import android.content.Context
 import sh.postback.sdk.Postback
 import sh.postback.sdk.PostbackConfig
 import sh.postback.sdk.PostbackEventType
-import sh.postback.sdk.PostbackNative
 import sh.postback.sdk.AttributionResult
 import sh.postback.sdk.GoogleAdsConsent
 import sh.postback.sdk.GoogleAdsConsentStatus
@@ -159,66 +158,6 @@ class PostbackFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                     result.success(null)
                 }
             }
-
-            // Utility
-
-            "getDeviceInfo" -> {
-                runAsync(result, "DEVICE_INFO_ERROR") {
-                    val deviceInfo = PostbackNative(context).getDeviceInfo(includeAdvertisingId = true)
-                    result.success(mapOf(
-                        "deviceModel" to deviceInfo.deviceModel,
-                        "screenWidth" to deviceInfo.screenWidth,
-                        "screenHeight" to deviceInfo.screenHeight,
-                        "nativeScreenWidth" to deviceInfo.nativeScreenWidth,
-                        "nativeScreenHeight" to deviceInfo.nativeScreenHeight,
-                        "screenScale" to deviceInfo.screenScale,
-                        "hardwareConcurrency" to deviceInfo.hardwareConcurrency,
-                        "processorCount" to deviceInfo.processorCount,
-                        "maxTouchPoints" to deviceInfo.maxTouchPoints,
-                        "memoryGb" to deviceInfo.memoryGb,
-                        "lowPowerMode" to deviceInfo.lowPowerMode,
-                        "batteryState" to deviceInfo.batteryState,
-                        "batteryLevelBucket" to deviceInfo.batteryLevelBucket,
-                        "preferredLanguages" to deviceInfo.preferredLanguages,
-                        "timezoneOffsetMinutes" to deviceInfo.timezoneOffsetMinutes,
-                        "deviceManufacturer" to deviceInfo.deviceManufacturer,
-                        "deviceBrand" to deviceInfo.deviceBrand,
-                        "deviceProduct" to deviceInfo.deviceProduct,
-                        "deviceHardware" to deviceInfo.deviceHardware,
-                        "gpuVendor" to deviceInfo.gpuVendor,
-                        "gpuRenderer" to deviceInfo.gpuRenderer,
-                        "connectionType" to deviceInfo.connectionType,
-                        "networkType" to deviceInfo.networkType,
-                        "colorScheme" to deviceInfo.colorScheme,
-                        "carrierName" to deviceInfo.carrierName,
-                        "carrierCountryCode" to deviceInfo.carrierCountryCode,
-                        "mobileCountryCode" to deviceInfo.mobileCountryCode,
-                        "mobileNetworkCode" to deviceInfo.mobileNetworkCode,
-                        "sdkPlatform" to deviceInfo.sdkPlatform,
-                        "sdkVersion" to deviceInfo.sdkVersion,
-                        "sdkWebViewUserAgent" to deviceInfo.sdkWebViewUserAgent,
-                        "locale" to deviceInfo.locale,
-                        "timezone" to deviceInfo.timezone,
-                        "osVersion" to deviceInfo.osVersion,
-                        "appVersion" to deviceInfo.appVersion,
-                        "gaid" to deviceInfo.gaid,
-                        "installReferrer" to deviceInfo.installReferrer,
-                        "referrerClickTimestamp" to deviceInfo.referrerClickTimestamp,
-                        "referrerInstallBeginTimestamp" to deviceInfo.referrerInstallBeginTimestamp,
-                    ).filterValues { it != null })
-                }
-            }
-
-            "getWebViewUserAgent" -> {
-                runAsync(result, "WEBVIEW_USER_AGENT_ERROR") {
-                    val userAgent = PostbackNative(context)
-                        .getDeviceInfo(includeAdvertisingId = false)
-                        .sdkWebViewUserAgent
-                    result.success(userAgent)
-                }
-            }
-
-            "getAdServicesToken" -> result.success(null) // iOS only
 
             else -> result.notImplemented()
         }

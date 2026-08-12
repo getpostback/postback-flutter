@@ -15,7 +15,7 @@ Add the package to `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  postback_flutter: ^1.1.0
+  postback_flutter: ^2.0.0
 ```
 
 Fetch dependencies:
@@ -162,9 +162,7 @@ debugPrint('source = ${updated?.source}');
 
 ## Privacy on iOS
 
-The production iOS SDK does not import AppTrackingTransparency, inspect ATT status, request ATT permission, or collect IDFA/IDFV. Do not add `NSUserTrackingUsageDescription` solely for Postback. Apple Ads attribution uses Apple's privacy-preserving AdServices token.
-
-Production install registration includes the Postback install identifier, install lifecycle classification, SDK/platform, OS and app versions, Apple AdServices token when enabled, and optional Google Ads consent. It omits the experimental fingerprint bundle: WebView user agent, exact device/hardware data, screen metrics, CPU/memory, battery/power, languages/locale/timezone, GPU, network/VPN diagnostics, appearance, and carrier/SIM data. There is no public runtime switch that enables those probes.
+Postback does not show an ATT prompt. IDFA is used only if the host app already has authorized access; Apple Ads attribution works through AdServices independently. See the [Postback Privacy Policy](https://postback.sh/privacy). Host apps remain responsible for their own privacy notices, App Store answers, and permissions.
 
 ## Google Advertising ID (Android only)
 
@@ -187,8 +185,6 @@ The native Android SDK reads GAID during install registration, off the main thre
 - Late identity updates (`setCustomerUserId`, iOS Apple Ads opt-in) retry automatically on the next `configure()` or foreground. If the cached install is no longer recognized, the SDK self-heals by re-registering.
 
 ## Privacy
-
-The vendored iOS framework ships a `PrivacyInfo.xcprivacy` manifest declaring `UserDefaults` access plus linked, non-tracking `DeviceID`, `ProductInteraction`, `UserID`, and `OtherDataTypes` collection. `NSPrivacyTracking` is `false`, and the SDK does not declare a tracking-domain list. Reflect this usage in the host app's App Privacy answers.
 
 For Android, include advertising ID collection, device IDs, approximate location/network-derived country, device or other identifiers, app activity, and (if you set `customerUserId`) user ID in your Play Console Data safety answers.
 
@@ -232,16 +228,6 @@ import 'package:postback_flutter/postback_flutter.dart';
 - `isSdkDisabled()` reports whether a rejected API key disabled the SDK.
 - `clearData()` wipes local state.
 - `destroy()` removes native lifecycle observers.
-
-### `PostbackNative`
-
-```dart
-import 'package:postback_flutter/postback_flutter.dart';
-```
-
-- `getDeviceInfo()` on production iOS returns typed install lifecycle (`InstallType.freshInstall`, `reinstall`, `appUpdate`, `sdkAddedOnUpdate`, `restore`, or `unknown`) plus safe SDK, app, and OS metadata. High-entropy fields remain nullable in the shared type for source and Android compatibility but are omitted on iOS. Android can return its documented device/network diagnostics, carrier/SIM metadata, GAID, and Play Install Referrer metadata when available.
-- `getWebViewUserAgent()` returns `null` on production iOS; Android may return its SDK WebView user agent.
-- `getAdServicesToken()` returns Apple's AdServices token on iOS; `null` on Android.
 
 ## Support
 

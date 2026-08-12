@@ -1,17 +1,20 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.3.1 effective-5.10 (swiftlang-6.3.1.1.2 clang-2100.0.123.102)
+// swift-compiler-version: Apple Swift version 6.3.3 effective-5.10 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
 // swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name PostbackSDK -package-name postback_ios
-// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.1
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
 import AdServices
+import AdSupport
+import AppTrackingTransparency
+import CoreTelephony
 import CryptoKit
 import Foundation
-import Foundation/*.Bundle*/
-import Foundation/*.ProcessInfo*/
-import Foundation/*.URL*/
+import Metal
+import Network
 import Security
 import StoreKit
 import Swift
 import UIKit
+import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -52,35 +55,6 @@ public struct PostbackConfig : Swift.Sendable {
   public var eventTrackingEnabled: Swift.Bool
   public var googleAdsConsent: PostbackSDK.GoogleAdsConsent?
   public init(apiKey: Swift.String, apiURL: Foundation.URL = PostbackConfig.defaultAPIURL, enableAppleAdsAttribution: Swift.Bool = true, isDebug: Swift.Bool = false, logLevel: PostbackSDK.PostbackLogLevel = .warn, customerUserId: Swift.String? = nil, autoTrackSessions: Swift.Bool = true, autoRefreshAttribution: Swift.Bool = true, eventTrackingEnabled: Swift.Bool = true, googleAdsConsent: PostbackSDK.GoogleAdsConsent? = nil)
-}
-public enum InstallType : Swift.String, Swift.Codable, Swift.CaseIterable, Swift.Sendable {
-  case freshInstall
-  case reinstall
-  case appUpdate
-  case sdkAddedOnUpdate
-  case restore
-  case unknown
-  public init?(rawValue: Swift.String)
-  public typealias AllCases = [PostbackSDK.InstallType]
-  public typealias RawValue = Swift.String
-  nonisolated public static var allCases: [PostbackSDK.InstallType] {
-    get
-  }
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public enum PostbackNative {
-  @_Concurrency.MainActor public static func getDeviceInfo() -> PostbackSDK.DeviceInfo
-  public static var signalCollectionModeForDiagnostics: Swift.String {
-    get
-  }
-  public static func getAdServicesToken() -> Swift.String?
-  @_Concurrency.MainActor public static func getWebViewUserAgent() async -> Swift.String?
-  public static func storageSet(_ key: Swift.String, value: Swift.String)
-  public static func storageGet(_ key: Swift.String) -> Swift.String?
-  public static func storageRemove(_ key: Swift.String)
-  public static func getInstallStateDebugInfo() -> [Swift.String : Swift.String]
 }
 public enum PostbackLogLevel : Swift.Int, Swift.Codable, Swift.Sendable {
   case debug
@@ -188,65 +162,6 @@ public struct TestEventResult : Swift.Equatable, Swift.Sendable {
   public init(success: Swift.Bool, message: Swift.String)
   public static func == (a: PostbackSDK.TestEventResult, b: PostbackSDK.TestEventResult) -> Swift.Bool
 }
-public struct DeviceInfo : Swift.Codable, Swift.Equatable, Swift.Sendable {
-  public let deviceModel: Swift.String?
-  public let screenWidth: Swift.Int?
-  public let screenHeight: Swift.Int?
-  public let nativeScreenWidth: Swift.Int?
-  public let nativeScreenHeight: Swift.Int?
-  public let screenScale: Swift.Double?
-  public let hardwareConcurrency: Swift.Int?
-  public let processorCount: Swift.Int?
-  public let maxTouchPoints: Swift.Int?
-  public let memoryGb: Swift.Int?
-  public let lowPowerMode: Swift.Bool?
-  public let batteryState: Swift.String?
-  public let batteryLevelBucket: Swift.String?
-  public let preferredLanguages: [Swift.String]?
-  public let timezoneOffsetMinutes: Swift.Int?
-  public let deviceManufacturer: Swift.String?
-  public let deviceBrand: Swift.String?
-  public let deviceProduct: Swift.String?
-  public let deviceHardware: Swift.String?
-  public let gpuVendor: Swift.String?
-  public let gpuRenderer: Swift.String?
-  public let connectionType: Swift.String?
-  public let networkType: Swift.String?
-  public let installType: PostbackSDK.InstallType?
-  public let isVPN: Swift.Bool?
-  public let isLowDataMode: Swift.Bool?
-  public let isExpensiveNetwork: Swift.Bool?
-  public let colorScheme: Swift.String?
-  @available(*, deprecated, message: "Carrier identity is not collected or transmitted by the iOS SDK.")
-  public var carrierName: Swift.String? {
-    get
-  }
-  @available(*, deprecated, message: "Carrier identity is not collected or transmitted by the iOS SDK.")
-  public var carrierCountryCode: Swift.String? {
-    get
-  }
-  @available(*, deprecated, message: "Carrier identity is not collected or transmitted by the iOS SDK.")
-  public var mobileCountryCode: Swift.String? {
-    get
-  }
-  @available(*, deprecated, message: "Carrier identity is not collected or transmitted by the iOS SDK.")
-  public var mobileNetworkCode: Swift.String? {
-    get
-  }
-  public let sdkPlatform: Swift.String?
-  public let sdkVersion: Swift.String?
-  public let sdkWebViewUserAgent: Swift.String?
-  public let locale: Swift.String?
-  public let timezone: Swift.String?
-  public let osVersion: Swift.String?
-  public let appVersion: Swift.String?
-  public let idfa: Swift.String?
-  public let idfv: Swift.String?
-  public init(deviceModel: Swift.String? = nil, screenWidth: Swift.Int? = nil, screenHeight: Swift.Int? = nil, nativeScreenWidth: Swift.Int? = nil, nativeScreenHeight: Swift.Int? = nil, screenScale: Swift.Double? = nil, hardwareConcurrency: Swift.Int? = nil, processorCount: Swift.Int? = nil, maxTouchPoints: Swift.Int? = nil, memoryGb: Swift.Int? = nil, lowPowerMode: Swift.Bool? = nil, batteryState: Swift.String? = nil, batteryLevelBucket: Swift.String? = nil, preferredLanguages: [Swift.String]? = nil, timezoneOffsetMinutes: Swift.Int? = nil, deviceManufacturer: Swift.String? = nil, deviceBrand: Swift.String? = nil, deviceProduct: Swift.String? = nil, deviceHardware: Swift.String? = nil, gpuVendor: Swift.String? = nil, gpuRenderer: Swift.String? = nil, connectionType: Swift.String? = nil, networkType: Swift.String? = nil, installType: PostbackSDK.InstallType? = nil, isVPN: Swift.Bool? = nil, isLowDataMode: Swift.Bool? = nil, isExpensiveNetwork: Swift.Bool? = nil, colorScheme: Swift.String? = nil, carrierName: Swift.String? = nil, carrierCountryCode: Swift.String? = nil, mobileCountryCode: Swift.String? = nil, mobileNetworkCode: Swift.String? = nil, sdkPlatform: Swift.String? = nil, sdkVersion: Swift.String? = nil, sdkWebViewUserAgent: Swift.String? = nil, locale: Swift.String? = nil, timezone: Swift.String? = nil, osVersion: Swift.String? = nil, appVersion: Swift.String? = nil, idfa: Swift.String? = nil, idfv: Swift.String? = nil)
-  public static func == (a: PostbackSDK.DeviceInfo, b: PostbackSDK.DeviceInfo) -> Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
 public enum GoogleAdsConsentStatus : Swift.String, Swift.Codable, Swift.Sendable {
   case granted
   case denied
@@ -276,9 +191,6 @@ public struct AnySendable : @unchecked Swift.Sendable, Swift.Equatable {
   public static func == (lhs: PostbackSDK.AnySendable, rhs: PostbackSDK.AnySendable) -> Swift.Bool
 }
 extension PostbackSDK.Postback : Swift.Sendable {}
-extension PostbackSDK.InstallType : Swift.Equatable {}
-extension PostbackSDK.InstallType : Swift.Hashable {}
-extension PostbackSDK.InstallType : Swift.RawRepresentable {}
 extension PostbackSDK.PostbackLogLevel : Swift.Equatable {}
 extension PostbackSDK.PostbackLogLevel : Swift.Hashable {}
 extension PostbackSDK.PostbackLogLevel : Swift.RawRepresentable {}

@@ -2,6 +2,16 @@
 
 All notable changes to the Postback Flutter SDK are documented here.
 
+## 2.0.0 - 2026-08-12
+
+### Changed
+
+- Vendored the public iOS full attribution-context collector while keeping its raw diagnostics internal to the binary.
+- Removed the public raw-device diagnostic helpers from the Flutter channel; the supported customer API remains the high-level `Postback` integration surface.
+- IDFA is collected only when ATT is already authorized; Postback never requests authorization.
+- Carrier and SIM identity remain excluded on iOS.
+- Removed the embedded iOS privacy manifest; disclosure is maintained in the Postback website policy and host-app declarations.
+
 ## 1.1.0 - 2026-08-12
 
 ### Changed
