@@ -83,6 +83,10 @@ class PostbackNative {
     return DeviceInfo.fromJson(result ?? const <dynamic, dynamic>{});
   }
 
+  static Future<String?> getWebViewUserAgent() {
+    return _channel.invokeMethod<String>('getWebViewUserAgent');
+  }
+
   static Future<String?> getAdServicesToken() {
     return _channel.invokeMethod<String>('getAdServicesToken');
   }

@@ -202,7 +202,19 @@ class PostbackFlutterPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                         "osVersion" to deviceInfo.osVersion,
                         "appVersion" to deviceInfo.appVersion,
                         "gaid" to deviceInfo.gaid,
+                        "installReferrer" to deviceInfo.installReferrer,
+                        "referrerClickTimestamp" to deviceInfo.referrerClickTimestamp,
+                        "referrerInstallBeginTimestamp" to deviceInfo.referrerInstallBeginTimestamp,
                     ).filterValues { it != null })
+                }
+            }
+
+            "getWebViewUserAgent" -> {
+                runAsync(result, "WEBVIEW_USER_AGENT_ERROR") {
+                    val userAgent = PostbackNative(context)
+                        .getDeviceInfo(includeAdvertisingId = false)
+                        .sdkWebViewUserAgent
+                    result.success(userAgent)
                 }
             }
 

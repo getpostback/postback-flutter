@@ -143,6 +143,32 @@ class AttributionResult {
   final String? utmTerm;
 }
 
+enum InstallType {
+  freshInstall,
+  reinstall,
+  appUpdate,
+  sdkAddedOnUpdate,
+  restore,
+  unknown,
+}
+
+const Map<InstallType, String> installTypeValues = {
+  InstallType.freshInstall: 'fresh_install',
+  InstallType.reinstall: 'reinstall',
+  InstallType.appUpdate: 'app_update',
+  InstallType.sdkAddedOnUpdate: 'sdk_added_on_update',
+  InstallType.restore: 'restore',
+  InstallType.unknown: 'unknown',
+};
+
+InstallType? _installTypeFromJson(Object? value) {
+  if (value == null) return null;
+  for (final entry in installTypeValues.entries) {
+    if (entry.value == value) return entry.key;
+  }
+  return InstallType.unknown;
+}
+
 class DeviceInfo {
   const DeviceInfo({
     this.deviceModel,
@@ -168,6 +194,10 @@ class DeviceInfo {
     this.gpuRenderer,
     this.connectionType,
     this.networkType,
+    this.installType,
+    this.isVPN,
+    this.isLowDataMode,
+    this.isExpensiveNetwork,
     this.colorScheme,
     this.carrierName,
     this.carrierCountryCode,
@@ -181,6 +211,11 @@ class DeviceInfo {
     this.osVersion,
     this.appVersion,
     this.gaid,
+    this.installReferrer,
+    this.referrerClickTimestamp,
+    this.referrerInstallBeginTimestamp,
+    this.idfa,
+    this.idfv,
   });
   factory DeviceInfo.fromJson(Map<dynamic, dynamic> json) {
     return DeviceInfo(
@@ -209,6 +244,10 @@ class DeviceInfo {
       gpuRenderer: json['gpuRenderer'] as String?,
       connectionType: json['connectionType'] as String?,
       networkType: json['networkType'] as String?,
+      installType: _installTypeFromJson(json['installType']),
+      isVPN: json['isVPN'] as bool?,
+      isLowDataMode: json['isLowDataMode'] as bool?,
+      isExpensiveNetwork: json['isExpensiveNetwork'] as bool?,
       colorScheme: json['colorScheme'] as String?,
       carrierName: json['carrierName'] as String?,
       carrierCountryCode: json['carrierCountryCode'] as String?,
@@ -222,6 +261,12 @@ class DeviceInfo {
       osVersion: json['osVersion'] as String?,
       appVersion: json['appVersion'] as String?,
       gaid: json['gaid'] as String?,
+      installReferrer: json['installReferrer'] as String?,
+      referrerClickTimestamp: json['referrerClickTimestamp'] as String?,
+      referrerInstallBeginTimestamp:
+          json['referrerInstallBeginTimestamp'] as String?,
+      idfa: json['idfa'] as String?,
+      idfv: json['idfv'] as String?,
     );
   }
   final String? deviceModel;
@@ -247,10 +292,30 @@ class DeviceInfo {
   final String? gpuRenderer;
   final String? connectionType;
   final String? networkType;
+
+  /// iOS only. Distinguishes a fresh install, reinstall, update, or restore.
+  final InstallType? installType;
+
+  /// iOS only. Whether a VPN or tunnel interface is active.
+  final bool? isVPN;
+
+  /// iOS only. Whether Low Data Mode constrains the active network path.
+  final bool? isLowDataMode;
+
+  /// iOS only. Whether the active network path is considered expensive.
+  final bool? isExpensiveNetwork;
   final String? colorScheme;
+
+  /// Android only. iOS does not collect carrier/SIM metadata.
   final String? carrierName;
+
+  /// Android only. iOS does not collect carrier/SIM metadata.
   final String? carrierCountryCode;
+
+  /// Android only. iOS does not collect carrier/SIM metadata.
   final String? mobileCountryCode;
+
+  /// Android only. iOS does not collect carrier/SIM metadata.
   final String? mobileNetworkCode;
   final String? sdkPlatform;
   final String? sdkVersion;
@@ -260,6 +325,11 @@ class DeviceInfo {
   final String? osVersion;
   final String? appVersion;
   final String? gaid;
+  final String? installReferrer;
+  final String? referrerClickTimestamp;
+  final String? referrerInstallBeginTimestamp;
+  final String? idfa;
+  final String? idfv;
 }
 
 class TestEventResult {

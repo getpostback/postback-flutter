@@ -162,7 +162,7 @@ debugPrint('source = ${updated?.source}');
 
 ## Privacy on iOS
 
-The iOS SDK does not import AppTrackingTransparency or AdSupport, request ATT permission, read IDFA or IDFV, or collect device/browser characteristics for fingerprint matching. Do not add `NSUserTrackingUsageDescription` solely for Postback. Apple Ads attribution uses Apple's privacy-preserving AdServices token.
+The iOS SDK does not request ATT permission. It sends device/browser characteristics for probabilistic click-to-install attribution and includes IDFA/IDFV only when the OS already makes a usable value available. Do not add `NSUserTrackingUsageDescription` solely for Postback. Apple Ads attribution uses Apple's privacy-preserving AdServices token.
 
 ## Google Advertising ID (Android only)
 
@@ -186,7 +186,7 @@ The native Android SDK reads GAID during install registration, off the main thre
 
 ## Privacy
 
-The vendored iOS framework ships a `PrivacyInfo.xcprivacy` manifest declaring `UserDefaults` access plus `DeviceID`, `ProductInteraction`, `UserID`, `CoarseLocation`, and `OtherDataTypes` collection, all marked `Tracking: false`. The core Postback API domain is not declared as a tracking domain, so ATT denial does not block install or event delivery.
+The vendored iOS framework ships a `PrivacyInfo.xcprivacy` manifest declaring `UserDefaults` access plus `DeviceID`, `ProductInteraction`, `UserID`, `CoarseLocation`, and `OtherDataTypes` collection. These data types and `NSPrivacyTracking` are marked `true`; the SDK does not declare a tracking-domain list. Reflect this usage in the host app's App Privacy answers.
 
 For Android, include advertising ID collection, device IDs, approximate location/network-derived country, device or other identifiers, app activity, and (if you set `customerUserId`) user ID in your Play Console Data safety answers.
 
@@ -237,7 +237,7 @@ import 'package:postback_flutter/postback_flutter.dart';
 import 'package:postback_flutter/postback_flutter.dart';
 ```
 
-- `getDeviceInfo()` returns SDK/platform, OS, and app version metadata on iOS. Android also returns its platform-specific attribution metadata.
+- `getDeviceInfo()` returns the iOS device signal bundle and any currently available IDFA/IDFV values. It never presents the ATT prompt. iOS includes connection/network type, typed install lifecycle (`InstallType.freshInstall`, `reinstall`, `appUpdate`, `sdkAddedOnUpdate`, `restore`, or `unknown`), and VPN/Low Data Mode/expensive-path diagnostics, but intentionally omits carrier/SIM metadata. Android can additionally return carrier/SIM metadata, GAID, and Play Install Referrer metadata when available. The new iOS-only fields are nullable so existing Android consumers remain compatible.
 - `getAdServicesToken()` returns Apple's AdServices token on iOS; `null` on Android.
 
 ## Support
