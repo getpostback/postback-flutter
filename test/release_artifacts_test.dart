@@ -28,18 +28,30 @@ void main() {
     expect(manifest, contains('com.google.android.gms.permission.AD_ID'));
   });
 
-  test('iOS package supports opportunistic IDFA without an ATT dependency', () {
+  test('iOS package links only production-safe native dependencies', () {
     final podspec = File('ios/postback_flutter.podspec').readAsStringSync();
     final binary = latin1.decode(File(
             'ios/PostbackSDK.xcframework/ios-arm64/PostbackSDK.framework/PostbackSDK')
         .readAsBytesSync());
 
     expect(podspec, isNot(contains('AppTrackingTransparency')));
-    expect(podspec, contains("'AdSupport'"));
+    for (final framework in <String>[
+      'AdSupport',
+      'CoreTelephony',
+      'Metal',
+      'Network',
+      'WebKit',
+    ]) {
+      expect(podspec, isNot(contains("'$framework'")));
+      expect(
+        binary,
+        isNot(contains(
+            '/System/Library/Frameworks/$framework.framework/$framework')),
+        reason: 'production binary must not link $framework',
+      );
+    }
     expect(podspec, contains("'Security'"));
     expect(podspec, contains("s.weak_frameworks = 'AdServices', 'StoreKit'"));
-    expect(binary,
-        contains('/System/Library/Frameworks/AdSupport.framework/AdSupport'));
     expect(binary, isNot(contains('AppTrackingTransparency.framework')));
     expect(binary,
         contains('/System/Library/Frameworks/Security.framework/Security'));
@@ -49,19 +61,24 @@ void main() {
     expect(binary, isNot(contains('requestTrackingAuthorization')));
   });
 
-  test('iOS privacy manifest declares tracking without tracking domains', () {
+  test('iOS privacy manifest declares non-tracking collection', () {
     final manifest = File(
             'ios/PostbackSDK.xcframework/ios-arm64/PostbackSDK.framework/PrivacyInfo.xcprivacy')
         .readAsStringSync();
 
     expect(
         manifest,
-        matches(RegExp(r'<key>NSPrivacyTracking</key>\s*<true\s*/>',
+        matches(RegExp(r'<key>NSPrivacyTracking</key>\s*<false\s*/>',
             multiLine: true)));
+    expect(
+        manifest,
+        isNot(matches(RegExp(
+            r'<key>NSPrivacyCollectedDataTypeTracking</key>\s*<true\s*/>',
+            multiLine: true))));
     expect(manifest, isNot(contains('NSPrivacyTrackingDomains')));
   });
 
-  test('iOS package exposes its signal bundle without carrier metadata', () {
+  test('iOS bridge exposes lifecycle and safe metadata only', () {
     final swiftInterface = File(
       'ios/PostbackSDK.xcframework/ios-arm64/PostbackSDK.framework/Modules/'
       'PostbackSDK.swiftmodule/arm64-apple-ios.swiftinterface',
@@ -69,7 +86,7 @@ void main() {
     final bridge =
         File('ios/Classes/PostbackFlutterPlugin.swift').readAsStringSync();
 
-    const expectedFields = <String>[
+    const sourceCompatibleFields = <String>[
       'deviceModel',
       'screenWidth',
       'screenHeight',
@@ -109,26 +126,67 @@ void main() {
       'idfv',
     ];
 
-    for (final field in expectedFields) {
+    for (final field in sourceCompatibleFields) {
       expect(swiftInterface, contains('public let $field:'));
+    }
+
+    for (final field in <String>[
+      'installType',
+      'sdkPlatform',
+      'sdkVersion',
+      'osVersion',
+      'appVersion',
+    ]) {
       expect(bridge, contains('dict["$field"] ='));
     }
 
-    const deprecatedCarrierFields = <String>[
+    const omittedFields = <String>[
+      'deviceModel',
+      'screenWidth',
+      'screenHeight',
+      'nativeScreenWidth',
+      'nativeScreenHeight',
+      'screenScale',
+      'hardwareConcurrency',
+      'processorCount',
+      'maxTouchPoints',
+      'memoryGb',
+      'lowPowerMode',
+      'batteryState',
+      'batteryLevelBucket',
+      'preferredLanguages',
+      'timezoneOffsetMinutes',
+      'deviceManufacturer',
+      'deviceBrand',
+      'deviceProduct',
+      'deviceHardware',
+      'gpuVendor',
+      'gpuRenderer',
+      'connectionType',
+      'networkType',
+      'isVPN',
+      'isLowDataMode',
+      'isExpensiveNetwork',
+      'colorScheme',
+      'sdkWebViewUserAgent',
+      'locale',
+      'timezone',
+      'idfa',
+      'idfv',
       'carrierName',
       'carrierCountryCode',
       'mobileCountryCode',
       'mobileNetworkCode',
     ];
 
-    for (final field in deprecatedCarrierFields) {
-      expect(swiftInterface, contains('public var $field:'));
+    for (final field in omittedFields) {
       expect(bridge, isNot(contains('dict["$field"] =')));
     }
+    expect(bridge, isNot(contains('PostbackNative.getWebViewUserAgent()')));
     expect(
-        swiftInterface,
-        contains(
-            'deprecated, message: "Carrier identity is not collected or transmitted by the iOS SDK."'));
+        bridge,
+        matches(RegExp(r'case "getWebViewUserAgent":\s*result\(nil\)',
+            multiLine: true)));
   });
 
   test('android wrapper declares local AAR runtime dependencies', () {

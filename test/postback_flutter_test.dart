@@ -23,35 +23,13 @@ void main() {
           'gclid': 'gclid_123',
         },
         'getDeviceInfo': {
-          'deviceModel': 'iPhone17,1',
-          'screenWidth': 1179,
-          'screenHeight': 2556,
-          'screenScale': 3,
-          'hardwareConcurrency': 6,
-          'memoryGb': 8,
-          'batteryState': 'charging',
-          'preferredLanguages': ['en-US', 'fr-FR'],
-          'timezoneOffsetMinutes': 120,
-          'gpuVendor': 'Apple',
-          'gpuRenderer': 'Apple GPU',
-          'connectionType': 'cellular',
-          'networkType': '5g',
           'installType': 'app_update',
-          'isVPN': true,
-          'isLowDataMode': false,
-          'isExpensiveNetwork': true,
-          'sdkWebViewUserAgent':
-              'Mozilla/5.0 AppleWebKit/605.1.15 Mobile/15E148',
-          'locale': 'en-FR',
-          'timezone': 'Europe/Paris',
-          'idfa': '11111111-2222-3333-4444-555555555555',
-          'idfv': 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee',
           'sdkPlatform': 'ios',
           'sdkVersion': '1.0.0',
           'osVersion': '18.7',
           'appVersion': '1.0',
         },
-        'getWebViewUserAgent': 'Mozilla/5.0 AppleWebKit/605.1.15 Mobile/15E148',
+        'getWebViewUserAgent': null,
       });
 
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
@@ -359,31 +337,31 @@ void main() {
     expect(attribution?.link?['name'], 'spring');
     expect(attributionParams['gclid'], 'gclid_123');
     expect(postbackId, 'app_123');
-    expect(deviceInfo.deviceModel, 'iPhone17,1');
-    expect(deviceInfo.screenWidth, 1179);
-    expect(deviceInfo.screenHeight, 2556);
-    expect(deviceInfo.screenScale, 3);
-    expect(deviceInfo.hardwareConcurrency, 6);
-    expect(deviceInfo.memoryGb, 8);
-    expect(deviceInfo.batteryState, 'charging');
-    expect(deviceInfo.preferredLanguages, ['en-US', 'fr-FR']);
-    expect(deviceInfo.timezoneOffsetMinutes, 120);
-    expect(deviceInfo.gpuRenderer, 'Apple GPU');
-    expect(deviceInfo.networkType, '5g');
     expect(deviceInfo.installType, InstallType.appUpdate);
-    expect(deviceInfo.isVPN, true);
-    expect(deviceInfo.isLowDataMode, false);
-    expect(deviceInfo.isExpensiveNetwork, true);
-    expect(deviceInfo.sdkWebViewUserAgent,
-        'Mozilla/5.0 AppleWebKit/605.1.15 Mobile/15E148');
-    expect(deviceInfo.locale, 'en-FR');
-    expect(deviceInfo.timezone, 'Europe/Paris');
-    expect(deviceInfo.idfa, '11111111-2222-3333-4444-555555555555');
-    expect(deviceInfo.idfv, 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee');
     expect(deviceInfo.sdkPlatform, 'ios');
     expect(deviceInfo.sdkVersion, '1.0.0');
     expect(deviceInfo.osVersion, '18.7');
     expect(deviceInfo.appVersion, '1.0');
+  });
+
+  test('shared device type retains Android diagnostics', () async {
+    responseMap['getDeviceInfo'] = {
+      'deviceModel': 'Pixel 10',
+      'screenWidth': 1080,
+      'networkType': '5g',
+      'carrierName': 'Example Mobile',
+      'gaid': '11111111-2222-3333-4444-555555555555',
+      'sdkPlatform': 'android',
+    };
+
+    final deviceInfo = await PostbackNative.getDeviceInfo();
+
+    expect(deviceInfo.deviceModel, 'Pixel 10');
+    expect(deviceInfo.screenWidth, 1080);
+    expect(deviceInfo.networkType, '5g');
+    expect(deviceInfo.carrierName, 'Example Mobile');
+    expect(deviceInfo.gaid, '11111111-2222-3333-4444-555555555555');
+    expect(deviceInfo.sdkPlatform, 'android');
   });
 
   test('unknown future install lifecycle values remain safe', () async {

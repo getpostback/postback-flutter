@@ -6,8 +6,9 @@ All notable changes to the Postback Flutter SDK are documented here.
 
 ### Changed
 
-- Restored the iOS device and browser signal bundle in install payloads and `getDeviceInfo()`, including connection/network type, the WebView user agent, and opportunistic IDFA/IDFV values when the OS already makes them available. The SDK does not request ATT permission and does not collect carrier/SIM metadata on iOS; those fields remain available on Android.
-- Added iOS install lifecycle classification plus VPN, Low Data Mode, and expensive-network diagnostics to `getDeviceInfo()` and the native install payload. The fields remain nullable for Android compatibility.
+- Vendored the production-safe iOS framework, which enforces a compile-time boundary that omits IDFA/IDFV and the experimental fingerprint bundle. The iOS bridge exposes only install lifecycle plus safe SDK, app, and OS metadata; shared nullable fields remain source-compatible for Android consumers.
+- Removed unused iOS AdSupport, CoreTelephony, Metal, Network, and WebKit link declarations and aligned the packaged privacy manifest with `NSPrivacyTracking = false`.
+- Preserved install lifecycle classification and added one-shot missing-install recovery to `sendTestEvent()`: re-register once, retry once, and never loop.
 
 ## 1.0.2 - 2026-08-04
 

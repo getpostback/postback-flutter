@@ -3,20 +3,15 @@
 // swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name PostbackSDK -package-name postback_ios
 // swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.1
 import AdServices
-import AdSupport
-import CoreTelephony
 import CryptoKit
 import Foundation
 import Foundation/*.Bundle*/
 import Foundation/*.ProcessInfo*/
 import Foundation/*.URL*/
-import Metal
-import Network
 import Security
 import StoreKit
 import Swift
 import UIKit
-import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
@@ -77,6 +72,9 @@ public enum InstallType : Swift.String, Swift.Codable, Swift.CaseIterable, Swift
 }
 public enum PostbackNative {
   @_Concurrency.MainActor public static func getDeviceInfo() -> PostbackSDK.DeviceInfo
+  public static var signalCollectionModeForDiagnostics: Swift.String {
+    get
+  }
   public static func getAdServicesToken() -> Swift.String?
   @_Concurrency.MainActor public static func getWebViewUserAgent() async -> Swift.String?
   public static func storageSet(_ key: Swift.String, value: Swift.String)

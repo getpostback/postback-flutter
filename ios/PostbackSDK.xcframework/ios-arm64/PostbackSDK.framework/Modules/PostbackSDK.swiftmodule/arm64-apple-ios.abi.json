@@ -2248,41 +2248,6 @@
         "moduleName": "PostbackSDK"
       },
       {
-        "kind": "Import",
-        "name": "AdSupport",
-        "printedName": "AdSupport",
-        "declKind": "Import",
-        "moduleName": "PostbackSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "Metal",
-        "printedName": "Metal",
-        "declKind": "Import",
-        "moduleName": "PostbackSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "Network",
-        "printedName": "Network",
-        "declKind": "Import",
-        "moduleName": "PostbackSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "CoreTelephony",
-        "printedName": "CoreTelephony",
-        "declKind": "Import",
-        "moduleName": "PostbackSDK"
-      },
-      {
-        "kind": "Import",
-        "name": "WebKit",
-        "printedName": "WebKit",
-        "declKind": "Import",
-        "moduleName": "PostbackSDK"
-      },
-      {
         "kind": "TypeDecl",
         "name": "PostbackNative",
         "printedName": "PostbackNative",
@@ -2309,6 +2274,49 @@
               "Custom"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "signalCollectionModeForDiagnostics",
+            "printedName": "signalCollectionModeForDiagnostics",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11PostbackSDK0A6NativeO34signalCollectionModeForDiagnosticsSSvpZ",
+            "mangledName": "$s11PostbackSDK0A6NativeO34signalCollectionModeForDiagnosticsSSvpZ",
+            "moduleName": "PostbackSDK",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11PostbackSDK0A6NativeO34signalCollectionModeForDiagnosticsSSvgZ",
+                "mangledName": "$s11PostbackSDK0A6NativeO34signalCollectionModeForDiagnosticsSSvgZ",
+                "moduleName": "PostbackSDK",
+                "static": true,
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Function",
@@ -2528,6 +2536,13 @@
             "mangledName": "$ss9EscapableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PostbackSDK"
       },
       {
         "kind": "Import",
@@ -11292,58 +11307,23 @@
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 488,
+      "offset": 808,
       "length": 7,
       "value": "\"1.0.2\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
-      "kind": "BooleanLiteral",
-      "offset": 765,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
-      "kind": "Array",
-      "offset": 875,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 1080,
+      "offset": 1464,
       "length": 13,
       "value": "\"sh.postback\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 1131,
+      "offset": 1515,
       "length": 83,
       "value": "\"Postback could not open UserDefaults suite sh.postback; falling back to standard.\""
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
-      "kind": "StringLiteral",
-      "offset": 17134,
-      "length": 30,
-      "value": "\"sh.postback.sdk.network-path\""
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
-      "kind": "BooleanLiteral",
-      "offset": 17224,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
-      "kind": "BooleanLiteral",
-      "offset": 17257,
-      "length": 5,
-      "value": "false"
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
@@ -11372,6 +11352,20 @@
       "offset": 249,
       "length": 3,
       "value": "100"
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
+      "kind": "BooleanLiteral",
+      "offset": 676,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
+      "kind": "StringLiteral",
+      "offset": 714,
+      "length": 17,
+      "value": "\"production_safe\""
     },
     {
       "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",

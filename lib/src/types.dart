@@ -169,6 +169,8 @@ InstallType? _installTypeFromJson(Object? value) {
   return InstallType.unknown;
 }
 
+/// Production iOS returns install lifecycle plus SDK, app, and OS metadata.
+/// Remaining fields are Android diagnostics or source-compatibility placeholders.
 class DeviceInfo {
   const DeviceInfo({
     this.deviceModel,
@@ -296,13 +298,13 @@ class DeviceInfo {
   /// iOS only. Distinguishes a fresh install, reinstall, update, or restore.
   final InstallType? installType;
 
-  /// iOS only. Whether a VPN or tunnel interface is active.
+  /// Reserved for source compatibility; production iOS does not return it.
   final bool? isVPN;
 
-  /// iOS only. Whether Low Data Mode constrains the active network path.
+  /// Reserved for source compatibility; production iOS does not return it.
   final bool? isLowDataMode;
 
-  /// iOS only. Whether the active network path is considered expensive.
+  /// Reserved for source compatibility; production iOS does not return it.
   final bool? isExpensiveNetwork;
   final String? colorScheme;
 
@@ -328,7 +330,11 @@ class DeviceInfo {
   final String? installReferrer;
   final String? referrerClickTimestamp;
   final String? referrerInstallBeginTimestamp;
+
+  /// Reserved for source compatibility; production iOS does not return IDFA.
   final String? idfa;
+
+  /// Reserved for source compatibility; production iOS does not return IDFV.
   final String? idfv;
 }
 

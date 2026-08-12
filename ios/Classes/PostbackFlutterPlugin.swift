@@ -188,53 +188,19 @@ public class PostbackFlutterPlugin: NSObject, FlutterPlugin {
     case "getDeviceInfo":
       Task { @MainActor in
         let info = PostbackNative.getDeviceInfo()
-        let fetchedWebViewUserAgent = await PostbackNative.getWebViewUserAgent()
-        let webViewUserAgent = info.sdkWebViewUserAgent ?? fetchedWebViewUserAgent
+        // Keep the public bridge on the production allowlist even though the
+        // native collector also returns experimental compatibility fields as nil.
         var dict: [String: Any] = [:]
-        if let value = info.deviceModel { dict["deviceModel"] = value }
-        if let value = info.screenWidth { dict["screenWidth"] = value }
-        if let value = info.screenHeight { dict["screenHeight"] = value }
-        if let value = info.nativeScreenWidth { dict["nativeScreenWidth"] = value }
-        if let value = info.nativeScreenHeight { dict["nativeScreenHeight"] = value }
-        if let value = info.screenScale { dict["screenScale"] = value }
-        if let value = info.hardwareConcurrency { dict["hardwareConcurrency"] = value }
-        if let value = info.processorCount { dict["processorCount"] = value }
-        if let value = info.maxTouchPoints { dict["maxTouchPoints"] = value }
-        if let value = info.memoryGb { dict["memoryGb"] = value }
-        if let value = info.lowPowerMode { dict["lowPowerMode"] = value }
-        if let value = info.batteryState { dict["batteryState"] = value }
-        if let value = info.batteryLevelBucket { dict["batteryLevelBucket"] = value }
-        if let value = info.preferredLanguages { dict["preferredLanguages"] = value }
-        if let value = info.timezoneOffsetMinutes { dict["timezoneOffsetMinutes"] = value }
-        if let value = info.deviceManufacturer { dict["deviceManufacturer"] = value }
-        if let value = info.deviceBrand { dict["deviceBrand"] = value }
-        if let value = info.deviceProduct { dict["deviceProduct"] = value }
-        if let value = info.deviceHardware { dict["deviceHardware"] = value }
-        if let value = info.gpuVendor { dict["gpuVendor"] = value }
-        if let value = info.gpuRenderer { dict["gpuRenderer"] = value }
-        if let value = info.connectionType { dict["connectionType"] = value }
-        if let value = info.networkType { dict["networkType"] = value }
         if let value = info.installType { dict["installType"] = value.rawValue }
-        if let value = info.isVPN { dict["isVPN"] = value }
-        if let value = info.isLowDataMode { dict["isLowDataMode"] = value }
-        if let value = info.isExpensiveNetwork { dict["isExpensiveNetwork"] = value }
-        if let value = info.colorScheme { dict["colorScheme"] = value }
         if let value = info.sdkPlatform { dict["sdkPlatform"] = value }
         if let value = info.sdkVersion { dict["sdkVersion"] = value }
-        if let value = webViewUserAgent { dict["sdkWebViewUserAgent"] = value }
-        if let value = info.locale { dict["locale"] = value }
-        if let value = info.timezone { dict["timezone"] = value }
         if let o = info.osVersion { dict["osVersion"] = o }
         if let appVersion = info.appVersion { dict["appVersion"] = appVersion }
-        if let value = info.idfa { dict["idfa"] = value }
-        if let value = info.idfv { dict["idfv"] = value }
         result(dict)
       }
 
     case "getWebViewUserAgent":
-      Task { @MainActor in
-        result(await PostbackNative.getWebViewUserAgent())
-      }
+      result(nil)
 
     case "getAdServicesToken":
       let token = PostbackNative.getAdServicesToken()

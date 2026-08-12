@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.platform = :ios, '14.0'
   s.swift_version = '5.0'
   s.ios.vendored_frameworks = 'PostbackSDK.xcframework'
-  s.frameworks = 'Foundation', 'UIKit', 'AdSupport', 'CoreTelephony', 'Metal', 'Network', 'WebKit', 'CoreGraphics', 'CryptoKit', 'Security'
+  s.frameworks = 'Foundation', 'UIKit', 'CryptoKit', 'Security'
   s.weak_frameworks = 'AdServices', 'StoreKit'
 end
