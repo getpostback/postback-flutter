@@ -2,7 +2,7 @@
 
 All notable changes to the Postback Flutter SDK are documented here.
 
-## Unreleased
+## 1.1.0 - 2026-08-12
 
 ### Changed
 
