@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'postback_flutter'
-  s.version          = '1.0.2'
+  s.version          = '1.1.0'
   s.summary          = 'Flutter Postback attribution SDK'
   s.description      = 'Flutter plugin wrapper for Postback attribution.'
   s.homepage         = 'https://postback.sh'
