@@ -2,6 +2,13 @@
 
 All notable changes to the Postback Flutter SDK are documented here.
 
+## 2.0.1 - 2026-08-14
+
+### Changed
+
+- Added production and sandbox environment context to native install and event payloads.
+- Updated both vendored native SDKs to 2.0.1.
+
 ## 2.0.0 - 2026-08-12
 
 ### Changed
