@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.3.3 effective-5.10 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
+// swift-compiler-version: Apple Swift version 6.3.1 effective-5.10 (swiftlang-6.3.1.1.2 clang-2100.0.123.102)
 // swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name PostbackSDK -package-name postback_ios
-// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.1
 import AdServices
 import AdSupport
 import AppTrackingTransparency
@@ -238,6 +238,7 @@ public struct TestEventResult : Swift.Equatable, Swift.Sendable {
   }
   @_spi(PostbackTesting) public let sdkPlatform: Swift.String?
   @_spi(PostbackTesting) public let sdkVersion: Swift.String?
+  @_spi(PostbackTesting) public let isSandbox: Swift.Bool?
   @_spi(PostbackTesting) public let sdkWebViewUserAgent: Swift.String?
   @_spi(PostbackTesting) public let locale: Swift.String?
   @_spi(PostbackTesting) public let timezone: Swift.String?
@@ -245,7 +246,7 @@ public struct TestEventResult : Swift.Equatable, Swift.Sendable {
   @_spi(PostbackTesting) public let appVersion: Swift.String?
   @_spi(PostbackTesting) public let idfa: Swift.String?
   @_spi(PostbackTesting) public let idfv: Swift.String?
-  @_spi(PostbackTesting) public init(deviceModel: Swift.String? = nil, screenWidth: Swift.Int? = nil, screenHeight: Swift.Int? = nil, nativeScreenWidth: Swift.Int? = nil, nativeScreenHeight: Swift.Int? = nil, screenScale: Swift.Double? = nil, hardwareConcurrency: Swift.Int? = nil, processorCount: Swift.Int? = nil, maxTouchPoints: Swift.Int? = nil, memoryGb: Swift.Int? = nil, lowPowerMode: Swift.Bool? = nil, batteryState: Swift.String? = nil, batteryLevelBucket: Swift.String? = nil, preferredLanguages: [Swift.String]? = nil, timezoneOffsetMinutes: Swift.Int? = nil, deviceManufacturer: Swift.String? = nil, deviceBrand: Swift.String? = nil, deviceProduct: Swift.String? = nil, deviceHardware: Swift.String? = nil, gpuVendor: Swift.String? = nil, gpuRenderer: Swift.String? = nil, connectionType: Swift.String? = nil, networkType: Swift.String? = nil, installType: PostbackSDK.InstallType? = nil, isVPN: Swift.Bool? = nil, isLowDataMode: Swift.Bool? = nil, isExpensiveNetwork: Swift.Bool? = nil, colorScheme: Swift.String? = nil, carrierName: Swift.String? = nil, carrierCountryCode: Swift.String? = nil, mobileCountryCode: Swift.String? = nil, mobileNetworkCode: Swift.String? = nil, sdkPlatform: Swift.String? = nil, sdkVersion: Swift.String? = nil, sdkWebViewUserAgent: Swift.String? = nil, locale: Swift.String? = nil, timezone: Swift.String? = nil, osVersion: Swift.String? = nil, appVersion: Swift.String? = nil, idfa: Swift.String? = nil, idfv: Swift.String? = nil)
+  @_spi(PostbackTesting) public init(deviceModel: Swift.String? = nil, screenWidth: Swift.Int? = nil, screenHeight: Swift.Int? = nil, nativeScreenWidth: Swift.Int? = nil, nativeScreenHeight: Swift.Int? = nil, screenScale: Swift.Double? = nil, hardwareConcurrency: Swift.Int? = nil, processorCount: Swift.Int? = nil, maxTouchPoints: Swift.Int? = nil, memoryGb: Swift.Int? = nil, lowPowerMode: Swift.Bool? = nil, batteryState: Swift.String? = nil, batteryLevelBucket: Swift.String? = nil, preferredLanguages: [Swift.String]? = nil, timezoneOffsetMinutes: Swift.Int? = nil, deviceManufacturer: Swift.String? = nil, deviceBrand: Swift.String? = nil, deviceProduct: Swift.String? = nil, deviceHardware: Swift.String? = nil, gpuVendor: Swift.String? = nil, gpuRenderer: Swift.String? = nil, connectionType: Swift.String? = nil, networkType: Swift.String? = nil, installType: PostbackSDK.InstallType? = nil, isVPN: Swift.Bool? = nil, isLowDataMode: Swift.Bool? = nil, isExpensiveNetwork: Swift.Bool? = nil, colorScheme: Swift.String? = nil, carrierName: Swift.String? = nil, carrierCountryCode: Swift.String? = nil, mobileCountryCode: Swift.String? = nil, mobileNetworkCode: Swift.String? = nil, sdkPlatform: Swift.String? = nil, sdkVersion: Swift.String? = nil, isSandbox: Swift.Bool? = nil, sdkWebViewUserAgent: Swift.String? = nil, locale: Swift.String? = nil, timezone: Swift.String? = nil, osVersion: Swift.String? = nil, appVersion: Swift.String? = nil, idfa: Swift.String? = nil, idfv: Swift.String? = nil)
   @_spi(PostbackTesting) public static func == (a: PostbackSDK.DeviceInfo, b: PostbackSDK.DeviceInfo) -> Swift.Bool
   @_spi(PostbackTesting) public func encode(to encoder: any Swift.Encoder) throws
   @_spi(PostbackTesting) public init(from decoder: any Swift.Decoder) throws

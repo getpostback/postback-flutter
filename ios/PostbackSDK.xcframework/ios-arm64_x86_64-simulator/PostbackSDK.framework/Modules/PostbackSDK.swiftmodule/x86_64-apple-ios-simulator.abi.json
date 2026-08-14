@@ -9123,6 +9123,72 @@
           },
           {
             "kind": "Var",
+            "name": "isSandbox",
+            "printedName": "isSandbox",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11PostbackSDK10DeviceInfoV9isSandboxSbSgvp",
+            "mangledName": "$s11PostbackSDK10DeviceInfoV9isSandboxSbSgvp",
+            "moduleName": "PostbackSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "spi_group_names": [
+              "PostbackTesting"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11PostbackSDK10DeviceInfoV9isSandboxSbSgvg",
+                "mangledName": "$s11PostbackSDK10DeviceInfoV9isSandboxSbSgvg",
+                "moduleName": "PostbackSDK",
+                "implicit": true,
+                "spi_group_names": [
+                  "PostbackTesting"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "sdkWebViewUserAgent",
             "printedName": "sdkWebViewUserAgent",
             "children": [
@@ -9586,7 +9652,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(deviceModel:screenWidth:screenHeight:nativeScreenWidth:nativeScreenHeight:screenScale:hardwareConcurrency:processorCount:maxTouchPoints:memoryGb:lowPowerMode:batteryState:batteryLevelBucket:preferredLanguages:timezoneOffsetMinutes:deviceManufacturer:deviceBrand:deviceProduct:deviceHardware:gpuVendor:gpuRenderer:connectionType:networkType:installType:isVPN:isLowDataMode:isExpensiveNetwork:colorScheme:carrierName:carrierCountryCode:mobileCountryCode:mobileNetworkCode:sdkPlatform:sdkVersion:sdkWebViewUserAgent:locale:timezone:osVersion:appVersion:idfa:idfv:)",
+            "printedName": "init(deviceModel:screenWidth:screenHeight:nativeScreenWidth:nativeScreenHeight:screenScale:hardwareConcurrency:processorCount:maxTouchPoints:memoryGb:lowPowerMode:batteryState:batteryLevelBucket:preferredLanguages:timezoneOffsetMinutes:deviceManufacturer:deviceBrand:deviceProduct:deviceHardware:gpuVendor:gpuRenderer:connectionType:networkType:installType:isVPN:isLowDataMode:isExpensiveNetwork:colorScheme:carrierName:carrierCountryCode:mobileCountryCode:mobileNetworkCode:sdkPlatform:sdkVersion:isSandbox:sdkWebViewUserAgent:locale:timezone:osVersion:appVersion:idfa:idfv:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -10115,6 +10181,21 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
                 "printedName": "Swift.String?",
                 "children": [
                   {
@@ -10219,8 +10300,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11PostbackSDK10DeviceInfoV11deviceModel11screenWidth0G6Height012nativeScreenH00jkI00G5Scale19hardwareConcurrency14processorCount14maxTouchPoints8memoryGb12lowPowerMode12batteryState0Y11LevelBucket18preferredLanguages21timezoneOffsetMinutes0E12Manufacturer0E5Brand0E7Product0E8Hardware9gpuVendor11gpuRenderer14connectionType11networkType11installType5isVPN09isLowDataX018isExpensiveNetwork11colorScheme11carrierName18carrierCountryCode17mobileCountryCode17mobileNetworkCode11sdkPlatform10sdkVersion19sdkWebViewUserAgent6locale8timezone9osVersion10appVersion4idfa4idfvACSSSg_SiSgA18_A18_A18_SdSgA18_A18_A18_A18_SbSgA17_A17_SaySSGSgA18_A17_A17_A17_A17_A17_A17_A17_A17_AA11InstallTypeOSgA20_A20_A20_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_tcfc",
-            "mangledName": "$s11PostbackSDK10DeviceInfoV11deviceModel11screenWidth0G6Height012nativeScreenH00jkI00G5Scale19hardwareConcurrency14processorCount14maxTouchPoints8memoryGb12lowPowerMode12batteryState0Y11LevelBucket18preferredLanguages21timezoneOffsetMinutes0E12Manufacturer0E5Brand0E7Product0E8Hardware9gpuVendor11gpuRenderer14connectionType11networkType11installType5isVPN09isLowDataX018isExpensiveNetwork11colorScheme11carrierName18carrierCountryCode17mobileCountryCode17mobileNetworkCode11sdkPlatform10sdkVersion19sdkWebViewUserAgent6locale8timezone9osVersion10appVersion4idfa4idfvACSSSg_SiSgA18_A18_A18_SdSgA18_A18_A18_A18_SbSgA17_A17_SaySSGSgA18_A17_A17_A17_A17_A17_A17_A17_A17_AA11InstallTypeOSgA20_A20_A20_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_A17_tcfc",
+            "usr": "s:11PostbackSDK10DeviceInfoV11deviceModel11screenWidth0G6Height012nativeScreenH00jkI00G5Scale19hardwareConcurrency14processorCount14maxTouchPoints8memoryGb12lowPowerMode12batteryState0Y11LevelBucket18preferredLanguages21timezoneOffsetMinutes0E12Manufacturer0E5Brand0E7Product0E8Hardware9gpuVendor11gpuRenderer14connectionType11networkType11installType5isVPN09isLowDataX018isExpensiveNetwork11colorScheme11carrierName18carrierCountryCode17mobileCountryCode17mobileNetworkCode11sdkPlatform10sdkVersion9isSandbox19sdkWebViewUserAgent6locale8timezone9osVersion10appVersion4idfa4idfvACSSSg_SiSgA19_A19_A19_SdSgA19_A19_A19_A19_SbSgA18_A18_SaySSGSgA19_A18_A18_A18_A18_A18_A18_A18_A18_AA11InstallTypeOSgA21_A21_A21_A18_A18_A18_A18_A18_A18_A18_A21_A18_A18_A18_A18_A18_A18_A18_tcfc",
+            "mangledName": "$s11PostbackSDK10DeviceInfoV11deviceModel11screenWidth0G6Height012nativeScreenH00jkI00G5Scale19hardwareConcurrency14processorCount14maxTouchPoints8memoryGb12lowPowerMode12batteryState0Y11LevelBucket18preferredLanguages21timezoneOffsetMinutes0E12Manufacturer0E5Brand0E7Product0E8Hardware9gpuVendor11gpuRenderer14connectionType11networkType11installType5isVPN09isLowDataX018isExpensiveNetwork11colorScheme11carrierName18carrierCountryCode17mobileCountryCode17mobileNetworkCode11sdkPlatform10sdkVersion9isSandbox19sdkWebViewUserAgent6locale8timezone9osVersion10appVersion4idfa4idfvACSSSg_SiSgA19_A19_A19_SdSgA19_A19_A19_A19_SbSgA18_A18_SaySSGSgA19_A18_A18_A18_A18_A18_A18_A18_A18_AA11InstallTypeOSgA21_A21_A21_A18_A18_A18_A18_A18_A18_A18_A21_A18_A18_A18_A18_A18_A18_A18_tcfc",
             "moduleName": "PostbackSDK",
             "declAttributes": [
               "AccessControl"
@@ -11222,695 +11303,702 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 187,
       "length": 14,
       "value": "\"@postback:id\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 235,
       "length": 23,
       "value": "\"@postback:attribution\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 298,
       "length": 30,
       "value": "\"@postback:attribution_params\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 362,
       "length": 20,
       "value": "\"@postback:disabled\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 422,
       "length": 30,
       "value": "\"@postback:install_registered\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 494,
       "length": 33,
       "value": "\"@postback:server_install_stored\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 564,
       "length": 28,
       "value": "\"@postback:customer_user_id\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 621,
       "length": 19,
       "value": "\"@postback:api_key\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 679,
       "length": 29,
       "value": "\"@postback:install_timestamp\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 749,
       "length": 32,
       "value": "\"@postback:install_type_current\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 826,
       "length": 41,
       "value": "\"@postback:install_type_current_evidence\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 906,
       "length": 33,
       "value": "\"@postback:last_session_start_ms\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "StringLiteral",
       "offset": 1344,
       "length": 43,
       "value": "\"@postback:pending_ad_services_token_retry\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "Dictionary",
       "offset": 1567,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "BooleanLiteral",
       "offset": 1601,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "BooleanLiteral",
       "offset": 1637,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "BooleanLiteral",
       "offset": 1931,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "BooleanLiteral",
       "offset": 1969,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2013,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2051,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2098,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2601,
       "length": 2,
       "value": "50"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2916,
       "length": 6,
       "value": "95000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 2968,
       "length": 6,
       "value": "90000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3024,
       "length": 3,
       "value": "255"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3083,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3088,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3093,
       "length": 4,
       "value": "1000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3173,
       "length": 2,
       "value": "75"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
       "offset": 3178,
       "length": 13,
       "value": "1000000000"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/Postback.swift",
       "kind": "IntegerLiteral",
-      "offset": 17406,
+      "offset": 17681,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "StringLiteral",
       "offset": 110,
       "length": 25,
       "value": "\"https:\/\/api.postback.sh\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "StringLiteral",
       "offset": 169,
       "length": 3,
       "value": "\"\/\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 701,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 731,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 855,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 900,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 943,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 1004,
       "length": 2,
       "value": "15"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 1058,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "IntegerLiteral",
       "offset": 1115,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "BooleanLiteral",
       "offset": 1162,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3622,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3710,
       "length": 17,
       "value": "\"CFBundleVersion\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3759,
       "length": 9,
       "value": "\"unknown\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3810,
       "length": 17,
       "value": "\"CFBundleVersion\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 3843,
       "length": 9,
       "value": "\"unknown\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 266,
       "length": 15,
       "value": "\"fresh_install\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 322,
       "length": 12,
       "value": "\"app_update\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 363,
       "length": 21,
       "value": "\"sdk_added_on_update\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 1498,
       "length": 14,
       "value": "\"device-token\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 4132,
       "length": 35,
       "value": "\"@postback:install_state_record_v1\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 4197,
       "length": 32,
       "value": "\"@postback:install_type_pending\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 4267,
       "length": 33,
       "value": "\"@postback:install_type_evidence\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 4337,
       "length": 40,
       "value": "\"@postback:install_type_last_successful\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 4422,
       "length": 49,
       "value": "\"@postback:install_type_last_successful_evidence\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 4501,
       "length": 32,
       "value": "\"@postback:install_type_current\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackInstallState.swift",
       "kind": "StringLiteral",
       "offset": 4571,
       "length": 41,
       "value": "\"@postback:install_type_current_evidence\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
       "offset": 599,
       "length": 7,
-      "value": "\"2.0.0\""
+      "value": "\"2.0.1\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 876,
+      "offset": 696,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1052,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "Array",
-      "offset": 986,
+      "offset": 1162,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 1191,
+      "offset": 1367,
       "length": 13,
       "value": "\"sh.postback\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 1242,
+      "offset": 1418,
       "length": 83,
       "value": "\"Postback could not open UserDefaults suite sh.postback; falling back to standard.\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "StringLiteral",
-      "offset": 17438,
+      "offset": 18649,
       "length": 30,
       "value": "\"sh.postback.sdk.network-path\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 17528,
+      "offset": 18739,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackNative.swift",
       "kind": "BooleanLiteral",
-      "offset": 17561,
+      "offset": 18772,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
       "kind": "StringLiteral",
       "offset": 79,
       "length": 23,
       "value": "\"@postback:event_queue\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
       "kind": "StringLiteral",
       "offset": 128,
       "length": 27,
       "value": "\"@postback:event_queue_ids\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
       "kind": "StringLiteral",
       "offset": 188,
       "length": 29,
       "value": "\"@postback:event_queue_item:\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackQueueStore.swift",
       "kind": "IntegerLiteral",
       "offset": 249,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
       "kind": "BooleanLiteral",
       "offset": 132,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackSignalPolicy.swift",
       "kind": "StringLiteral",
       "offset": 169,
       "length": 14,
       "value": "\"full_signals\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 91,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 109,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 127,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "IntegerLiteral",
       "offset": 146,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 248,
       "length": 15,
       "value": "\"session_start\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 297,
       "length": 9,
       "value": "\"sign_up\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 384,
       "length": 13,
       "value": "\"start_trial\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 424,
       "length": 18,
       "value": "\"add_payment_info\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 464,
       "length": 13,
       "value": "\"add_to_cart\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 503,
       "length": 17,
       "value": "\"add_to_wishlist\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 549,
       "length": 19,
       "value": "\"initiate_checkout\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 592,
       "length": 14,
       "value": "\"view_content\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 627,
       "length": 11,
       "value": "\"view_item\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 698,
       "length": 19,
       "value": "\"tutorial_complete\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 742,
       "length": 15,
       "value": "\"achieve_level\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 780,
       "length": 13,
       "value": "\"level_start\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 819,
       "length": 16,
       "value": "\"level_complete\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 3143,
       "length": 8,
       "value": "\"source\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 3363,
       "length": 12,
       "value": "\"confidence\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
       "offset": 3410,
       "length": 14,
       "value": "\"campaignName\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 12747,
+      "offset": 12846,
       "length": 13,
       "value": "\"carrierName\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 12801,
+      "offset": 12900,
       "length": 20,
       "value": "\"carrierCountryCode\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 12861,
+      "offset": 12960,
       "length": 19,
       "value": "\"mobileCountryCode\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 12920,
+      "offset": 13019,
       "length": 19,
       "value": "\"mobileNetworkCode\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 13239,
+      "offset": 13361,
       "length": 9,
       "value": "\"GRANTED\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 13267,
+      "offset": 13389,
       "length": 8,
       "value": "\"DENIED\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/postback-ios\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
+      "filePath": "\/Users\/arthur\/Dev\/postback\/SDKs\/postback-ios\/Sources\/PostbackSDK\/PostbackTypes.swift",
       "kind": "StringLiteral",
-      "offset": 13299,
+      "offset": 13421,
       "length": 13,
       "value": "\"UNSPECIFIED\""
     }

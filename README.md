@@ -15,7 +15,7 @@ Add the package to `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  postback_flutter: ^2.0.0
+  postback_flutter: ^2.0.1
 ```
 
 Fetch dependencies:
